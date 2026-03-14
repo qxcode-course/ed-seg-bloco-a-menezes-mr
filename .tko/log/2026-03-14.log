@@ -16,3 +16,10 @@
 2026-03-14 17:57:57, MOVE, v:1, k:ed@fuga, mode:DOWN
 2026-03-14 17:57:59, MOVE, v:1, k:ed@fuga, mode:PICK
 2026-03-14 17:58:04, MOVE, v:1, k:ed@fuga, mode:BACK
+2026-03-14 18:32:40, MOVE, v:1, k:ed@fuga, mode:PICK
+2026-03-14 18:32:43, EXEC, v:1, k:ed@fuga, mode:FULL, rate:80, size:22
+2026-03-14 18:35:32, EXEC, v:1, k:ed@fuga, mode:FULL, rate:100, size:22
+2026-03-14 18:35:44, MOVE, v:1, k:ed@fuga, mode:BACK
+2026-03-14 18:35:49, MOVE, v:1, k:ed@fuga, mode:PICK
+2026-03-14 18:35:58, MOVE, v:1, k:ed@fuga, mode:BACK
+2026-03-14 18:37:00, SELF, v:1, k:ed@fuga, self:1, rate:100, study:20, friend:nao

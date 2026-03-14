@@ -19,6 +19,7 @@ expanded:
 tasks:
   ed@pintando: '{self:1, rate:100, study:30, friend:nao, concept:1}'
   ed@mumia: '{self:1, rate:100, study:20, friend:nao}'
+  ed@fuga: '{self:1, rate:100, study:20, friend:nao}'
 flags:
   painel: 0
   quests: 2

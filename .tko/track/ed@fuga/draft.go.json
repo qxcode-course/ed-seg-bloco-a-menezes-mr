@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_18-32-43",
+            "content": "@@ -196,17 +196,17 @@\n if f == \n-p\n+h\n  %7B%0A     \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-14_18-35-32",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    var h, p, f, d int\n    fmt.Scan(&h, &p, &f, &d)\n    \n    for {\n\n        if f == h {\n            fmt.Println(\"S\")\n            break\n        }\n        if f == p {\n            fmt.Println(\"N\")\n            break\n        }\n\n        f = ((f+d)%16 + 16) % 16\n    }\n}",
+            "lines": "22"
+        }
+    ]
+}

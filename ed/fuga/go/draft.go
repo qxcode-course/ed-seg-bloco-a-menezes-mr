@@ -12,7 +12,7 @@ func main() {
             fmt.Println("S")
             break
         }
-        if f == h {
+        if f == p {
             fmt.Println("N")
             break
         }
