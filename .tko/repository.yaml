@@ -16,7 +16,8 @@ sources:
 expanded:
 - ed@revisão
 - ed@main-quest
-tasks: {}
+tasks:
+  ed@pintando: '{self:1, rate:100, study:30, friend:nao, concept:1}'
 flags:
   painel: 0
   quests: 2
