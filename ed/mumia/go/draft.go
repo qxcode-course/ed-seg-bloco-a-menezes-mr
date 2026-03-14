@@ -5,7 +5,7 @@ func main() {
     var nome string
     var id int
 
-    fmt.Scanf("%s %d", nome, id)
+    fmt.Scanf("%s %d", &nome, &id)
 
     if id < 12{
         fmt.Printf("%s eh crianca\n", nome)

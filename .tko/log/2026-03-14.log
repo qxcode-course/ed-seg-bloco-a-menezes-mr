@@ -4,3 +4,5 @@
 2026-03-14 17:23:16, MOVE, v:1, k:ed@pintando, mode:BACK
 2026-03-14 17:23:23, MOVE, v:1, k:ed@mumia, mode:DOWN
 2026-03-14 17:26:39, SELF, v:1, k:ed@pintando, self:1, rate:100, study:30, friend:nao, concept:1
+2026-03-14 17:42:16, MOVE, v:1, k:ed@mumia, mode:PICK
+2026-03-14 17:42:27, EXEC, v:1, k:ed@mumia, mode:FULL, rate:0, size:22
