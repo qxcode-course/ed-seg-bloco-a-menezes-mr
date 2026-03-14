@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_19-24-31",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\nfunc main() {\n    var n, a, b int\n    fmt.Scan(&n)\n    jogo := make([]int, n)\n\n    for i := 0; i < n; i++ {\n\n        fmt.Scan(&a, &b)\n        if a < 10 || b < 10 {\n            jogo[i] = -1\n        } else  {\n            jogo[i] = int(math.Abs(float64(a - b)))\n        }\n    }\n\n    auxId := -1\n    auxDif := 99999\n    \n    for id, competidor := range jogo{\n\n        if competidor != -1 && competidor < auxDif {\n            auxId = id\n            auxDif = competidor\n        }\n\n    }\n\n    if auxId == -1 {\n        fmt.Println(\"sem ganhador\")\n    } else {\n        fmt.Println(auxId)\n    }\n    \n}\n",
+            "lines": "40"
+        }
+    ]
+}
