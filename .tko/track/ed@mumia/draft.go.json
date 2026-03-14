@@ -2,7 +2,22 @@
     "patches": [
         {
             "label": "2026-03-14_17-42-27",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n\n    var nome string\n    var id int\n\n    fmt.Scanf(\"%s %d\", nome, id)\n\n    if id < 12{\n        fmt.Printf(\"%s eh crianca\\n\", nome)\n    }else if id < 18{\n        fmt.Printf(\"%s eh jovem\\n\", nome)\n    }else if id < 65{\n        fmt.Printf(\"%s eh adulto\\n\", nome)\n    }else if id < 1000{\n        fmt.Printf(\"%s eh idoso\\n\", nome)\n    }else {\n        fmt.Printf(\"%s eh mumia\\n\", nome)\n    }\n    \n}\n",
+            "content": "@@ -97,16 +97,14 @@\n d%22, \n-&\n nome, \n-&\n id)%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-14_17-45-07",
+            "content": "@@ -120,19 +120,18 @@\n  id %3C 12\n- \n %7B%0A\n+\n         \n@@ -163,33 +163,32 @@\n %5Cn%22, nome)%0A    %7D\n- \n else if id %3C 18 \n@@ -186,17 +186,16 @@\n  id %3C 18\n- \n %7B%0A      \n@@ -227,33 +227,32 @@\n %5Cn%22, nome)%0A    %7D\n- \n else if id %3C 65 \n@@ -250,17 +250,16 @@\n  id %3C 65\n- \n %7B%0A      \n@@ -296,25 +296,24 @@\n  nome)%0A    %7D\n- \n else if id %3C\n@@ -317,17 +317,16 @@\n d %3C 1000\n- \n %7B%0A      \n@@ -365,14 +365,13 @@\n me)%0A\n+\n     %7D\n- \n else\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-14_17-51-41",
+            "content": "@@ -82,17 +82,27 @@\n fmt.Scan\n-(\n+f(%22%25s %25d%22, \n &nome, &\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-14_17-54-07",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n\n    var nome string\n    var id int\n\n    fmt.Scan(&nome, &id)\n\n    if id < 12 {\n        fmt.Printf(\"%s eh crianca\\n\", nome)\n    } else if id < 18 {\n        fmt.Printf(\"%s eh jovem\\n\", nome)\n    } else if id < 65 {\n        fmt.Printf(\"%s eh adulto\\n\", nome)\n    } else if id < 1000 {\n        fmt.Printf(\"%s eh idoso\\n\", nome)\n    } else {\n        fmt.Printf(\"%s eh mumia\\n\", nome)\n    }\n    \n}\n",
             "lines": "22"
         }
     ]
