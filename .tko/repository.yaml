@@ -1,0 +1,28 @@
+version: '0.2'
+sources:
+- name: sandbox
+  target: sandbox
+  type: local
+  writeable: true
+  quests: null
+  tasks: null
+- name: ed
+  target: https://github.com/qxcodeed/arcade.git
+  type: git
+  writeable: false
+  cache_timestamp: '2026-03-14 16:52:50'
+  quests: null
+  tasks: null
+expanded:
+- ed@revisão
+- ed@main-quest
+tasks: {}
+flags:
+  painel: 0
+  quests: 2
+  tracks: 0
+  tasks: 0
+  task_graph_mode: 0
+  show_time: 0
+lang: go
+selected: ed@pintando
