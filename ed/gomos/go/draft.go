@@ -22,9 +22,9 @@ func main() {
         case "R":
             cobra[0]++
         case "U":
-            cobra[1]++
-        case "D":
             cobra[1]--
+        case "D":
+            cobra[1]++
     }
 
     for i := 0; i < q*2; i++ {

@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_18-05-36",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n\n    var d string\n    var q int\n    fmt.Scan(&q, &d)\n\n    cobra := make([]int, q*2)\n\n    for i := 0; i < q*2; i++ {\n        fmt.Scan(&cobra[i])\n    }\n\n    for i := (q*2) - 1; i > 1; i-- {\n        cobra[i] = cobra[i-2]\n    }\n\n    switch d {\n        case \"L\":\n            cobra[0]-- \n        case \"R\":\n            cobra[0]++\n        case \"U\":\n            cobra[1]++\n        case \"D\":\n            cobra[1]--\n    }\n\n    for i := 0; i < q*2; i++ {\n        if i % 2 == 0 {\n            fmt.Printf(\"%d \", cobra[i])\n        } else {\n            fmt.Printf(\"%d\\n\", cobra[i])\n        }\n    }\n}\n",
+            "lines": "37"
+        }
+    ]
+}
