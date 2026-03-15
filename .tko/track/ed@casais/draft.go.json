@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-14_19-52-12",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n    var n, t int\n    fmt.Scan(&n)\n    casais := make([]int, n)\n\n    for i := 0; i < n; i++ {\n        var a int\n        fmt.Scan(&a)\n        casais[i] = a\n    }\n\n    for i := 0; i < n; i++ {\n        if casais[i] == 0 {\n            continue\n        }\n        for j := i+1; j < n; j++ {\n            if casais[i] == -casais[j]{\n                t++\n                casais[j] = 0\n                casais[j] = 0\n                break\n            }\n        }\n    }\n\n    fmt.Println(t)\n}\n",
+            "lines": "32"
+        }
+    ]
+}
