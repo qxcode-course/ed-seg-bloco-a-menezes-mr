@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_09-52-10",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n)\n\nfunc main() {\n\n\tvar n, x, y int\n\tvar rep string = \"\"\n\tvar fal string = \"\"\n\n\tfmt.Scan(&n, &x)\n\talbum := make([]int, n)\n\n\tfor i := 0; i < x; i++ {\n\t\tfmt.Scan(&y)\n\t\talbum[y-1]++\n\t}\n\n\tfor i := 0; i < n; i++ {\n\t\tif album[i] != 0 {\n\n\t\t\tfor j := 0; j < album[i]-1; j++ {\n\t\t\t\tif rep != \"\" {\n\t\t\t\t\trep += \" \"\n\t\t\t\t}\n\t\t\t\trep += strconv.Itoa(i+1)\n\t\t\t}\n\t\t} else {\n\t\t\tif fal != \"\" {\n\t\t\t\tfal += \" \"\n\t\t\t}\n\t\t\tfal += strconv.Itoa(i+1)\n\t\t}\n\t}\n\n\tif rep == \"\" {\n\t\trep = \"N\"\n\t}\n\tif fal == \"\" {\n\t\tfal = \"N\"\n\t}\n\n\tfmt.Println(rep)\n\tfmt.Println(fal)\n}",
+            "lines": "48"
+        }
+    ]
+}
