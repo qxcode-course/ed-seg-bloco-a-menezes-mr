@@ -6,3 +6,15 @@
 2026-03-15 17:08:20, MOVE, v:1, k:ed@gomos, mode:DOWN
 2026-03-15 18:05:34, MOVE, v:1, k:ed@gomos, mode:PICK
 2026-03-15 18:05:36, EXEC, v:1, k:ed@gomos, mode:FULL, rate:50, size:37
+2026-03-15 18:16:57, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-15 18:16:59, EXEC, v:1, k:ed@gomos, mode:FULL, rate:100, size:37
+2026-03-15 18:18:17, MOVE, v:1, k:ed@gomos, mode:BACK
+2026-03-15 18:19:18, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-15 18:19:20, EXEC, v:1, k:ed@gomos, mode:FULL, rate:100
+2026-03-15 18:19:22, MOVE, v:1, k:ed@gomos, mode:BACK
+2026-03-15 18:19:40, EXEC, v:1, k:ed@gomos, mode:FULL, rate:100
+2026-03-15 18:19:42, MOVE, v:1, k:ed@gomos, mode:BACK
+2026-03-15 18:20:05, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-03-15 18:20:09, EXEC, v:1, k:ed@gomos, mode:FULL, rate:100
+2026-03-15 18:20:15, MOVE, v:1, k:ed@gomos, mode:BACK
+2026-03-15 18:20:41, SELF, v:1, k:ed@gomos, self:1, rate:100, study:90, friend:nao
