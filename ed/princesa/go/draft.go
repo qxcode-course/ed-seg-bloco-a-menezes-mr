@@ -10,7 +10,6 @@ func main() {
     aux02 := e % n
     size := n
 
-
     for size > 1 {
         if combate[aux01] == 1 {
             aux01 = (aux01 + 1) % n
@@ -27,5 +26,16 @@ func main() {
         aux01 = (aux02 + 1) % n
         aux02 = (aux01 + 1) % n
 
+        fmt.Print("[ ")
+        for i := 1; i < n; i++ {
+            if i == aux01{
+                fmt.Printf("%d> ", i)
+            }else if combate[i] != 1{
+                fmt.Printf("%d ", i)
+            }
+        }
+        fmt.Print("]")
+
     }
+
 }
