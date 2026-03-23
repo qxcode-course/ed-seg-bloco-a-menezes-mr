@@ -1,0 +1,104 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_19-42-07",
+            "content": "@@ -393,24 +393,16 @@\n       %7D%0A\n-        \n %0A       \n@@ -438,16 +438,81 @@\n ize--;%0A%0A\n+        aux01 = (aux02 + 1) %25 n%0A        aux02 = (aux01 + 1) %25 n%0A%0A\n         \n@@ -754,73 +754,8 @@\n %22)%0A%0A\n-        aux01 = (aux02 + 1) %25 n%0A        aux02 = (aux01 + 1) %25 n%0A%0A\n     \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-23_19-43-33",
+            "content": "@@ -487,17 +487,17 @@\n or i := \n-0\n+1\n ; i %3C n;\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-23_19-44-52",
+            "content": "@@ -562,28 +562,24 @@\n tf(%22%25d%3E %22, i\n- + 1\n )%0A          \n@@ -641,20 +641,16 @@\n %22%25d %22, i\n- + 1\n )%0A      \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-23_19-45-34",
+            "content": "@@ -392,16 +392,68 @@\n        %7D\n+%0A        %0A        combate%5Baux02%5D = 1%0A        size--;\n %0A%0A      \n@@ -705,60 +705,8 @@\n %22)%0A%0A\n-        combate%5Baux02%5D = 1%0A        size--;%0A        %0A\n     \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-23_19-46-22",
+            "content": "@@ -692,16 +692,24 @@\n size--;%0A\n+        \n %0A       \n@@ -777,252 +777,6 @@\n  %7D%0A%0A\n-    fmt.Print(%22%5B %22)%0A        for i := 0; i %3C n; i++ %7B%0A            if i == aux01%7B%0A                fmt.Printf(%22%25d%3E %22, i + 1)%0A            %7Delse if combate%5Bi%5D != 1%7B%0A                fmt.Printf(%22%25d %22, i + 1)%0A            %7D%0A        %7D%0A    fmt.Print(%22%5D%5Cn%22)%0A\n %7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-23_19-52-20",
+            "content": "@@ -393,24 +393,25 @@\n       %7D%0A\n+%0A\n         \n %0A       \n@@ -402,16 +402,262 @@\n         \n+fmt.Print(%22%5B %22)%0A        for i := 0; i %3C n; i++ %7B%0A            if i == aux01%7B%0A                fmt.Printf(%22%25d%3E %22, i + 1)%0A            %7Delse if combate%5Bi%5D != 1%7B%0A                fmt.Printf(%22%25d %22, i + 1)%0A            %7D%0A        %7D%0A        fmt.Print(%22%5D%5Cn%22)%0A\n %0A       \n@@ -760,24 +760,25 @@\n  %25 n%0A%0A    %7D%0A\n+%0A\n     fmt.Prin\n@@ -779,19 +779,242 @@\n t.Print(\n-combate\n+%22%5B %22)%0A        for i := 0; i %3C n; i++ %7B%0A            if i == aux01%7B%0A                fmt.Printf(%22%25d%3E %22, i + 1)%0A            %7Delse if combate%5Bi%5D != 1%7B%0A                fmt.Printf(%22%25d %22, i + 1)%0A            %7D%0A        %7D%0A    fmt.Print(%22%5D%5Cn%22\n )%0A%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-23_19-58-38",
+            "content": "@@ -393,25 +393,24 @@\n       %7D%0A\n-%0A\n         \n fmt.Prin\n@@ -405,254 +405,8 @@\n     \n-fmt.Print(%22%5B %22)%0A        for i := 0; i %3C n; i++ %7B%0A            if i == aux01%7B%0A                fmt.Printf(%22%25d%3E %22, i + 1)%0A            %7Delse if combate%5Bi%5D != 1%7B%0A                fmt.Printf(%22%25d %22, i + 1)%0A            %7D%0A        %7D%0A        fmt.Print(%22%5D%5Cn%22)%0A\n %0A   \n@@ -445,25 +445,17 @@\n size--;%0A\n-        \n %0A\n+\n         \n@@ -517,11 +517,33 @@\n %0A%0A    %7D%0A\n+    fmt.Print(combate)\n %0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-23_20-00-44",
+            "content": "@@ -171,17 +171,17 @@\n  size %3E \n-0\n+1\n  %7B%0A     \n@@ -772,10 +772,11 @@\n %0A%0A    %7D%0A\n+%0A\n %7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-23_20-04-59",
+            "content": "@@ -171,17 +171,17 @@\n  size %3E \n-1\n+0\n  %7B%0A     \n@@ -462,39 +462,34 @@\n          if \n-combate%5Bi%5D == 2\n+i == aux01\n %7B%0A          \n@@ -653,35 +653,8 @@\n %22)%0A%0A\n-        combate%5Baux01%5D = 2%0A\n     \n@@ -770,236 +770,12 @@\n  n%0A%0A\n+\n     %7D\n-%0A%0A    fmt.Print(%22%5B %22)%0A    for i := 0; i %3C n; i++ %7B%0A        if combate%5Bi%5D == 2%7B%0A            fmt.Printf(%22%25d%3E %22, i + 1)%0A        %7Delse if combate%5Bi%5D != 1%7B%0A            fmt.Printf(%22%25d %22, i + 1)%0A        %7D%0A    %7D%0A    fmt.Print(%22%5D%5Cn%22)\n %0A%7D%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-23_20-06-03",
+            "content": "@@ -24,221 +24,8 @@\n t%22%0A%0A\n-func saida(n int, combate %5B%5Dint) %7B%0A%09fmt.Print(%22%5B %22)%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09if combate%5Bi%5D == 2 %7B%0A%09%09%09fmt.Printf(%22%25d%3E %22, i+1)%0A%09%09%7D else if combate%5Bi%5D == 0 %7B %0A%09%09%09fmt.Printf(%22%25d %22, i+1)%0A%09%09%7D%0A%09%7D%0A%09fmt.Print(%22%5D%5Cn%22)%0A%7D%0A%0A\n func\n@@ -398,32 +398,96 @@\n  %7D%0A%0A        \n+fmt.Print(%22%5B %22)%0A        for i := 0; i %3C n; i++ %7B%0A            if \n combate%5B\n aux01%5D = 2%0A%0A\n@@ -478,190 +478,560 @@\n ate%5B\n-aux01\n+i\n %5D =\n+=\n  2\n-%0A%0A        saida(n, combate)%0A%0A        combate%5Baux02%5D = 1%0A        size--;%0A        %0A        aux01 = (aux02 + 1) %25 n%0A        aux02 = (aux01 + 1) %25 n%0A%0A    %7D%0A%0A    saida(n,combate\n+%7B%0A                fmt.Printf(%22%25d%3E %22, i + 1)%0A            %7Delse if combate%5Bi%5D != 1%7B%0A                fmt.Printf(%22%25d %22, i + 1)%0A            %7D%0A        %7D%0A        fmt.Print(%22%5D%5Cn%22)%0A%0A        combate%5Baux01%5D = 2%0A        combate%5Baux02%5D = 1%0A        size--;%0A        %0A        aux01 = (aux02 + 1) %25 n%0A        aux02 = (aux01 + 1) %25 n%0A%0A    %7D%0A%0A    fmt.Print(%22%5B %22)%0A    for i := 0; i %3C n; i++ %7B%0A        if combate%5Bi%5D == 2%7B%0A            fmt.Printf(%22%25d%3E %22, i + 1)%0A        %7Delse if combate%5Bi%5D != 1%7B%0A            fmt.Printf(%22%25d %22, i + 1)%0A        %7D%0A    %7D%0A    fmt.Print(%22%5D%5Cn%22\n )%0A%7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-23_20-15-44",
+            "content": "@@ -41,18 +41,8 @@\n int,\n- faca int,\n  com\n@@ -107,17 +107,23 @@\n %09if \n-i == faca\n+combate%5Bi%5D == 2\n  %7B%0A%09\n@@ -619,60 +619,54 @@\n     \n-saida(n, aux01, combate)%0A%0A        combate%5Baux01%5D = 2\n+combate%5Baux01%5D = 2%0A%0A        saida(n, combate)%0A\n %0A   \n@@ -802,13 +802,8 @@\n a(n,\n- -1, \n comb\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-23_20-24-34",
+            "content": "@@ -645,16 +645,43 @@\n mbate)%0A%0A\n+        combate%5Baux01%5D = 2%0A\n         \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-23_20-33-33",
+            "content": "@@ -381,16 +381,25 @@\n     for \n+size %3E 1 \n %7B%0A      \n@@ -649,60 +649,8 @@\n e)%0A%0A\n-        if size == 1 %7B%0A            break%0A        %7D%0A%0A\n     \n@@ -767,11 +767,38 @@\n n%0A%0A    %7D\n+%0A%0A    saida(n, -1, combate)\n %0A%7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-23_20-39-31",
+            "content": "@@ -385,17 +385,8 @@\n for \n-size %3E 0 \n %7B%0A  \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-23_20-40-12",
+            "content": "@@ -390,12 +390,11 @@\n ize \n-=\n %3E \n-1\n+0\n  %7B%0A \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-23_20-40-50",
+            "content": "@@ -390,10 +390,10 @@\n ize \n-%3E\n =\n+%3E\n  1 %7B\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-23_20-41-18",
+            "content": "@@ -387,16 +387,17 @@\n r size %3E\n+=\n  1 %7B%0A   \n@@ -658,26 +658,22 @@\n     \n-combate%5Baux02%5D \n+if size =\n = 1\n+ %7B\n %0A   \n@@ -681,76 +681,55 @@\n     \n-size--;%0A%0A        if size == 1 %7B%0A            saida(n, aux01, combate)\n+    break%0A        %7D%0A%0A        combate%5Baux02%5D = 1\n %0A   \n@@ -725,33 +725,39 @@\n 02%5D = 1%0A        \n-%7D\n+size--;\n %0A        %0A      \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-23_20-42-14",
+            "content": "@@ -377,37 +377,8 @@\n  n%0A%0A\n-    saida(n, aux01, combate)%0A\n     \n@@ -611,16 +611,50 @@\n      %7D%0A%0A\n+        saida(n, aux01, combate)%0A%0A\n         \n@@ -705,17 +705,17 @@\n if size \n-%3E\n+=\n = 1 %7B%0A  \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-03-23_20-44-10",
+            "content": "@@ -369,24 +369,53 @@\n  size := n%0A%0A\n+    saida(n, aux01, combate)%0A\n     for size\n@@ -644,42 +644,8 @@\n  %7D%0A%0A\n-        saida(n, aux01, combate)%0A%0A\n     \n@@ -700,17 +700,17 @@\n if size \n-=\n+%3E\n = 1 %7B%0A  \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-23_20-44-36",
+            "content": "package main\nimport \"fmt\"\n\nfunc saida(n int, faca int, combate []int) {\n\tfmt.Print(\"[ \")\n\tfor i := 0; i < n; i++ {\n\t\tif i == faca {\n\t\t\tfmt.Printf(\"%d> \", i+1)\n\t\t} else if combate[i] == 0 { \n\t\t\tfmt.Printf(\"%d \", i+1)\n\t\t}\n\t}\n\tfmt.Print(\"]\\n\")\n}\n\nfunc main() {\n\n    var n, e int\n    fmt.Scan(&n, &e)\n    combate := make([]int, n)\n    aux01 := e - 1\n    aux02 := e % n\n    size := n\n\n    for size > 1 {\n        if combate[aux01] == 1 {\n            aux01 = (aux01 + 1) % n\n            continue\n        }\n        if combate[aux02] == 1 || aux02 == aux01 {\n            aux02 = (aux02 + 1) % n\n            continue\n        }\n\n        saida(n, aux01, combate)\n\n        combate[aux02] = 1\n        size--;\n\n        if size == 1 {\n            saida(n, aux01, combate)\n        }\n        \n        aux01 = (aux02 + 1) % n\n        aux02 = (aux01 + 1) % n\n\n    }\n}\n",
+            "lines": "48"
+        }
+    ]
+}

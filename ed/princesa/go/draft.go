@@ -1,6 +1,18 @@
 package main
 import "fmt"
 
+func saida(n int, faca int, combate []int) {
+	fmt.Print("[ ")
+	for i := 0; i < n; i++ {
+		if i == faca {
+			fmt.Printf("%d> ", i+1)
+		} else if combate[i] == 0 { 
+			fmt.Printf("%d ", i+1)
+		}
+	}
+	fmt.Print("]\n")
+}
+
 func main() {
 
     var n, e int
@@ -20,22 +32,17 @@ func main() {
             continue
         }
 
+        saida(n, aux01, combate)
+
         combate[aux02] = 1
         size--;
 
+        if size == 1 {
+            saida(n, aux01, combate)
+        }
+        
         aux01 = (aux02 + 1) % n
         aux02 = (aux01 + 1) % n
 
-        fmt.Print("[ ")
-        for i := 1; i < n; i++ {
-            if i == aux01{
-                fmt.Printf("%d> ", i)
-            }else if combate[i] != 1{
-                fmt.Printf("%d ", i)
-            }
-        }
-        fmt.Print("]\n")
-
     }
-
 }
