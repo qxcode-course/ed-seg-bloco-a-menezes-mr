@@ -34,7 +34,7 @@ func main() {
                 fmt.Printf("%d ", i)
             }
         }
-        fmt.Print("]")
+        fmt.Print("]\n")
 
     }
 
