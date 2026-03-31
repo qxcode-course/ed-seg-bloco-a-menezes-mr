@@ -5,9 +5,9 @@ func main() {
 	fmt.Scan(&n)
 	fila := make([]int, n)
 
-	for _, pessoa := range fila{
-		fmt.Scan(&pessoa)
-	}
+	for i := range fila {
+    fmt.Scan(&fila[i])
+  }
 
 	fmt.Scan(&qtd)
 	saiu := make(map[int]bool)
@@ -26,6 +26,11 @@ func main() {
 		filaNova = append(filaNova, pessoa)
 	} 
 
-	fmt.Println(filaNova)
-
+	for i, p := range filaNova {
+    if i > 0 {
+      fmt.Print(" ") 
+    }
+    fmt.Print(p)
+  }
+  fmt.Println()
 }

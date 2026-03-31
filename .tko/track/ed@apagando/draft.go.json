@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-31_20-13-58",
+            "content": "@@ -97,17 +97,25 @@\n )%0A%0A%09for \n-i\n+_, pessoa\n  := rang\n@@ -124,15 +124,12 @@\n fila\n- \n %7B%0A\n-    \n+%09%09\n fmt.\n@@ -138,19 +138,17 @@\n an(&\n-fila%5Bi%5D)%0A  \n+pessoa)%0A%09\n %7D%0A%0A%09\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-31_20-19-02",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n\tvar n, qtd, ps int\n\tfmt.Scan(&n)\n\tfila := make([]int, n)\n\n\tfor i := range fila {\n    fmt.Scan(&fila[i])\n  }\n\n\tfmt.Scan(&qtd)\n\tsaiu := make(map[int]bool)\n\n\tfor range qtd {\n\t\tfmt.Scan(&ps)\n\t\tsaiu[ps] = true\n\t}\n\n\tfilaNova := make([]int, 0, n - qtd)\n\n\tfor _, pessoa := range fila{\n\t\tif saiu[pessoa]{\n\t\t\tcontinue\n\t\t}\n\t\tfilaNova = append(filaNova, pessoa)\n\t} \n\n\tfmt.Println(filaNova)\n\n}\n",
+            "lines": "31"
+        }
+    ]
+}

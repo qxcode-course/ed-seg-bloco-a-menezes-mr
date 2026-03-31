@@ -1,1 +1,4 @@
 2026-03-31 16:06:10, MOVE, v:1, k:ed@apagando, mode:DOWN
+2026-03-31 20:13:52, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-31 20:13:58, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:31
+2026-03-31 20:19:02, EXEC, v:1, k:ed@apagando, mode:FULL, rate:0, size:31
