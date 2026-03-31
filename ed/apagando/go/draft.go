@@ -17,9 +17,15 @@ func main() {
 		saiu[ps] = true
 	}
 
-	filaNova := make([]int, n - qtd)
-	for i := 0; i < n - qtd; i++ {
+	filaNova := make([]int, 0, n - qtd)
 
-	}
+	for _, pessoa := range fila{
+		if saiu[pessoa]{
+			continue
+		}
+		filaNova = append(filaNova, pessoa)
+	} 
+
+	fmt.Println(filaNova)
 
 }
