@@ -15,8 +15,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
 - ed@map_set
+- ed@rec
 tasks:
   ed@pintando: '{self:1, rate:100, study:30, friend:nao, concept:1}'
   ed@mumia: '{self:1, rate:100, study:20, friend:nao}'
@@ -26,8 +26,8 @@ tasks:
   ed@baruel: '{self:1, rate:100, study:50, friend:nao}'
   ed@gomos: '{self:1, rate:100, study:90, friend:nao}'
   ed@princesa: '{self:1, rate:100, study:120, concept:1}'
+  ed@apagando: '{self:1, rate:100, study:90, concept:1}'
   ed@analise: '{}'
-  ed@apagando: '{}'
   ed@manipulacao: '{}'
   ed@especiais: '{}'
   ed@buscas: '{}'

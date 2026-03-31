@@ -7,8 +7,23 @@
         },
         {
             "label": "2026-03-31_20-19-02",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n\tvar n, qtd, ps int\n\tfmt.Scan(&n)\n\tfila := make([]int, n)\n\n\tfor i := range fila {\n    fmt.Scan(&fila[i])\n  }\n\n\tfmt.Scan(&qtd)\n\tsaiu := make(map[int]bool)\n\n\tfor range qtd {\n\t\tfmt.Scan(&ps)\n\t\tsaiu[ps] = true\n\t}\n\n\tfilaNova := make([]int, 0, n - qtd)\n\n\tfor _, pessoa := range fila{\n\t\tif saiu[pessoa]{\n\t\t\tcontinue\n\t\t}\n\t\tfilaNova = append(filaNova, pessoa)\n\t} \n\n\tfmt.Println(filaNova)\n\n}\n",
+            "content": "@@ -395,114 +395,28 @@\n %0A%0A%09f\n-or i, p := range filaNova %7B%0A    if i %3E 0 %7B%0A      fmt.Print(%22 %22) %0A    %7D%0A    fmt.Print(p)%0A  %7D%0A  fmt.Println()\n+mt.Println(filaNova)%0A\n %0A%7D%0A\n",
             "lines": "31"
+        },
+        {
+            "label": "2026-03-31_20-21-30",
+            "content": "@@ -394,17 +394,17 @@\n  %0A%0A%09for \n-_\n+i\n , p := r\n@@ -419,24 +419,67 @@\n aNova %7B%0A    \n+if i %3E 0 %7B%0A      fmt.Print(%22 %22) %0A    %7D%0A    \n fmt.Print(p,\n@@ -481,13 +481,8 @@\n nt(p\n-, %22 %22\n )%0A  \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-31_20-24-49",
+            "content": "@@ -185,21 +185,16 @@\n int%5Dbool\n-, qtd\n )%0A%0A%09for \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-31_20-32-54",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n\tvar n, qtd, ps int\n\tfmt.Scan(&n)\n\tfila := make([]int, n)\n\n\tfor i := range fila {\n    fmt.Scan(&fila[i])\n  }\n\n\tfmt.Scan(&qtd)\n\tsaiu := make(map[int]bool, qtd)\n\n\tfor range qtd {\n\t\tfmt.Scan(&ps)\n\t\tsaiu[ps] = true\n\t}\n\n\tfilaNova := make([]int, 0, n - qtd)\n\n\tfor _, pessoa := range fila{\n\t\tif saiu[pessoa]{\n\t\t\tcontinue\n\t\t}\n\t\tfilaNova = append(filaNova, pessoa)\n\t} \n\n\tfor _, p := range filaNova {\n    fmt.Print(p, \" \")\n  }\n  fmt.Println()\n}\n",
+            "lines": "33"
         }
     ]
 }

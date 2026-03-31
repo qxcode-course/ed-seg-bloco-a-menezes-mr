@@ -10,7 +10,7 @@ func main() {
   }
 
 	fmt.Scan(&qtd)
-	saiu := make(map[int]bool)
+	saiu := make(map[int]bool, qtd)
 
 	for range qtd {
 		fmt.Scan(&ps)
@@ -26,11 +26,8 @@ func main() {
 		filaNova = append(filaNova, pessoa)
 	} 
 
-	for i, p := range filaNova {
-    if i > 0 {
-      fmt.Print(" ") 
-    }
-    fmt.Print(p)
+	for _, p := range filaNova {
+    fmt.Print(p, " ")
   }
   fmt.Println()
 }
