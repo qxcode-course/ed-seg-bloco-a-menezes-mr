@@ -6,41 +6,80 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"slices"
+	"math"
+	"cmp"
 )
 
 func getMen(vet []int) []int {
-	_ = vet
-	return nil
+	men := make([]int, 0, len(vet))
+
+	for _, pessoa := range vet {
+		if pessoa > 0 {
+			men = append(men, pessoa)
+		}
+	}
+	return men
 }
 
 func getCalmWomen(vet []int) []int {
-	_ = vet
-	return nil
+	women := make([]int, 0, len(vet))
+
+	for _, pessoa := range vet {
+		if pessoa < 0 && pessoa > -10{
+			women = append(women, pessoa)
+		}
+	}
+	return women
 }
 
 func sortVet(vet []int) []int {
-	_ = vet
-	return nil
+	slices.Sort(vet)
+	return vet
 }
 
 func sortStress(vet []int) []int {
-	_ = vet
-	return nil
+	slices.SortFunc(vet, func(a, b int) int {
+		return cmp.Compare(math.Abs(float64(a)), math.Abs(float64(b)))
+	})
+	return vet
 }
 
 func reverse(vet []int) []int {
-	_ = vet
-	return nil
+	vetR := make([]int, len(vet))
+	copy(vetR, vet)
+	slices.Reverse(vetR)
+
+	return vetR
 }
 
 func unique(vet []int) []int {
-	_ = vet
-	return nil
+	elementos := make(map[int]bool)
+	vetU := make([]int, 0, len(vet))
+
+	for _, elemento := range vet {
+		if !elementos[elemento] {
+			vetU = append(vetU, elemento)
+			elementos[elemento] = true
+		}
+	}
+
+	return vetU
 }
 
 func repeated(vet []int) []int {
-	_ = vet
-	return nil
+	elementos := make(map[int]bool)
+	vetR := make([]int, 0, len(vet))
+
+	for _, elemento := range vet {
+		if elementos[elemento] {
+			vetR = append(vetR, elemento)
+		}else {
+			elementos[elemento] = true
+		}
+	}
+
+	return vetR
 }
 
 func main() {
