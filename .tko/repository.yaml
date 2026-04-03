@@ -15,8 +15,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@map_set
 - ed@rec
+- ed@map_set
 tasks:
   ed@pintando: '{self:1, rate:100, study:30, friend:nao, concept:1}'
   ed@mumia: '{self:1, rate:100, study:20, friend:nao}'
@@ -112,9 +112,9 @@ tasks:
   ed@escapeSpread: '{}'
 flags:
   inbox: inbox
-  panel: help
-  show_panel: 'true'
+  panel: graph
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@apagando
+selected: ed@manipulacao
