@@ -6,6 +6,9 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"slices"
+	"cmp"
+	"math"
 )
 
 type Pair struct {
@@ -14,28 +17,98 @@ type Pair struct {
 }
 
 func occurr(vet []int) []Pair {
-	_ = vet
-	return nil
+	occur := make([]Pair, 0, len(vet))
+	elementos := make(map[int]int)
+	
+	for _, elemento := range vet {
+		elemento = int(math.Abs(float64(elemento)))
+		if elementos[elemento] != 0 {
+			elementos[elemento] = 1
+		}else {
+			elementos[elemento] += 1
+		}
+	}
+	for key, valor := range elementos {
+		occur = append(occur, Pair{One: key, Two: valor})
+	}
+
+	slices.SortFunc(occur, func(a, b Pair) int { return cmp.Compare(a.One, b.One)})
+	return occur
 }
 
 func teams(vet []int) []Pair {
-	_ = vet
-	return nil
+	if len(vet) == 0 {
+		return []Pair{} 
+	}
+
+	team := make([]Pair, 0, len(vet))
+	valor := vet[0]
+	rep := 1
+
+	for i := 1; i < len(vet); i++ {
+
+		if vet[i] == valor {
+			rep++
+
+		} else {
+			team = append(team, Pair{One: valor, Two: rep})
+			valor = vet[i]
+			rep = 1
+		}
+	}
+
+	team = append(team, Pair{One: valor, Two: rep})
+	return team
 }
 
 func mnext(vet []int) []int {
-	_ = vet
-	return nil
+	mapa := make([]int,len(vet))
+
+	for i := 0; i < len(vet); i++ {
+		me := i > 0 && vet[i-1] < 0
+		md := i < len(vet) - 1 && vet[i+1] < 0
+
+		if me || md {
+			mapa[i] = 1
+		}
+	}
+
+	return mapa
 }
 
 func alone(vet []int) []int {
-	_ = vet
-	return nil
+	mapa := make([]int,len(vet))
+	if len(vet) == 1 && vet[0] > 0 {
+		mapa[0] = 1
+		return mapa
+	}
+
+	for i := 0; i < len(vet); i++ {
+		me := i > 0 && vet[i-1] < 0
+		md := i < len(vet) - 1 && vet[i+1] < 0
+
+		if !(me || md) {
+			mapa[i] = 1
+		}
+	}
+
+	return mapa
 }
 
 func couple(vet []int) int {
-	_ = vet
-	return 0
+	
+	solt := make(map[int]int)
+	cont := 0
+	for _, elemento := range vet {
+		if solt[-elemento] > 0 {
+			cont ++
+			solt[-elemento]--
+		}else {
+			solt[elemento]++
+		}
+	}
+
+	return cont
 }
 
 func hasSubseq(vet []int, seq []int, pos int) bool {
