@@ -22,7 +22,7 @@ func occurr(vet []int) []Pair {
 	
 	for _, elemento := range vet {
 		elemento = int(math.Abs(float64(elemento)))
-		if elementos[elemento] != 0 {
+		if elementos[elemento] == 0 {
 			elementos[elemento] = 1
 		}else {
 			elementos[elemento] += 1
@@ -119,21 +119,60 @@ func hasSubseq(vet []int, seq []int, pos int) bool {
 }
 
 func subseq(vet []int, seq []int) int {
-	_ = vet
-	_ = seq
+	cont := 0
+	id := 0
+	for i, elemento := range vet {
+		if elemento == seq[cont] {
+			cont++
+			if cont == len(seq) {
+				return id
+			}
+		}else if elemento == seq[0] {
+			cont = 1
+			id = i
+			if cont == len(seq) {
+				return id
+			}
+		}else {
+			id = i+1
+			cont = 0
+		}
+	}
 	return -1
 }
 
 func erase(vet []int, posList []int) []int {
-	_ = vet
-	_ = posList
-	return nil
+
+	mapa := make(map[int]bool, len(posList))
+	size := len(vet) - len(posList)
+	newList := make([]int, 0, size)
+
+	if size == 0 { return newList}
+
+	for _, id := range posList {
+		mapa[id] = true
+	}
+	
+	for i, elemento := range vet {
+		if !mapa[i] {
+			newList = append(newList, elemento)
+		}
+	}
+
+	return newList
 }
 
 func clear(vet []int, value int) []int {
-	_ = vet
-	_ = value
-	return nil
+
+	newList := make([]int, 0, len(vet))
+	
+	for _, elemento := range vet {
+		if elemento != value {
+			newList = append(newList, elemento)
+		}
+		
+	}
+	return newList
 }
 
 func main() {

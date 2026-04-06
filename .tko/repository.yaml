@@ -15,8 +15,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@map_set
 - ed@basic
+- ed@map_set
 - ed@rec
 flags:
   inbox: all
@@ -25,4 +25,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@basic
+selected: ed@casais
