@@ -2,13 +2,13 @@ package main
 
 import (
 	"bufio"
+	"cmp"
 	"fmt"
+	"math"
 	"os"
+	"slices"
 	"strconv"
 	"strings"
-	"slices"
-	"cmp"
-	"math"
 )
 
 type Pair struct {
@@ -88,7 +88,9 @@ func alone(vet []int) []int {
 		md := i < len(vet) - 1 && vet[i+1] < 0
 
 		if !(me || md) {
-			mapa[i] = 1
+			if vet[i] > 0 {
+				mapa[i] = 1
+			}
 		}
 	}
 
