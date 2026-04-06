@@ -121,24 +121,27 @@ func hasSubseq(vet []int, seq []int, pos int) bool {
 }
 
 func subseq(vet []int, seq []int) int {
-	cont := 0
-	id := 0
-	for i, elemento := range vet {
-		if elemento == seq[cont] {
-			cont++
-			if cont == len(seq) {
-				return id
+	if len(vet) < len(seq) {
+		return -1
+	}
+
+	for i := 0; i <= len(vet) - len(seq); i++ {
+		
+		if vet[i] == seq[0]{
+			j := i
+			aux := true
+			for _, verif := range seq {
+				if verif != vet[j]{
+					aux = false
+					break
+				}
+				j++
 			}
-		}else if elemento == seq[0] {
-			cont = 1
-			id = i
-			if cont == len(seq) {
-				return id
+			if aux {
+				return i
 			}
-		}else {
-			id = i+1
-			cont = 0
 		}
+		
 	}
 	return -1
 }
