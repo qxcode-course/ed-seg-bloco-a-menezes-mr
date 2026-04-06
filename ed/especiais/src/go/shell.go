@@ -65,8 +65,8 @@ func mnext(vet []int) []int {
 	mapa := make([]int,len(vet))
 
 	for i := 0; i < len(vet); i++ {
-		me := i > 0 && vet[i-1] < 0
-		md := i < len(vet) - 1 && vet[i+1] < 0
+		me := i > 0 && vet[i-1] < 0 && vet[i] > 0
+		md := i < len(vet) - 1 && vet[i+1] < 0 && vet[i] > 0
 
 		if me || md {
 			mapa[i] = 1
