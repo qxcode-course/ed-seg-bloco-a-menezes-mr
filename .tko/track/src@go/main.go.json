@@ -1,0 +1,184 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-06_16-07-20",
+            "content": "@@ -114,42 +114,8 @@\n %0A%7D%0A%0A\n-func tree(t *Pen, size int) %7B%0A%0A%7D%0A%0A\n func\n@@ -124,16 +124,16 @@\n ain() %7B%0A\n+\n %09pen := \n@@ -222,24 +222,20 @@\n GB(255, \n-255, 255\n+0, 0\n )     //\n@@ -407,15 +407,424 @@\n pen.\n-Down()%0A\n+Walk(100)             // anda 100 pixels%0A%09pen.Left(30)              // dobra 30 graus para esquerda%0A%09pen.Walk(100)             // anda 100 pixels%0A%09pen.DrawCircle(50)        // desenha um c%C3%ADrculo de raio 50%0A%09pen.Right(60)             // gira para direita 60 graus%0A%09pen.Walk(150)%0A%09for range 10 %7B%0A%09%09pen.Up()%0A%09%09pen.Walk(30) // anda sem riscar%0A%09%09pen.Down()%0A%0A%09%09pen.DrawCircle(10) //desenha um circulo pequeno%0A%0A%09%09pen.Up()%0A%09\n %09pen\n@@ -833,12 +833,72 @@\n alk(\n+-\n 30\n-0\n )\n+ // volta sem riscar%0A%09%09pen.Down()%0A%0A%09%09pen.Left(36) // gira%0A%09%7D\n %0A%0A%09p\n@@ -967,9 +967,10 @@\n ully.%22)%0A\n-\n %7D\n+%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_16-16-28",
+            "content": "@@ -260,12 +260,16 @@\n 55, \n-0, 0\n+255, 255\n )   \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-07_16-18-02",
+            "content": "@@ -162,23 +162,8 @@\n ) %7B%0A\n-%09size := 200.0%0A\n %09pen\n@@ -454,20 +454,19 @@\n en.Walk(\n-size\n+300\n )%0A%0A%09pen.\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-07_16-18-59",
+            "content": "@@ -137,149 +137,15 @@\n ize \n-float64) %7B%0A%09if size %3C 10 %7B%0A%09%09return %0A%09%7D%0A%09dgr := 30.0%0A%09t.Right(dgr)%0A%09t.Walk(size)%0A%09tree(t, size/2)%0A%09t.Left(2*dgr)%0A%09t.Walk(-size)%0A%09t.Walk(size)\n+int) %7B%0A\n %0A%7D%0A%0A\n@@ -479,26 +479,8 @@\n ze)%0A\n-%09tree(pen, size/2)\n %0A%09pe\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-07_16-28-57",
+            "content": "@@ -181,17 +181,17 @@\n %09dgr := \n-4\n+3\n 0.0%0A%09t.R\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_16-30-44",
+            "content": "@@ -232,18 +232,16 @@\n ize/2)%0A%09\n-//\n t.Left(2\n@@ -247,18 +247,16 @@\n 2*dgr)%0A%09\n-//\n t.Walk(-\n@@ -262,18 +262,16 @@\n -size)%0A%09\n-//\n t.Walk(s\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_16-33-00",
+            "content": "@@ -232,16 +232,18 @@\n ize/2)%0A%09\n+//\n t.Left(2\n@@ -245,24 +245,26 @@\n eft(2*dgr)%0A%09\n+//\n t.Walk(-size\n@@ -266,16 +266,18 @@\n -size)%0A%09\n+//\n t.Walk(s\n@@ -620,42 +620,8 @@\n e)%0A%09\n-pen.Right(30)%0A%09pen.Walk(-size)%0A%09//\n tree\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_16-35-07",
+            "content": "@@ -624,10 +624,9 @@\n ght(\n-27\n+3\n 0)%0A%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_16-35-41",
+            "content": "@@ -624,10 +624,10 @@\n ght(\n-33\n+27\n 0)%0A%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_16-36-00",
+            "content": "@@ -614,21 +614,24 @@\n e)%0A%09pen.\n-Left(\n+Right(33\n 0)%0A%09pen.\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_16-36-18",
+            "content": "@@ -623,9 +623,8 @@\n eft(\n-3\n 0)%0A%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_16-36-24",
+            "content": "@@ -634,18 +634,16 @@\n n.Walk(-\n-2*\n size)%0A%09/\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_16-36-36",
+            "content": "@@ -630,24 +630,26 @@\n %0A%09pen.Walk(-\n+2*\n size)%0A%09//tre\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_16-36-59",
+            "content": "@@ -623,10 +623,9 @@\n eft(\n-21\n+3\n 0)%0A%09\n@@ -629,24 +629,25 @@\n )%0A%09pen.Walk(\n+-\n size)%0A%09//tre\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_16-38-43",
+            "content": "@@ -630,25 +630,24 @@\n )%0A%09pen.Walk(\n--\n size)%0A%09//tre\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_16-39-42",
+            "content": "@@ -606,24 +606,58 @@\n Walk(size)%0A%09\n+pen.Left(210)%0A%09pen.Walk(-size)%0A%09//\n tree(pen, si\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-07_16-40-13",
+            "content": "@@ -253,17 +253,18 @@\n %0A%09t.\n-Right(180\n+Walk(-size\n )%0A%09t\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_16-41-02",
+            "content": "@@ -186,17 +186,16 @@\n := 40.0%0A\n-%0A\n %09t.Right\n@@ -235,10 +235,8 @@\n /2)%0A\n-%09%0A\n %09t.L\n@@ -253,43 +253,17 @@\n %0A%09t.\n-Walk(size)%0A%09tree(t, size/2)%0A%0A%09t.Up(\n+Right(180\n )%0A%09t\n@@ -272,25 +272,14 @@\n alk(\n--\n size)%0A\n-%09t.Down()%0A\n %7D%0A%0Af\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_16-45-38",
+            "content": "@@ -236,41 +236,8 @@\n /2)%0A\n-%09t.Up()%0A%09t.Walk(-size)%0A%09t.Down()%0A\n %09%0A%09t\n@@ -281,16 +281,48 @@\n ize/2)%0A%0A\n+%09t.Up()%0A%09t.Walk(-size)%0A%09t.Down()\n %0A%7D%0A%0Afunc\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-07_16-48-29",
+            "content": "@@ -185,14 +185,13 @@\n  := \n-3\n+4\n 0.0%0A\n-%09\n %0A%09t.\n@@ -215,16 +215,116 @@\n k(size)%0A\n+%09tree(t, size/2)%0A%09t.Up()%0A%09t.Walk(-size)%0A%09t.Down()%0A%09%0A%09t.Left(2*dgr)%0A%09t.Walk(size)%0A%09tree(t, size/2)%0A%0A%0A\n %7D%0A%0Afunc \n@@ -633,16 +633,31 @@\n .Down()%0A\n+%09pen.Walk(size)\n %0A%09tree(p\n@@ -668,17 +668,16 @@\n size/2)%0A\n-%0A\n %09pen.Sav\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-07_16-52-56",
+            "content": "@@ -195,31 +195,31 @@\n %0A%09t.\n-Walk(size)%0A%09t.Right(dgr\n+Right(dgr)%0A%09t.Walk(size\n )%0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-07_16-53-30",
+            "content": "@@ -550,16 +550,18 @@\n en, size\n+/2\n )%0A%0A%09pen.\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-07_16-53-45",
+            "content": "@@ -219,26 +219,8 @@\n dgr)\n-%0A%0A%09tree(t, size/2)\n %0A%7D%0A%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-07_16-54-05",
+            "content": "@@ -181,17 +181,17 @@\n %09dgr := \n-4\n+3\n 0.0%0A%09%0A%09t\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_16-54-26",
+            "content": "@@ -234,12 +234,10 @@\n size\n-*3/4\n+/2\n )%0A%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_16-55-08",
+            "content": "@@ -287,16 +287,14 @@\n Pen(\n-10\n+5\n 00, \n-10\n+5\n 00) \n@@ -435,15 +435,14 @@\n ion(\n+2\n 5\n-0\n 0, \n-10\n+5\n 00) \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_16-55-44",
+            "content": "@@ -235,11 +235,11 @@\n ize*\n-2/3\n+3/4\n )%0A%7D%0A\n@@ -287,14 +287,16 @@\n Pen(\n-5\n+10\n 00, \n-5\n+10\n 00) \n@@ -437,14 +437,15 @@\n ion(\n-2\n 5\n+0\n 0, \n-5\n+10\n 00) \n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_16-56-04",
+            "content": "@@ -155,17 +155,17 @@\n  size %3C \n-3\n+1\n 0 %7B%0A%09%09re\n@@ -240,25 +240,8 @@\n /3)%0A\n-%0A%09t.Left(2*dgr)%0A%0A\n %7D%0A%0Af\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-07_16-56-56",
+            "content": "@@ -159,10 +159,10 @@\n e %3C \n-15\n+30\n  %7B%0A%09\n@@ -252,29 +252,16 @@\n (2*dgr)%0A\n-%09t.Walk(size)\n %0A%7D%0A%0Afunc\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_16-57-24",
+            "content": "@@ -253,18 +253,16 @@\n 2*dgr)%0A%09\n-//\n t.Walk(s\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_16-58-44",
+            "content": "@@ -249,60 +249,31 @@\n eft(\n+2*\n dgr)%0A\n-%0A%09t.Up()%0A%09\n+%09//\n t.Walk(\n--\n size)%0A\n-%09t.Down()%0A%09t.Walk(200)%0A\n %7D%0A%0Af\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-07_16-59-47",
+            "content": "@@ -256,26 +256,24 @@\n )%0A%0A%09t.Up()%0A%09\n-//\n t.Walk(-size\n@@ -275,18 +275,16 @@\n -size)%0A%09\n-//\n t.Down()\n@@ -285,18 +285,16 @@\n Down()%0A%09\n-//\n t.Walk(2\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-07_17-00-12",
+            "content": "@@ -256,24 +256,26 @@\n )%0A%0A%09t.Up()%0A%09\n+//\n t.Walk(-size\n@@ -277,16 +277,18 @@\n -size)%0A%09\n+//\n t.Down()\n@@ -289,16 +289,18 @@\n Down()%0A%09\n+//\n t.Walk(2\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-07_17-00-24",
+            "content": "@@ -287,42 +287,8 @@\n wn()\n-%0A%0A%09tree(t, size*2/3)%0A%0A%09t.Left(dgr)\n %0A%09t.\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-07_17-01-25",
+            "content": "@@ -318,16 +318,29 @@\n ft(dgr)%0A\n+%09t.Walk(200)%0A\n %7D%0A%0Afunc \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-07_17-01-34",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc tree(t *Pen, size float64) {\n\tif size < 15 {\n\t\treturn \n\t}\n\tdgr := 40.0\n\t\n\tt.Walk(size)\n\tt.Right(dgr)\n\n\ttree(t, size*2/3)\n\n\tt.Left(dgr)\n\n\tt.Up()\n\tt.Walk(-size)\n\tt.Down()\n\n\ttree(t, size*2/3)\n\n\tt.Left(dgr)\n}\n\nfunc main() {\n\tsize := 200.0\n\tpen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(250, 500) // move o pincel para x 250, y 500\n\tpen.SetHeading(90)        // coloca o pincel apontando para cima\n\tpen.Down()\n\n\ttree(pen, size)\n\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}",
+            "lines": "46"
+        }
+    ]
+}
