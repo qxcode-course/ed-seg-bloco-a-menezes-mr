@@ -15,9 +15,9 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
 - ed@map_set
 - ed@basic
+- ed@rec
 flags:
   inbox: all
   panel: graph

@@ -9,38 +9,37 @@ func randInt(min, max int) int {
 	return min + rand.Intn(max-min+1)
 }
 
-func square(t *Pen, size float64) {
-	if size < 4 {
+func circle(t *Pen, raio float64) {
+	if raio < 3 {
 		return 
 	}
-	t.Up()
-	t.Walk(size*0.5)
-	t.Left(90)
-	t.Walk(size*0.5)
-	t.Down()
-	for range 4 {
-		t.Left(90)
-		square(t, size*0.45)
-		t.Walk(size)
 
+	for range 6 {
+		t.Right(60)
+		t.Up()
+		t.Walk(raio)
+		t.Down()
+		t.DrawCircle(raio/3)
+		circle(t, raio/3)
+		t.Up()
+		t.Walk(-raio)
+		t.Down()
 	}
-	t.Up()
-	t.Walk(-size*0.5)
-	t.Right(90)
-	t.Walk(-size*0.5)
-	t.Down()
+	
+	
 }
 
 func main() {
-	size := 500.0
+	raio := 333.3
 	pen := NewPen(1000, 1000)   // cria um canvas de 500 de largura por 500 de altura
 	pen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho
 	pen.SetPosition(500, 500) // move o pincel para x 250, y 500
-	pen.SetHeading(90)
-	pen.SetLineWidth(1)  
+	pen.SetHeading(60)
+	pen.SetLineWidth(1)        // coloca o pincel apontando para cima
 	pen.Down()
-	square(pen, size)
+	pen.DrawCircle(raio)
+	circle(pen, raio)
 
-	pen.SavePNG("square.png")
+	pen.SavePNG("circle.png")
 	fmt.Println("PNG file created successfully.")
 }
