@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_15-40-55",
+            "content": "@@ -10,912 +10,66 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-%09%22text/template/parse%22%0A)%0Afunc main() %7B%0A    var qtd, baruel int%0A    fmt.Scan(&qtd, &baruel)%0A    rep := %22%22%0A    falt := %22%22%0A%0A    album :=  make(%5B%5Dint, qtd)%0A    num := 0%0A    for range baruel %7B%0A        fmt.Scan(&num)%0A        album%5Bnum - 1%5D ++%0A    %7D%0A%0A    for i := range qtd %7B%0A        if album%5Bi%5D != 0%7B%0A            for j := range (album%5Bi%5D)-1 %7B%0A                if j != (album%5Bi%5D)-2%7B%0A                    rep += string(album%5Bi%5D)%0A                    rep += %22 %22%0A                %7Delse %7B%0A                    rep += string(album%5Bi%5D)%0A                %7D%0A            %7D%0A        %7Delse %7B%0A            if j != (album%5Bi%5D)-2%7B%0A                falt += string(album%5Bi%5D)%0A                falt += %22 %22%0A            %7Delse %7B%0A                falt += string(album%5Bi%5D)%0A            %7D%0A        %7D%0A    %7D%0A    if falt == %22%22%7B%0A        falt = %22N%22%0A    %7D%0A    if rep == %22%22%7B%0A        rep = %22N%22%0A    %7D%0A    fmt.Println(rep)%0A    fmt.Println(falt\n+func main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-04-13_16-10-32",
+            "content": "@@ -396,17 +396,16 @@\n um%5Bi%5D)-2\n- \n %7B%0A      \n@@ -608,21 +608,25 @@\n  if \n-i\n+j\n  != \n-qtd - 1 \n+(album%5Bi%5D)-2\n %7B%0A  \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_16-11-30",
+            "content": "@@ -23,16 +23,39 @@\n %0A%09%22fmt%22%0A\n+%09%22text/template/parse%22%0A\n )%0Afunc m\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_16-11-48",
+            "content": "@@ -403,35 +403,23 @@\n  rep += \n-fmt.Sprintf(%22%25d %22, \n+string(\n album%5Bi%5D\n@@ -412,32 +412,63 @@\n tring(album%5Bi%5D)%0A\n+                    rep += %22 %22%0A\n                 \n@@ -502,34 +502,23 @@\n  rep += \n-fmt.Sprintf(%22%25d%22, \n+string(\n album%5Bi%5D\n@@ -625,27 +625,15 @@\n  += \n-fmt.Sprintf(%22%25d %22, \n+string(\n albu\n@@ -630,32 +630,60 @@\n tring(album%5Bi%5D)%0A\n+                falt += %22 %22%0A\n             %7Dels\n@@ -714,26 +714,15 @@\n  += \n-fmt.Sprintf(%22%25d%22, \n+string(\n albu\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_16-16-53",
+            "content": "@@ -241,44 +241,8 @@\n  ++%0A\n-        fmt.Println(album%5Bnum - 1%5D)%0A\n     \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_16-19-21",
+            "content": "@@ -245,65 +245,71 @@\n     \n-%7D%0A%0A    for i := range qtd %7B%0A        fmt.Println(album%5Bi%5D)\n+    fmt.Println(album%5Bnum - 1%5D)%0A    %7D%0A%0A    for i := range qtd %7B\n %0A   \n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_16-20-45",
+            "content": "@@ -269,16 +269,46 @@\n e qtd %7B%0A\n+        fmt.Println(album%5Bi%5D)%0A\n         \n@@ -444,33 +444,40 @@\n .Sprintf(%22%25d %22, \n-i\n+album%5Bi%5D\n )%0A              \n@@ -523,33 +523,40 @@\n t.Sprintf(%22%25d%22, \n-i\n+album%5Bi%5D\n )%0A              \n@@ -662,17 +662,24 @@\n (%22%25d %22, \n-i\n+album%5Bi%5D\n )%0A      \n@@ -734,17 +734,24 @@\n f(%22%25d%22, \n-i\n+album%5Bi%5D\n )%0A      \n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_16-21-50",
+            "content": "@@ -415,36 +415,32 @@\n Sprintf(%22%25d %22, i\n- + 1\n )%0A              \n@@ -487,36 +487,32 @@\n .Sprintf(%22%25d%22, i\n- + 1\n )%0A              \n@@ -615,28 +615,24 @@\n ntf(%22%25d %22, i\n- + 1\n )%0A          \n@@ -688,12 +688,8 @@\n %22, i\n- + 1\n )%0A  \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_16-22-29",
+            "content": "@@ -362,9 +362,10 @@\n f j \n-%3C\n+!=\n  (al\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_16-25-08",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\nfunc main() {\n    var qtd, baruel int\n    fmt.Scan(&qtd, &baruel)\n    rep := \"\"\n    falt := \"\"\n\n    album :=  make([]int, qtd)\n    num := 0\n    for range baruel {\n        fmt.Scan(&num)\n        album[num - 1] ++\n    }\n\n    for i := range qtd {\n        if album[i] != 0{\n            for j := range (album[i])-1 {\n                if j < (album[i])-2 {\n                    rep += fmt.Sprintf(\"%d \", i + 1)\n                }else {\n                    rep += fmt.Sprintf(\"%d\", i + 1)\n                }\n            }\n        }else {\n            if i != qtd - 1 {\n                falt += fmt.Sprintf(\"%d \", i + 1)\n            }else {\n                falt += fmt.Sprintf(\"%d\", i + 1)\n            }\n        }\n    }\n    if falt == \"\"{\n        falt = \"N\"\n    }\n    if rep == \"\"{\n        rep = \"N\"\n    }\n    fmt.Println(rep)\n    fmt.Println(falt)\n}\n",
+            "lines": "44"
+        }
+    ]
+}

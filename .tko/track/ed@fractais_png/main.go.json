@@ -997,8 +997,1213 @@
         },
         {
             "label": "2026-04-12_22-56-06",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc square(t *Pen, size float64) {\n\tif size < 4 {\n\t\treturn \n\t}\n\tt.Up()\n\tt.Walk(size*0.5)\n\tt.Left(90)\n\tt.Walk(size*0.5)\n\tt.Down()\n\tfor range 4 {\n\t\tt.Left(90)\n\t\tsquare(t, size*0.45)\n\t\tt.Walk(size)\n\n\t}\n\tt.Up()\n\tt.Walk(-size*0.5)\n\tt.Right(90)\n\tt.Walk(-size*0.5)\n\tt.Down()\n}\n\nfunc main() {\n\tsize := 500.0\n\tpen := NewPen(1000, 1000)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(500, 500) // move o pincel para x 250, y 500\n\tpen.SetHeading(90)\n\tpen.SetLineWidth(1)  \n\tpen.Down()\n\tsquare(pen, size)\n\n\tpen.SavePNG(\"square.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "content": "@@ -115,23 +115,22 @@\n %7D%0A%0Afunc \n-rotacao\n+square\n (t *Pen,\n@@ -175,16 +175,22 @@\n rn %0A%09%7D%0A%09\n+t.Up()\n %0A%09t.Walk\n@@ -198,98 +198,372 @@\n size\n-)%0A%0A%09%0A%7D%0A%0Afunc main() %7B%0A%09size := 500.0%0A%09pen := NewPen(1000, 1000) %0A%09pen.SetRGB(255, 0, 0)   \n+*0.5)%0A%09t.Left(90)%0A%09t.Walk(size*0.5)%0A%09t.Down()%0A%09for range 4 %7B%0A%09%09t.Left(90)%0A%09%09square(t, size*0.45)%0A%09%09t.Walk(size)%0A%0A%09%7D%0A%09t.Up()%0A%09t.Walk(-size*0.5)%0A%09t.Right(90)%0A%09t.Walk(-size*0.5)%0A%09t.Down()%0A%7D%0A%0Afunc main() %7B%0A%09size := 500.0%0A%09pen := NewPen(1000, 1000)   // cria um canvas de 500 de largura por 500 de altura%0A%09pen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n %0A%09pe\n@@ -582,14 +582,50 @@\n n(50\n+0\n , 50\n+0\n ) \n+// move o pincel para x 250, y 500\n %0A%09pe\n@@ -641,10 +641,9 @@\n ing(\n-18\n+9\n 0)%0A%09\n@@ -677,23 +677,22 @@\n Down()%0A%09\n-rotacao\n+square\n (pen, si\n@@ -714,15 +714,14 @@\n NG(%22\n-rotacao\n+square\n .png\n",
             "lines": "46"
+        },
+        {
+            "label": "2026-04-13_07-29-30",
+            "content": "@@ -322,16 +322,18 @@\n Heading(\n+18\n 0)%0A%09pen.\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-13_07-29-58",
+            "content": "@@ -224,9 +224,9 @@\n  := \n-9\n+5\n 00.0\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-13_07-30-29",
+            "content": "@@ -224,10 +224,10 @@\n  := \n-85\n+90\n 0.0%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-13_07-31-02",
+            "content": "@@ -195,43 +195,8 @@\n ze)%0A\n-%09t.Right(90)%0A%09rotacao(t, size - 20)\n %0A%09%0A%7D\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-13_07-32-32",
+            "content": "@@ -223,17 +223,17 @@\n  size - \n-1\n+2\n 0)%0A%09%0A%7D%0A%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_07-32-57",
+            "content": "@@ -180,94 +180,8 @@\n %09%7D%0A%09\n-t.SetRGB(float64(randInt(0, 250)), float64(randInt(0, 250)), float64(randInt(0, 250)))\n %0A%09t.\n@@ -285,24 +285,50 @@\n 000, 1000) %0A\n+%09pen.SetRGB(255, 0, 0)   %0A\n %09pen.SetPosi\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_07-36-01",
+            "content": "@@ -438,17 +438,17 @@\n neWidth(\n-2\n+1\n )  %0A%09pen\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-13_07-38-11",
+            "content": "@@ -115,22 +115,23 @@\n %7D%0A%0Afunc \n-tapete\n+rotacao\n (t *Pen,\n@@ -182,147 +182,91 @@\n %0A%09t.\n-Up()%0A%09t.Walk(size*0.5)%0A%09t.Left(90)%0A%09t.Walk(size*0.5)%0A%09t.Down()%0A%09for range 4 %7B%0A%09%09t.Left(90)%0A%09%09tapete(t, size*0.45)%0A%09%09t.Walk(size)%0A%0A%09%7D%0A%09t.Up(\n+SetRGB(float64(randInt(0, 250)), float64(randInt(0, 250)), float64(randInt(0, 250))\n )%0A%09t\n@@ -267,33 +267,28 @@\n )))%0A%09t.Walk(\n--\n size\n-*0.5\n )%0A%09t.Right(9\n@@ -295,35 +295,31 @@\n 0)%0A%09\n-t.Walk(-size*0.5)%0A%09t.Down()\n+rotacao(t, size - 10)%0A%09\n %0A%7D%0A%0A\n@@ -341,18 +341,18 @@\n size := \n+8\n 5\n-0\n 0.0%0A%09pen\n@@ -378,128 +378,8 @@\n 00) \n-  // cria um canvas de 500 de largura por 500 de altura%0A%09pen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho\n %0A%09pe\n@@ -398,50 +398,14 @@\n n(50\n-0\n , 50\n-0\n ) \n-// move o pincel para x 250, y 500\n %0A%09pe\n@@ -417,17 +417,16 @@\n Heading(\n-9\n 0)%0A%09pen.\n@@ -438,17 +438,17 @@\n neWidth(\n-1\n+2\n )  %0A%09pen\n@@ -456,22 +456,23 @@\n Down()%0A%09\n-tapete\n+rotacao\n (pen, si\n@@ -494,14 +494,15 @@\n NG(%22\n-tapete\n+rotacao\n .png\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-13_07-44-06",
+            "content": "@@ -257,16 +257,64 @@\n e 4 %7B%0A%09%09\n+t.Left(90)%0A%09%09tapete(t, size*0.45)%0A%09%09t.Walk(size)\n %0A%0A%09%7D%0A%09t.\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_07-44-57",
+            "content": "@@ -261,20 +261,9 @@\n %7B%0A%09%09\n-t.Walk(size)\n+%0A\n %0A%09%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_07-45-26",
+            "content": "@@ -179,43 +179,174 @@\n %09%7D%0A%09\n-%0A%09for range 4 %7B%0A%09%09t.Walk(size)%0A%09%7D%0A%09\n+t.Up()%0A%09t.Walk(size*0.5)%0A%09t.Left(90)%0A%09t.Walk(size*0.5)%0A%09t.Down()%0A%09for range 4 %7B%0A%09%09t.Walk(size)%0A%09%7D%0A%09t.Up()%0A%09t.Walk(-size*0.5)%0A%09t.Right(90)%0A%09t.Walk(-size*0.5)%0A%09t.Down()\n %0A%7D%0A%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_07-46-11",
+            "content": "@@ -179,72 +179,8 @@\n %09%7D%0A%09\n-t.Up()%0A%09t.Walk(size*0.5)%0A%09t.Left(90)%0A%09t.Walk(size*0.5)%0A%09t.Down()\n %0A%09fo\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_07-46-42",
+            "content": "@@ -259,21 +259,8 @@\n 4 %7B%0A\n-%09%09t.Left(90)%0A\n %09%09t.\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_07-47-00",
+            "content": "@@ -314,17 +314,17 @@\n size := \n-4\n+5\n 00.0%0A%09pe\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_07-47-30",
+            "content": "@@ -318,9 +318,9 @@\n  := \n-3\n+4\n 00.0\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_07-47-39",
+            "content": "@@ -292,58 +292,8 @@\n %7D%0A%09%0A\n-%09t.Walk(size*0.5)%0A%09t.Left(90)%0A%09t.Walk(size*0.5)%0A%09%0A\n %7D%0A%0Af\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_07-52-09",
+            "content": "@@ -291,24 +291,8 @@\n %09%7D%0A%09\n-t.SetHeading(90)\n %0A%09t.\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_07-52-42",
+            "content": "@@ -286,24 +286,16 @@\n ize)%0A%09%7D%0A\n-%09t.Up()%0A\n %09t.SetHe\n@@ -356,39 +356,8 @@\n .5)%0A\n-%09t.Down()%0A%09tapete(t, size*0.5)%0A\n %09%0A%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_07-54-09",
+            "content": "@@ -287,16 +287,119 @@\n ze)%0A%09%7D%0A%09\n+t.Up()%0A%09t.SetHeading(90)%0A%09t.Walk(size*0.5)%0A%09t.Left(90)%0A%09t.Walk(size*0.5)%0A%09t.Down()%0A%09tapete(t, size*0.5)\n %0A%09%0A%7D%0A%0Afu\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_07-55-46",
+            "content": "@@ -120,16 +120,17 @@\n nc tapet\n+e\n (t *Pen,\n@@ -272,30 +272,8 @@\n 90)%0A\n-%09%09tapet(t, size*0.45)%0A\n %09%09t.\n@@ -287,80 +287,14 @@\n ze)%0A\n-%0A\n %09%7D%0A%09\n-t.Up()%0A%09t.Walk(-size*0.5)%0A%09t.Right(90)%0A%09t.Walk(-size*0.5)%0A%09t.Down()\n+%0A%09\n %0A%7D%0A%0A\n@@ -316,17 +316,17 @@\n size := \n-5\n+3\n 00.0%0A%09pe\n@@ -593,16 +593,17 @@\n )%0A%09tapet\n+e\n (pen, si\n@@ -626,16 +626,17 @@\n G(%22tapet\n+e\n .png%22)%0A%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_07-56-21",
+            "content": "@@ -712,17 +712,16 @@\n G(%22tapet\n-e\n .png%22)%0A%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_07-56-48",
+            "content": "@@ -254,16 +254,29 @@\n nge 4 %7B%0A\n+%09%09t.Left(90)%0A\n %09%09tapet(\n@@ -303,29 +303,16 @@\n lk(size)\n-%0A%09%09t.Left(90)\n %0A%0A%09%7D%0A%09t.\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_07-59-49",
+            "content": "@@ -578,9 +578,9 @@\n ion(\n-8\n+5\n 00, \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_08-01-23",
+            "content": "@@ -574,17 +574,17 @@\n osition(\n-9\n+8\n 00, 500)\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_08-01-35",
+            "content": "@@ -574,18 +574,17 @@\n osition(\n-10\n+9\n 00, 500)\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_08-01-49",
+            "content": "@@ -284,30 +284,30 @@\n %09%09t.\n-Left(90)%0A%09%09t.Walk(size\n+Walk(size)%0A%09%09t.Left(90\n )%0A%0A%09\n@@ -574,17 +574,18 @@\n osition(\n-5\n+10\n 00, 500)\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_08-02-57",
+            "content": "@@ -258,21 +258,8 @@\n 4 %7B%0A\n-%09%09t.Left(90)%0A\n %09%09ta\n@@ -276,16 +276,29 @@\n e*0.45)%0A\n+%09%09t.Left(90)%0A\n %09%09t.Walk\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_08-07-14",
+            "content": "@@ -267,16 +267,38 @@\n eft(90)%0A\n+%09%09tapet(t, size*0.45)%0A\n %09%09t.Walk\n@@ -407,9 +407,9 @@\n  := \n-8\n+5\n 00.0\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_08-15-24",
+            "content": "@@ -385,10 +385,10 @@\n  := \n-75\n+80\n 0.0%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_08-15-42",
+            "content": "@@ -271,61 +271,8 @@\n 90)%0A\n-%09%09for range 4  %7B%0A%09%09%09t.Walk(size/7)%0A%09%09%09t.Left(90)%0A%09%09%7D%0A\n %09%09t.\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_08-20-40",
+            "content": "@@ -434,18 +434,18 @@\n size := \n+7\n 5\n-0\n 0.0%0A%09pen\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-13_08-25-12",
+            "content": "@@ -434,17 +434,17 @@\n size := \n-4\n+5\n 00.0%0A%09pe\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-13_08-25-19",
+            "content": "@@ -438,16 +438,13 @@\n  := \n-10\n+4\n 00.0\n-/3\n %0A%09pe\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-13_08-26-11",
+            "content": "@@ -608,19 +608,23 @@\n osition(\n+50\n 0, \n+50\n 0) // mo\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-13_08-27-14",
+            "content": "@@ -665,16 +665,17 @@\n Heading(\n+9\n 0)%0A%09pen.\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-13_08-27-40",
+            "content": "@@ -178,60 +178,241 @@\n %09%7D%0A%09\n-%0A%09for range 4 %7B%0A%09%09t.Left(90)%0A%09%09%0A%09%09t.Walk(size)%0A%0A%09%7D%0A%09\n+t.Up()%0A%09t.Walk(size*0.5)%0A%09t.Left(90)%0A%09t.Walk(size*0.5)%0A%09t.Down()%0A%09for range 4 %7B%0A%09%09t.Left(90)%0A%09%09for range 4  %7B%0A%09%09%09t.Walk(size/7)%0A%09%09%09t.Left(90)%0A%09%09%7D%0A%09%09t.Walk(size)%0A%0A%09%7D%0A%09t.Up()%0A%09t.Walk(-size*0.5)%0A%09t.Right(90)%0A%09t.Walk(-size*0.5)%0A%09t.Down()\n %0A%7D%0A%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-13_08-28-03",
+            "content": "@@ -198,31 +198,33 @@\n %09%09t.\n-Walk(size)%0A%09%09t.Right(90\n+Left(90)%0A%09%09%0A%09%09t.Walk(size\n )%0A%0A%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-13_08-28-47",
+            "content": "@@ -223,158 +223,13 @@\n 90)%0A\n+%0A\n %09%7D%0A%09\n-t.Right(90)%0A%09t.Walk(size)%0A%09for range 4 %7B%0A%09%09t.Walk(size)%0A%09%09t.Right(90)%0A%09%7D%0A%09t.Right(90)%0A%09t.Walk(size)%0A%09for range 4 %7B%0A%09%09t.Walk(size)%0A%09%09t.Right(90)%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_08-29-45",
+            "content": "@@ -251,10 +251,8 @@\n size\n-*2\n )%0A%09f\n@@ -325,10 +325,8 @@\n size\n-*3\n )%0A%09f\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_08-30-17",
+            "content": "@@ -239,32 +239,34 @@\n 90)%0A%09t.Walk(size\n+*2\n )%0A%09for range 4 %7B\n@@ -323,16 +323,18 @@\n alk(size\n+*3\n )%0A%09for r\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_08-31-35",
+            "content": "@@ -214,32 +214,45 @@\n %09t.Right(90)%0A%09%7D%0A\n+%09t.Right(90)%0A\n %09t.Walk(size)%0A%09f\n@@ -296,16 +296,29 @@\n (90)%0A%09%7D%0A\n+%09t.Right(90)%0A\n %09t.Walk(\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_08-32-05",
+            "content": "@@ -178,22 +178,9 @@\n %09%7D%0A%09\n-for range 3%7B%0A%09\n+%0A\n %09for\n@@ -182,33 +182,32 @@\n %0A%09for range 4 %7B%0A\n-%09\n %09%09t.Walk(size)%0A%09\n@@ -199,33 +199,32 @@\n %09t.Walk(size)%0A%09%09\n-%09\n t.Right(90)%0A%09%09%7D%0A\n@@ -211,37 +211,35 @@\n )%0A%09%09t.Right(90)%0A\n-%09\n %09%7D%0A\n-%09\n %09t.Walk(size)%0A%09%09\n@@ -228,33 +228,32 @@\n %7D%0A%09t.Walk(size)%0A\n-%09\n %09for range 4 %7B%0A%09\n@@ -245,33 +245,32 @@\n for range 4 %7B%0A%09%09\n-%09\n t.Walk(size)%0A%09%09%09\n@@ -260,33 +260,32 @@\n %09t.Walk(size)%0A%09%09\n-%09\n t.Right(90)%0A%09%09%7D%0A\n@@ -280,21 +280,19 @@\n ght(90)%0A\n-%09\n %09%7D%0A\n-%09\n %09t.Walk(\n@@ -297,17 +297,16 @@\n k(size)%0A\n-%09\n %09for ran\n@@ -312,17 +312,16 @@\n nge 4 %7B%0A\n-%09\n %09%09t.Walk\n@@ -329,17 +329,16 @@\n size)%0A%09%09\n-%09\n t.Right(\n@@ -345,37 +345,8 @@\n 90)%0A\n-%09%09%7D%0A%09%09t.SetPosition(0, size)%0A\n %09%7D%0A%7D\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_08-35-57",
+            "content": "@@ -181,13 +181,8 @@\n %09for\n- i :=\n  ran\n@@ -397,21 +397,8 @@\n size\n- * float64(i)\n )%0A%09%7D\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_08-39-28",
+            "content": "@@ -410,18 +410,16 @@\n loat64(i\n-+1\n ))%0A%09%7D%0A%7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_08-39-47",
+            "content": "@@ -375,16 +375,55 @@\n 90)%0A%09%09%7D%0A\n+%09%09t.SetPosition(0, size * float64(i+1))\n %0A%09%7D%0A%7D%0A%0Af\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_08-40-37",
+            "content": "@@ -173,24 +173,29 @@\n urn %0A%09%7D%0A%09for\n+ i :=\n  range 3%7B%0A%09%09\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_08-40-49",
+            "content": "@@ -374,68 +374,8 @@\n %09%09%7D%0A\n-%09%09t.Walk(-size*2)%0A%09%09t.Right(90)%0A%09%09t.Walk(size)%0A%09%09t.Right(90)\n %0A%09%7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_08-44-51",
+            "content": "@@ -370,29 +370,16 @@\n 90)%0A%09%09%7D%0A\n-%09%09t.Left(90)%0A\n %09%09t.Walk\n@@ -375,24 +375,25 @@\n %09%7D%0A%09%09t.Walk(\n+-\n size*2)%0A%09%09t.\n@@ -388,27 +388,28 @@\n size*2)%0A%09%09t.\n-Lef\n+Righ\n t(90)%0A%09%09t.Wa\n@@ -425,11 +425,12 @@\n %09%09t.\n-Lef\n+Righ\n t(90\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-13_08-48-25",
+            "content": "@@ -383,10 +383,9 @@\n eft(\n-18\n+9\n 0)%0A%09\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-13_08-49-14",
+            "content": "@@ -238,32 +238,12 @@\n 90)%0A\n-%09%09%09tapet(t, size/3)%0A\n %09%09%7D%0A\n+\n %09%09t.\n@@ -300,36 +300,16 @@\n ght(90)%0A\n-%09%09%09tapet(t, size/3)%0A\n %09%09%7D%0A%09%09t.\n@@ -343,32 +343,32 @@\n %09%09%09t.Walk(size)%0A\n+\n %09%09%09t.Right(90)%0A%09\n@@ -370,28 +370,8 @@\n 90)%0A\n-%09%09%09tapet(t, size/3)%0A\n %09%09%7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-13_08-50-56",
+            "content": "@@ -156,18 +156,17 @@\n  size %3C \n-50\n+4\n  %7B%0A%09%09ret\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-13_08-51-18",
+            "content": "@@ -182,13 +182,8 @@\n %09for\n- i :=\n  ran\n@@ -325,23 +325,8 @@\n 90)%0A\n-%09%09%09if i != 1 %7B%0A\n %09%09%09t\n@@ -345,13 +345,8 @@\n /3)%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-13_08-53-01",
+            "content": "@@ -337,17 +337,17 @@\n if i != \n-2\n+1\n  %7B%0A%09%09%09ta\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-13_08-53-11",
+            "content": "@@ -344,17 +344,16 @@\n  2 %7B%0A%09%09%09\n-%09\n tapet(t,\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-13_08-54-08",
+            "content": "@@ -188,21 +188,15 @@\n  := \n-0; i %3C 3; i++\n+range 3\n %7B%0A%09%09\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-13_08-55-29",
+            "content": "@@ -343,17 +343,17 @@\n if i != \n-1\n+2\n  %7B%0A%09%09%09%09t\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-13_08-56-07",
+            "content": "@@ -249,23 +249,16 @@\n (90)%0A%09%09%09\n-%0A%09%09%7D%0A%09%09\n tapet(t,\n@@ -262,24 +262,28 @@\n (t, size/3)%0A\n+%09%09%7D%0A\n %09%09t.Walk(siz\n@@ -335,23 +335,16 @@\n (90)%0A%09%09%09\n-%0A%09%09%7D%0A%09%09\n if i != \n@@ -360,32 +360,37 @@\n apet(t, size/3)%0A\n+%09%09%09%7D%0A\n %09%09%7D%0A%09%09t.Walk(siz\n@@ -441,22 +441,16 @@\n t(90)%0A%09%09\n-%0A%09%09%7D%0A%09\n %09tapet(t\n@@ -459,16 +459,20 @@\n size/3)%0A\n+%09%09%7D%0A\n %09%09t.Left\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-13_09-08-17",
+            "content": "@@ -188,88 +188,338 @@\n  := \n-range 3%7B\n+0; i %3C 3; i++%7B%0A%09%09for range 4 %7B%0A%09%09%09t.Walk(size)%0A%09%09%09t.Right(90)%0A%09%09%09%0A%09%09%7D%0A%09%09tapet(t, size/3)%0A%09%09t.Walk(size)\n %0A%09%09for\n- j :=\n  range \n-3\n+4 \n %7B%0A%09%09%09\n-if i != 1 && j != 1%7B%0A%09%09%09%09tapet(t, size/3)%0A%09%09%09%7D%0A%09\n+t.Walk(size)%0A%09%09%09t.Right(90)%0A%09%09%09%0A%09%09%7D%0A%09%09if i != 1 %7B%0A%09%09%09%09tapet(t, size/3)%0A%09%09%7D%0A%09%09t.Walk(size)%0A%09%09for range 4 %7B%0A%09%09%09t.Walk(size)%0A%09%09%09t.Right(90)%0A%09%09%0A%09%09%7D%0A%09%09tapet(t, size/3)%0A%09%09t.Left(180)%0A%09%09t.Walk(size*2)%0A%09%09t.Left(90)%0A\n %09%09t.\n@@ -529,20 +529,28 @@\n k(size)%0A\n-%0A\n %09%09\n-%7D\n+t.Left(90)\n %0A%09%7D%0A%7D%0A%0Af\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-04-13_09-15-23",
+            "content": "@@ -283,22 +283,8 @@\n ze)%0A\n-%09%09%09t.Right(90)\n %0A%09%09%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_09-16-45",
+            "content": "@@ -302,81 +302,8 @@\n %09%09%7D%0A\n-%09%09t.Left(180)%0A%09%09t.Walk(size) %0A%09%09t.Left(90)%0A%09%09t.Walk(size/3)%0A%09%09t.Left(90)%0A\n %09%7D%0A%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_09-21-02",
+            "content": "@@ -378,47 +378,8 @@\n %0A%09%7D%0A\n-%09t.Left(90)%0A%09t.Walk(size)%0A%09t.Right(90)%0A\n %7D%0A%0Af\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_09-21-49",
+            "content": "@@ -299,18 +299,129 @@\n 0)%0A%09%09%7D%0A%09\n-%7D%0A\n+%09t.Left(180)%0A%09%09t.Walk(size) %0A%09%09t.Left(90)%0A%09%09t.Walk(size/3)%0A%09%09t.Left(90)%0A%09%7D%0A%09t.Left(90)%0A%09t.Walk(size)%0A%09t.Right(90)\n %0A%7D%0A%0Afunc\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_09-22-33",
+            "content": "@@ -156,17 +156,17 @@\n  size %3C \n-2\n+5\n 0 %7B%0A%09%09re\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_09-22-54",
+            "content": "@@ -267,26 +267,8 @@\n %09%09%7D%0A\n-%09%09%09for range 4 %7B%0A%09\n %09%09%09t\n@@ -282,17 +282,16 @@\n ize)%0A%09%09%09\n-%09\n t.Right(\n@@ -294,21 +294,16 @@\n ght(90)%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_10-28-13",
+            "content": "@@ -326,52 +326,8 @@\n %09%09%7D%0A\n-%09%09t.Left(180)%0A%09%09t.Walk(size)%0A%09%09t.Right(90)%0A%0A\n %09%7D%0A%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_10-30-03",
+            "content": "@@ -331,17 +331,18 @@\n %09t.Left(\n-9\n+18\n 0)%0A%09%09t.W\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_10-30-42",
+            "content": "@@ -352,16 +352,27 @@\n size)%0A%09%09\n+t.Right(90)\n %0A%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_10-32-13",
+            "content": "@@ -322,16 +322,44 @@\n %09%09%7D%0A%09%09%7D%0A\n+%09%09t.Left(90)%0A%09%09t.Walk(size)%0A\n %09%09%0A%0A%09%7D%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_10-32-25",
+            "content": "@@ -322,55 +322,8 @@\n %09%09%7D%0A\n-%09%09%09t.Left(180)%0A%09%09%09t.Walk(-size)%0A%09%09%09t.Right(90)%0A\n %09%09%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_10-34-38",
+            "content": "@@ -335,32 +335,33 @@\n (180)%0A%09%09%09t.Walk(\n+-\n size)%0A%09%09%09t.Right\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_10-34-45",
+            "content": "@@ -402,17 +402,18 @@\n size := \n-5\n+10\n 00.0/3%0A%09\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_10-35-06",
+            "content": "@@ -402,18 +402,17 @@\n size := \n-10\n+5\n 00.0/3%0A%09\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_10-35-45",
+            "content": "@@ -318,16 +318,62 @@\n 0)%0A%09%09%09%7D%0A\n+%09%09%09t.Left(180)%0A%09%09%09t.Walk(size)%0A%09%09%09t.Right(90)%0A\n %09%09%7D%0A%09%09%0A%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_10-40-00",
+            "content": "@@ -188,21 +188,15 @@\n  := \n-0; i %3C 3; i++\n+range 3\n %7B%0A%09%09\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_10-42-57",
+            "content": "@@ -214,21 +214,15 @@\n  := \n-0; j %3C 3; j++\n+range 3\n %7B%0A%09%09\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_10-44-34",
+            "content": "@@ -330,32 +330,16 @@\n 0)%0A%09%09%09%7D%0A\n-%09%09%09t.Walk(size)%0A\n %09%09%7D%0A%09%09%0A%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_10-45-54",
+            "content": "@@ -233,17 +233,17 @@\n %09%09%09if i \n-=\n+!\n = 1 && j\n@@ -247,49 +247,15 @@\n & j \n-=\n+!\n = 1%7B%0A%09\n-%09%09%09t.Walk(size)%0A%09%09%09%09continue%0A%09%09%09%7D%0A\n %09%09%09t\n@@ -270,16 +270,21 @@\n size/3)%0A\n+%09%09%09%7D%0A\n %09%09%09for r\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_10-48-37",
+            "content": "@@ -385,63 +385,8 @@\n %7D%0A%09%09\n-t.Walk(-size * 3)%0A%09%09t.Left(270)%0A%09%09t.Walk()%0A%09%09t.Left(90)\n %0A%0A%09%7D\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_11-01-01",
+            "content": "@@ -418,28 +418,24 @@\n 0)%0A%09%09t.Walk(\n-size\n )%0A%09%09t.Left(9\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-13_11-01-15",
+            "content": "@@ -383,22 +383,8 @@\n %09%09%7D%0A\n-%09%09t.Left(180)%0A\n %09%09t.\n@@ -384,24 +384,25 @@\n %09%7D%0A%09%09t.Walk(\n+-\n size * 3)%0A%09%09\n@@ -408,17 +408,18 @@\n %09t.Left(\n-9\n+27\n 0)%0A%09%09t.W\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-13_11-04-21",
+            "content": "@@ -225,32 +225,16 @@\n 3; j++%7B%0A\n-%09%09%09t.Walk(size)%0A\n %09%09%09if i \n@@ -249,16 +249,33 @@\n j == 1%7B%0A\n+%09%09%09%09t.Walk(size)%0A\n %09%09%09%09cont\n@@ -359,16 +359,32 @@\n 0)%0A%09%09%09%7D%0A\n+%09%09%09t.Walk(size)%0A\n %09%09%7D%0A%09%09t.\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-13_11-08-33",
+            "content": "@@ -392,17 +392,17 @@\n (size * \n-2\n+3\n )%0A%09%09t.Le\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-13_11-08-48",
+            "content": "@@ -316,17 +316,17 @@\n r range \n-3\n+4\n  %7B%0A%09%09%09%09t\n@@ -330,33 +330,33 @@\n %09%09t.\n-Right(90)%0A%09%09%09%09t.Walk(size\n+Walk(size)%0A%09%09%09%09t.Right(90\n )%0A%09%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-13_11-11-36",
+            "content": "@@ -316,17 +316,17 @@\n r range \n-4\n+3\n  %7B%0A%09%09%09%09t\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-13_11-13-22",
+            "content": "@@ -392,17 +392,17 @@\n (size * \n-3\n+2\n )%0A%09%09t.Le\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-13_11-14-57",
+            "content": "@@ -188,37 +188,47 @@\n  := \n-range 3 %7B%0A%09%09for j := range 3 \n+0; i %3C 3; i++%7B%0A%09%09for j := 0; j %3C 3; j++\n %7B%0A%09%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-13_11-16-04",
+            "content": "@@ -300,36 +300,137 @@\n %0A%09%09%09\n-t.FillSquare(size, size)%0A%09%09%7D\n+for range 4 %7B%0A%09%09%09%09t.Right(90)%0A%09%09%09%09t.Walk(size)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09t.Left(180)%0A%09%09t.Walk(size * 3)%0A%09%09t.Left(90)%0A%09%09t.Walk(size)%0A%09%09t.Left(90)\n %0A%0A%09%7D\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-13_11-30-43",
+            "content": "@@ -174,16 +174,137 @@\n urn %0A%09%7D%0A\n+%09for i := range 3 %7B%0A%09%09for j := range 3 %7B%0A%09%09%09t.Walk(size)%0A%09%09%09if i == 1 && j == 1%7B%0A%09%09%09%09continue%0A%09%09%09%7D%0A%09%09%09tapet(t, size/3)%0A%09%09\n %09t.FillS\n@@ -320,16 +320,24 @@\n e, size)\n+%0A%09%09%7D%0A%0A%09%7D\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_11-31-58",
+            "content": "@@ -204,43 +204,8 @@\n ze)%0A\n-%09t.SetRGB(0, 0, 0) %0A%09t.Walk(size)%0A%0A\n %0A%7D%0A%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-04-13_11-32-47",
+            "content": "@@ -213,18 +213,16 @@\n tRGB(0, \n-25\n 0, 0) %0A%09\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_11-34-58",
+            "content": "@@ -238,10 +238,8 @@\n size\n-*2\n )%0A%0A%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_11-35-23",
+            "content": "@@ -175,16 +175,78 @@\n rn %0A%09%7D%0A%09\n+t.FillSquare(size, size)%0A%09t.SetRGB(0, 250, 0) %0A%09t.Walk(size*2)\n %0A%0A%0A%7D%0A%0Afu\n@@ -444,15 +444,11 @@\n ion(\n-50\n 0, \n-50\n 0) /\n@@ -501,9 +501,8 @@\n ing(\n-9\n 0)%0A%09\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_11-36-21",
+            "content": "@@ -27,16 +27,8 @@\n mt%22%0A\n-%09%22math%22%0A\n %09%22ma\n@@ -179,47 +179,8 @@\n %09%7D%0A%09\n-t.Left(45)%0A%09t.Walk(math.Sqrt2*(size/2))\n %0A%0A%0A%7D\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-13_11-37-29",
+            "content": "@@ -227,34 +227,8 @@\n 2))%0A\n-%09t.FillSquare(size, size)%0A\n %0A%0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_11-38-45",
+            "content": "@@ -254,68 +254,8 @@\n e)%0A%0A\n-%09t.Walk((math.Sqrt2*(size/2))*2)%0A%09t.FillSquare(size, size)%0A%0A\n %0A%7D%0A%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-04-13_11-40-24",
+            "content": "@@ -276,17 +276,17 @@\n 2*(size/\n-6\n+2\n ))*2)%0A%09t\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_11-40-47",
+            "content": "@@ -250,32 +250,33 @@\n  size)%0A%0A%09t.Walk(\n+(\n math.Sqrt2*(size\n@@ -268,34 +268,37 @@\n ath.Sqrt2*(size/\n+6))*\n 2\n-)\n )%0A%09t.FillSquare(\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_11-41-11",
+            "content": "@@ -301,18 +301,14 @@\n size\n-/3\n , size\n-/3\n )%0A%0A%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_11-42-02",
+            "content": "@@ -314,70 +314,8 @@\n 3)%0A%0A\n-%09t.Right(45)%0A%09t.Walk(2*size/3)%0A%09t.FillSquare(size/3, size/3)%0A%0A\n %0A%7D%0A%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_11-43-57",
+            "content": "@@ -323,10 +323,9 @@\n ght(\n-13\n+4\n 5)%0A%09\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_11-44-18",
+            "content": "@@ -274,16 +274,18 @@\n t2*(size\n+/2\n ))%0A%09t.Fi\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_11-45-40",
+            "content": "@@ -278,11 +278,8 @@\n size\n-*75\n ))%0A%09\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_11-45-55",
+            "content": "@@ -275,18 +275,16 @@\n 2*(size*\n-0.\n 75))%0A%09t.\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_11-46-07",
+            "content": "@@ -274,16 +274,21 @@\n t2*(size\n+*0.75\n ))%0A%09t.Fi\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_11-46-49",
+            "content": "@@ -300,17 +300,17 @@\n ize/\n-2\n+3\n , size/\n-2\n+3\n )%0A%0A%09\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_11-47-14",
+            "content": "@@ -337,17 +337,17 @@\n (2*size/\n-2\n+3\n )%0A%09t.Fil\n@@ -359,25 +359,25 @@\n re(size/\n-2\n+3\n , size/\n-2\n+3\n )%0A%0A%0A%7D%0A%0Af\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_11-47-47",
+            "content": "@@ -330,17 +330,17 @@\n %09t.Walk(\n-3\n+2\n *size/2)\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_11-47-58",
+            "content": "@@ -398,17 +398,18 @@\n size := \n-5\n+10\n 00.0/3%0A%09\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_11-50-08",
+            "content": "@@ -315,32 +315,35 @@\n %0A%09t.\n-Walk(math.Sqrt2*(\n+Right(135)%0A%09t.Walk(3*\n size\n-*2)\n+/2\n )%0A%09t\n@@ -363,19 +363,18 @@\n ize/\n-4\n+2\n , size/\n-4)%0A\n+2)\n %0A%0A%0A%7D\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_14-26-07",
+            "content": "@@ -266,34 +266,32 @@\n math.Sqrt2*(size\n-/2\n ))%0A%09t.FillSquare\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_14-26-24",
+            "content": "@@ -274,16 +274,18 @@\n t2*(size\n+/2\n ))%0A%09t.Fi\n@@ -326,33 +326,33 @@\n math.Sqrt2*(size\n-/\n+*\n 2))%0A%09t.FillSquar\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_14-27-10",
+            "content": "@@ -372,67 +372,8 @@\n 4)%0A%0A\n-%0A%09t.Walk(math.Sqrt2*(size/4))%0A%09t.FillSquare(size/6, size/6)\n %0A%0A%7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_14-28-16",
+            "content": "@@ -183,16 +183,81 @@\n rn %0A%09%7D%0A%09\n+t.Left(45)%0A%09t.Walk(math.Sqrt2*(size/2))%0A%09t.FillSquare(size, size)\n %0A%0A%09t.Wal\n@@ -732,81 +732,8 @@\n n()%0A\n-%09pen.Left(45)%0A%09pen.Walk(math.Sqrt2*(size/2))%0A%09pen.FillSquare(size, size)%0A\n %09tap\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_14-31-07",
+            "content": "@@ -184,16 +184,17 @@\n n %0A%09%7D%0A%09%0A\n+%0A\n %09t.Walk(\n@@ -246,24 +246,127 @@\n /2)%0A\n+%0A\n %09t\n-apet(t\n+.Walk(math.Sqrt2*(size/2))%0A%09t.FillSquare(size/4, size/4)%0A%0A%0A%09t.Walk(math.Sqrt2*(size/4))%0A%09t.FillSquare(size/6\n , size/\n-3\n+6\n )%0A%0A%7D\n@@ -663,17 +663,16 @@\n .Down()%0A\n-%0A\n %09pen.Lef\n@@ -736,17 +736,16 @@\n , size)%0A\n-%0A\n %09tapet(p\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_14-32-45",
+            "content": "@@ -165,16 +165,17 @@\n size %3C 2\n+0\n  %7B%0A%09%09ret\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-33-01",
+            "content": "@@ -285,18 +285,17 @@\n size := \n-10\n+5\n 00.0/3%0A%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-33-16",
+            "content": "@@ -650,18 +650,16 @@\n en, size\n-/3\n )%0A%0A%09pen.\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-34-06",
+            "content": "@@ -651,17 +651,17 @@\n n, size/\n-2\n+3\n )%0A%0A%09pen.\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-34-50",
+            "content": "@@ -601,17 +601,17 @@\n 2*(size/\n-3\n+2\n ))%0A%09pen.\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-35-30",
+            "content": "@@ -601,17 +601,17 @@\n 2*(size/\n-2\n+3\n ))%0A%09pen.\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-35-44",
+            "content": "@@ -285,17 +285,18 @@\n size := \n-9\n+10\n 00.0/3%0A%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-35-56",
+            "content": "@@ -228,22 +228,26 @@\n are(size\n+/2\n , size\n+/2\n )%0A%09tapet\n@@ -650,17 +650,17 @@\n n, size/\n-3\n+2\n )%0A%0A%09pen.\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-37-16",
+            "content": "@@ -191,17 +191,16 @@\n %09t.Walk(\n-(\n math.Sqr\n@@ -213,13 +213,8 @@\n ze))\n- * 2)\n %0A%09t.\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-37-46",
+            "content": "@@ -464,30 +464,16 @@\n ion(\n-1000*(2/3), 1000*(2/3)\n+500, 500\n ) //\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-40-47",
+            "content": "@@ -464,30 +464,30 @@\n ion(\n-(\n 1000\n+*(2\n /3)\n-*2\n , \n-(\n 1000\n+*(2\n /3)\n-*2\n ) //\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-41-39",
+            "content": "@@ -468,16 +468,18 @@\n (1000/3)\n+*2\n , (1000/\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-42-12",
+            "content": "@@ -586,16 +586,75 @@\n Left(45)\n+%0A%09pen.Walk(math.Sqrt2*(size/2))%0A%09pen.FillSquare(size, size)\n %0A%0A%09tapet\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-42-34",
+            "content": "@@ -187,34 +187,8 @@\n %7D%0A%09%0A\n-%09t.FillSquare(size, size)%0A\n %09t.W\n@@ -216,16 +216,42 @@\n )) * 2)%0A\n+%09t.FillSquare(size, size)%0A\n %09tapet(t\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_14-42-59",
+            "content": "@@ -464,23 +464,29 @@\n ion(\n+(\n 1000/3\n+)\n , \n+(\n 1000/3)\n+*2)\n  // \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_14-43-40",
+            "content": "@@ -598,16 +598,18 @@\n en, size\n+/3\n )%0A%0A%09pen.\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_14-43-50",
+            "content": "@@ -531,10 +531,10 @@\n ing(\n-45\n+90\n )%0A%09p\n@@ -567,16 +567,31 @@\n Down()%0A%0A\n+%09pen.Left(45)%0A%0A\n %09tapet(p\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_14-45-02",
+            "content": "@@ -531,10 +531,9 @@\n ing(\n-13\n+4\n 5)%0A%09\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_14-45-17",
+            "content": "@@ -217,16 +217,17 @@\n %09t.Walk(\n+(\n math.Sqr\n@@ -236,16 +236,21 @@\n *(size))\n+ * 2)\n %0A%09tapet(\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_14-46-35",
+            "content": "@@ -233,18 +233,16 @@\n t2*(size\n-/3\n ))%0A%09tape\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_14-46-54",
+            "content": "@@ -240,10 +240,8 @@\n e/3)\n-*2\n )%0A%09t\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_14-47-13",
+            "content": "@@ -186,18 +186,8 @@\n %09%7D%0A%09\n-t.Left(45)\n %0A%09t.\n@@ -525,18 +525,19 @@\n Heading(\n-90\n+135\n )%0A%09pen.S\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_14-48-13",
+            "content": "@@ -182,16 +182,26 @@\n rn %0A%09%7D%0A%09\n+t.Left(45)\n %0A%09t.Fill\n@@ -539,11 +539,10 @@\n ing(\n-135\n+90\n )%0A%09p\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_14-49-12",
+            "content": "@@ -187,37 +187,8 @@\n %7D%0A%09%0A\n-%09for range 8 %7B%0A%09%09t.Left(45)%0A%09\n %09t.F\n@@ -209,17 +209,16 @@\n , size)%0A\n-%09\n %09t.Walk(\n@@ -240,17 +240,16 @@\n e/3)*2)%0A\n-%09\n %09tapet(t\n@@ -257,19 +257,16 @@\n  size/3)\n-%0A%09%7D\n %0A%0A%7D%0A%0Afun\n@@ -525,18 +525,19 @@\n Heading(\n-90\n+135\n )%0A%09pen.S\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_14-51-19",
+            "content": "@@ -168,10 +168,9 @@\n e %3C \n-30\n+2\n  %7B%0A%09\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-51-36",
+            "content": "@@ -164,18 +164,17 @@\n  size %3C \n-10\n+3\n 0 %7B%0A%09%09re\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-51-44",
+            "content": "@@ -164,17 +164,17 @@\n  size %3C \n-4\n+1\n 00 %7B%0A%09%09r\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-52-26",
+            "content": "@@ -164,17 +164,17 @@\n  size %3C \n-3\n+4\n 00 %7B%0A%09%09r\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-52-38",
+            "content": "@@ -165,17 +165,17 @@\n size %3C 3\n-4\n+0\n 0 %7B%0A%09%09re\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-52-53",
+            "content": "@@ -165,17 +165,17 @@\n size %3C 3\n-3\n+4\n 0 %7B%0A%09%09re\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-53-03",
+            "content": "@@ -165,17 +165,17 @@\n size %3C 3\n-1\n+3\n 0 %7B%0A%09%09re\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-53-11",
+            "content": "@@ -169,10 +169,10 @@\n  %3C 3\n+1\n 0\n-5\n  %7B%0A%09\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-53-23",
+            "content": "@@ -166,17 +166,17 @@\n ize %3C 30\n-0\n+5\n  %7B%0A%09%09ret\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-53-30",
+            "content": "@@ -188,46 +188,8 @@\n %09%7D%0A%09\n-%09t.Left(45)%0A%09%09t.FillSquare(size, size)\n %0A%09fo\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-54-27",
+            "content": "@@ -166,16 +166,17 @@\n ize %3C 30\n+0\n  %7B%0A%09%09ret\n@@ -184,16 +184,54 @@\n rn %0A%09%7D%0A%09\n+%09t.Left(45)%0A%09%09t.FillSquare(size, size)\n %0A%09for ra\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_14-54-45",
+            "content": "@@ -195,17 +195,17 @@\n r range \n-1\n+8\n  %7B%0A%09%09t.L\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-54-54",
+            "content": "@@ -208,18 +208,18 @@\n %09t.Left(\n-90\n+45\n )%0A%09%09t.Fi\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-55-49",
+            "content": "@@ -188,20 +188,8 @@\n %7D%0A%09%0A\n-%09t.Left(45)%0A\n %09for\n@@ -199,16 +199,29 @@\n nge 1 %7B%0A\n+%09%09t.Left(90)%0A\n %09%09t.Fill\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-56-41",
+            "content": "@@ -293,44 +293,8 @@\n /3)%0A\n-%09%09t.Walk(-(math.Sqrt2*(size/3)*2))%0A%0A\n %09%7D%0A%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_14-58-13",
+            "content": "@@ -532,16 +532,22 @@\n ion(\n-500, 500\n+1000/3, 1000/3\n ) //\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_14-59-34",
+            "content": "@@ -187,33 +187,8 @@\n %09%7D%0A%09\n-t.Walk(math.Sqrt2*(size))\n %0A%09t.\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-01-14",
+            "content": "@@ -186,20 +186,8 @@\n %0A%09%7D%0A\n-%09t.Left(45)%0A\n %09t.W\n@@ -209,16 +209,28 @@\n (size))%0A\n+%09t.Left(45)%0A\n %09for ran\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-01-27",
+            "content": "@@ -218,18 +218,16 @@\n t2*(size\n-*2\n ))%0A%09for \n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-01-56",
+            "content": "@@ -218,17 +218,17 @@\n t2*(size\n-/\n+*\n 2))%0A%09for\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-02-18",
+            "content": "@@ -183,16 +183,26 @@\n rn %0A%09%7D%0A%09\n+t.Left(45)\n %0A%09t.Walk\n@@ -620,11 +620,10 @@\n ing(\n-135\n+90\n )%0A%09p\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-02-47",
+            "content": "@@ -283,16 +283,18 @@\n (size/3)\n+*2\n )%0A%09%09tape\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-04-01",
+            "content": "@@ -277,25 +277,25 @@\n Sqrt2*(size/\n-2\n+3\n ))%0A%09%09tapet(t\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-04-16",
+            "content": "@@ -164,17 +164,17 @@\n  size %3C \n-2\n+3\n 0 %7B%0A%09%09re\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-04-36",
+            "content": "@@ -164,17 +164,17 @@\n  size %3C \n-1\n+2\n 0 %7B%0A%09%09re\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-04-45",
+            "content": "@@ -370,18 +370,17 @@\n size := \n-10\n+9\n 00.0/3%0A%09\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-05-04",
+            "content": "@@ -332,18 +332,20 @@\n 2*(size/\n+3)*\n 2\n-)\n ))%0A%0A%09%7D%0A%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-06-45",
+            "content": "@@ -224,17 +224,17 @@\n r range \n-2\n+1\n  %7B%0A%09%09t.F\n@@ -341,20 +341,8 @@\n )))%0A\n-%09%09t.Left(45)\n %0A%09%7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-07-37",
+            "content": "@@ -337,16 +337,29 @@\n ze/2)))%0A\n+%09%09t.Left(45)%0A\n %09%7D%0A%0A%7D%0A%0Af\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-07-54",
+            "content": "@@ -331,16 +331,18 @@\n t2*(size\n+/2\n )))%0A%09%7D%0A%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_15-08-12",
+            "content": "@@ -335,13 +335,9 @@\n size\n-/2)*2\n+)\n ))%0A%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_15-08-54",
+            "content": "@@ -314,16 +314,17 @@\n t.Walk(-\n+(\n math.Sqr\n@@ -334,16 +334,19 @@\n (size/2)\n+*2)\n )%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_15-09-28",
+            "content": "@@ -341,38 +341,8 @@\n )%0A%09%7D\n-%0A%09t.Walk(-math.Sqrt2*(size/2))\n %0A%0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_15-10-13",
+            "content": "@@ -371,20 +371,8 @@\n /2))\n-%0A%09t.Left(45)\n %0A%0A%7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-10-56",
+            "content": "@@ -367,16 +367,28 @@\n size/2))\n+%0A%09t.Left(45)\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_15-11-11",
+            "content": "@@ -342,30 +342,8 @@\n %0A%09%7D%0A\n-%09t.SetRGB(25, 4, 0)  %0A\n %09t.W\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_15-12-03",
+            "content": "@@ -224,17 +224,17 @@\n r range \n-1\n+2\n  %7B%0A%09%09t.F\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_15-12-18",
+            "content": "@@ -393,36 +393,8 @@\n /2))\n-%0A%09t.Left(45)%0A%09tapet(t, size)\n %0A%0A%7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-13_15-13-31",
+            "content": "@@ -166,17 +166,16 @@\n ize %3C 10\n-0\n  %7B%0A%09%09ret\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_15-13-47",
+            "content": "@@ -361,32 +361,16 @@\n 4, 0)  %0A\n-%09for range 1 %7B%0A%09\n %09t.Walk(\n@@ -391,17 +391,16 @@\n ize/2))%0A\n-%09\n %09t.Left(\n@@ -403,17 +403,16 @@\n eft(45)%0A\n-%09\n %09tapet(t\n@@ -418,19 +418,16 @@\n t, size)\n-%0A%09%7D\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_15-14-58",
+            "content": "@@ -361,16 +361,32 @@\n 4, 0)  %0A\n+%09for range 1 %7B%0A%09\n %09t.Walk(\n@@ -407,16 +407,17 @@\n ize/2))%0A\n+%09\n %09t.Left(\n@@ -425,35 +425,26 @@\n 5)%0A%09\n-t.Walk(math.Sqrt2*(size/2))\n+%09tapet(t, size)%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_15-16-16",
+            "content": "@@ -392,16 +392,55 @@\n ze/2))%0A%09\n+t.Left(45)%0A%09t.Walk(math.Sqrt2*(size/2))\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_15-16-43",
+            "content": "@@ -166,16 +166,17 @@\n ize %3C 10\n+0\n  %7B%0A%09%09ret\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_15-16-52",
+            "content": "@@ -392,12 +392,8 @@\n e/2)\n--211\n )%0A%09%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_15-17-43",
+            "content": "@@ -391,16 +391,17 @@\n ze/2)-21\n+1\n )%0A%09%0A%0A%7D%0A%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_15-17-51",
+            "content": "@@ -392,24 +392,11 @@\n e/2)\n-)%0A%09tapet(t, size\n+-21\n )%0A%09%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_15-18-56",
+            "content": "@@ -153,21 +153,12 @@\n at64\n-, ang int\n ) %7B%0A\n+\n %09if \n@@ -302,20 +302,16 @@\n , size/3\n-, 45\n )%0A%09%09t.Wa\n@@ -404,20 +404,16 @@\n (t, size\n-, 45\n )%0A%09%0A%0A%7D%0A%0A\n@@ -674,10 +674,11 @@\n ing(\n-90\n+135\n )%0A%09p\n@@ -711,16 +711,16 @@\n Down()%0A%0A\n+\n %09tapet(p\n@@ -731,12 +731,8 @@\n size\n-, 45\n )%0A%0A%09\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_15-23-38",
+            "content": "@@ -149,20 +149,29 @@\n  float64\n+, ang int\n ) %7B%0A\n-\n %09if size\n@@ -311,16 +311,20 @@\n , size/3\n+, 45\n )%0A%09%09t.Wa\n@@ -417,16 +417,20 @@\n (t, size\n+, 45\n )%0A%09%0A%0A%7D%0A%0A\n@@ -691,11 +691,10 @@\n ing(\n-135\n+90\n )%0A%09p\n@@ -727,16 +727,16 @@\n Down()%0A%0A\n-\n %09tapet(p\n@@ -743,16 +743,20 @@\n en, size\n+, 45\n )%0A%0A%09pen.\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_15-24-45",
+            "content": "@@ -391,18 +391,16 @@\n ze/2))%0A%09\n-//\n tapet(t,\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_15-25-12",
+            "content": "@@ -362,21 +362,8 @@\n  0) \n-%0A%09t.Left(180)\n  %0A%09t\n@@ -360,32 +360,33 @@\n 4, 0)  %0A%09t.Walk(\n+-\n math.Sqrt2*(size\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-13_15-26-14",
+            "content": "@@ -397,16 +397,18 @@\n t2*(size\n+/2\n ))%0A%09//ta\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_15-26-59",
+            "content": "@@ -224,17 +224,17 @@\n r range \n-2\n+1\n  %7B%0A%09%09t.F\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_15-27-23",
+            "content": "@@ -393,26 +393,24 @@\n .Sqrt2*(size\n-/2\n ))%0A%09//tapet(\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_15-27-43",
+            "content": "@@ -224,17 +224,17 @@\n r range \n-1\n+2\n  %7B%0A%09%09t.F\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_15-29-45",
+            "content": "@@ -224,17 +224,17 @@\n r range \n-3\n+1\n  %7B%0A%09%09t.F\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_15-30-04",
+            "content": "@@ -224,17 +224,17 @@\n r range \n-2\n+3\n  %7B%0A%09%09t.F\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_15-30-16",
+            "content": "@@ -187,21 +187,8 @@\n %09%7D%0A%09\n-for range 8 %7B\n %0A%09t.\n@@ -421,17 +421,16 @@\n  size)%0A%09\n-%7D\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_15-31-37",
+            "content": "@@ -437,20 +437,8 @@\n ze)%0A\n-%09t.Left(45)%0A\n %09%7D%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-13_15-33-13",
+            "content": "@@ -503,15 +503,15 @@\n Pen(\n-2\n+1\n 000, \n-2\n+1\n 000)\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_15-34-43",
+            "content": "@@ -197,17 +197,16 @@\n nge 8 %7B%0A\n-%09\n %09t.Walk(\n@@ -226,17 +226,16 @@\n ize/2))%0A\n-%09\n %09for ran\n@@ -241,17 +241,16 @@\n nge 2 %7B%0A\n-%09\n %09%09t.Fill\n@@ -266,25 +266,24 @@\n ze, size)%0A%09%09\n-%09\n t.Walk(math.\n@@ -298,17 +298,16 @@\n ize/2))%0A\n-%09\n %09%09tapet(\n@@ -319,17 +319,16 @@\n ze/3)%0A%09%09\n-%09\n t.Walk(-\n@@ -352,13 +352,11 @@\n 2))%0A\n-%09\n %09%7D%0A\n-%09\n %09t.S\n@@ -373,17 +373,87 @@\n 4, 0) %0A%09\n-%09\n+t.Left(180) %0A%09t.Walk(math.Sqrt2*(size/2))%0A%09//tapet(t, size)%0A%09t.Left(45)\n %0A%09%7D%0A%0A%7D%0A%0A\n@@ -503,15 +503,15 @@\n Pen(\n-1\n+2\n 000, \n-1\n+2\n 000)\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-13_20-32-07",
+            "content": "@@ -239,17 +239,17 @@\n r range \n-1\n+2\n  %7B%0A%09%09%09t.\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_20-32-59",
+            "content": "@@ -223,24 +223,41 @@\n 2*(size/2))%0A\n+%09%09for range 1 %7B%0A%09\n %09%09t.FillSqua\n@@ -271,16 +271,17 @@\n , size)%0A\n+%09\n %09%09t.Walk\n@@ -304,16 +304,17 @@\n e/2))%0A%09%09\n+%09\n tapet(t,\n@@ -322,16 +322,17 @@\n size/3)%0A\n+%09\n %09%09t.Walk\n@@ -354,16 +354,20 @@\n ize/2))%0A\n+%09%09%7D%0A\n %09%09t.SetR\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-13_20-34-20",
+            "content": "@@ -334,16 +334,38 @@\n ize/2))%0A\n+%09%09t.SetRGB(25, 4, 0) %0A\n %09%09%0A%09%7D%0A%0A%7D\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-13_20-34-32",
+            "content": "@@ -193,17 +193,17 @@\n r range \n-1\n+8\n  %7B%0A%09%09t.W\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_20-35-17",
+            "content": "@@ -183,17 +183,31 @@\n rn %0A%09%7D%0A%09\n-%0A\n+for range 1 %7B%0A%09\n %09t.Walk(\n@@ -227,16 +227,17 @@\n ize/2))%0A\n+%09\n %09t.FillS\n@@ -254,16 +254,17 @@\n , size)%0A\n+%09\n %09t.Walk(\n@@ -284,16 +284,17 @@\n ize/2))%0A\n+%09\n %09tapet(t\n@@ -303,16 +303,17 @@\n size/3)%0A\n+%09\n %09t.Walk(\n@@ -333,16 +333,22 @@\n size/2))\n+%0A%09%09%0A%09%7D\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_20-35-38",
+            "content": "@@ -290,27 +290,8 @@\n /3)%0A\n-%09t.SetRGB(0, 0, 0)%0A\n %09t.W\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-13_20-36-02",
+            "content": "@@ -330,16 +330,18 @@\n t2*(size\n+/2\n ))%0A%0A%7D%0A%0Af\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_20-36-14",
+            "content": "@@ -272,37 +272,8 @@\n 2))%0A\n-%09t.Walk(math.Sqrt2*(size/4))%0A\n %09tap\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-13_20-41-06",
+            "content": "@@ -289,25 +289,25 @@\n Sqrt2*(size/\n-2\n+4\n ))%0A%09tapet(t,\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_20-41-41",
+            "content": "@@ -269,16 +269,43 @@\n ze/2))%0A%09\n+t.Walk(math.Sqrt2*(size/2))\n %0A%09tapet(\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_20-42-03",
+            "content": "@@ -188,26 +188,9 @@\n %7D%0A%09%0A\n-%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%09// \n+%09\n t.Wa\n@@ -214,19 +214,16 @@\n ze/2))%0A%09\n-// \n t.FillSq\n@@ -240,19 +240,16 @@\n  size)%0A%09\n-// \n t.Walk(m\n@@ -271,19 +271,16 @@\n /2))%0A%09%0A%09\n-// \n tapet(t,\n@@ -289,19 +289,16 @@\n ize/3)%0A%09\n-// \n t.SetRGB\n@@ -308,19 +308,16 @@\n  0, 0)%0A%09\n-// \n t.Walk(-\n@@ -536,19 +536,23 @@\n osition(\n+50\n 0, \n+50\n 0) // mo\n@@ -597,17 +597,19 @@\n Heading(\n-0\n+135\n )%0A%09pen.S\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-13_20-46-59",
+            "content": "@@ -23,16 +23,24 @@\n %0A%09%22fmt%22%0A\n+%09%22math%22%0A\n %09%22math/r\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-04-13_20-47-15",
+            "content": "@@ -177,56 +177,8 @@\n  %0A%09%7D\n-%0A%0A%09for range 4 %7B%0A%09%09t.Walk(size)%0A%09%09t.Right(90)%0A%09%7D\n %0A%09%0A%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-13_20-50-45",
+            "content": "@@ -226,23 +226,8 @@\n %0A%09%7D%0A\n-%09t.Walk(size)%0A%0A\n %09%0A%0A%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-04-13_20-51-50",
+            "content": "@@ -178,24 +178,9 @@\n %0A%09%7D%0A\n-%09for range 3 %7B\n %0A\n-%09\n %09for\n@@ -192,17 +192,16 @@\n e 4 %7B%0A%09%09\n-%09\n t.Walk(s\n@@ -205,17 +205,16 @@\n k(size)%0A\n-%09\n %09%09t.Righ\n@@ -223,13 +223,11 @@\n 90)%0A\n-%09\n %09%7D%0A\n-%09\n %09t.W\n@@ -235,19 +235,16 @@\n lk(size)\n-%0A%09%7D\n %0A%0A%09%0A%0A%0A%0A%0A\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-04-13_20-52-40",
+            "content": "@@ -182,13 +182,8 @@\n %09for\n- i :=\n  ran\n@@ -198,21 +198,16 @@\n %09for\n- j :=\n  range \n-3\n+4\n  %7B%0A%09\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-13_20-53-28",
+            "content": "@@ -235,42 +235,8 @@\n ze)%0A\n-%09%09%09if i == 1 && j == 1 %7Bcontinue%7D%0A\n %09%09%09t\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-04-13_20-54-54",
+            "content": "@@ -265,32 +265,16 @@\n ntinue%7D%0A\n-%09%09%09t.Walk(size)%0A\n %09%09%09t.Rig\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-13_20-55-36",
+            "content": "@@ -265,16 +265,32 @@\n ntinue%7D%0A\n+%09%09%09t.Walk(size)%0A\n %09%09%09t.Rig\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-13_20-55-56",
+            "content": "@@ -211,17 +211,17 @@\n = range \n-4\n+3\n  %7B%0A%09%09%09t.\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-13_20-57-32",
+            "content": "@@ -208,25 +208,8 @@\n j :=\n- range 3 %7B%0A%09%09%09for\n  ran\n@@ -235,28 +235,8 @@\n ze)%0A\n-%09%09%09t.Right(90)%0A%09%09%09%7D%0A\n %09%09%09i\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-13_20-58-43",
+            "content": "@@ -174,24 +174,29 @@\n urn %0A%09%7D%0A%09for\n+ i :=\n  range 3 %7B%0A%09\n@@ -195,24 +195,29 @@\n ge 3 %7B%0A%09%09for\n+ j :=\n  range 3 %7B%0A%09\n@@ -235,17 +235,16 @@\n  4 %7B%0A%09%09%09\n-%09\n t.Walk(s\n@@ -248,17 +248,16 @@\n k(size)%0A\n-%09\n %09%09%09t.Rig\n@@ -268,16 +268,65 @@\n 0)%0A%09%09%09%7D%0A\n+%09%09%09if i == 1 && j == 1 %7Bcontinue%7D%0A%09%09%09t.Right(90)%0A\n %09%09%7D%0A%09%09t.\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-04-13_21-00-24",
+            "content": "@@ -261,16 +261,19 @@\n )%0A%09%09%09%7D%0A%09\n+%09%7D%0A\n %09%09t.Walk\n@@ -279,20 +279,16 @@\n k(size)%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09%0A%0A%0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-13_21-01-57",
+            "content": "@@ -284,81 +284,8 @@\n %09%09%7D%0A\n-%09%09t.Left(180)%0A%09%09t.Walk(size*3)%0A%09%09t.Left(90)%0A%09%09t.Walk(size)%0A%09%09t.Left(90)%0A%0A\n %09%7D%0A%0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-13_21-04-18",
+            "content": "@@ -264,18 +264,8 @@\n %09%09%7D%0A\n-%09%09%09t.Up()%0A\n %09%09%09t\n@@ -282,30 +282,9 @@\n )%0A%09%09\n-%09t.Down()%0A%09%09%7D%0A%09%09t.Up()\n+%7D\n %0A%09%09t\n@@ -356,80 +356,11 @@\n 90)%0A\n-%09%09t.Down()%0A%09%7D%0A%09t.Up()%0A%09t.Left(90)%0A%09t.Walk(size*3)%0A%09t.Right(90)%0A%09t.Down()\n+%0A%09%7D\n %0A%0A%09%0A\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-04-13_21-10-11",
+            "content": "@@ -209,28 +209,8 @@\n 3 %7B%0A\n-%09%09%09tapet(t, size/3)%0A\n %09%09%09f\n@@ -260,17 +260,16 @@\n 0)%0A%09%09%09%7D%0A\n-%0A\n %09%09%09t.Up(\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-04-13_21-13-21",
+            "content": "@@ -156,17 +156,18 @@\n  size %3C \n-5\n+10\n  %7B%0A%09%09ret\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-04-13_21-13-37",
+            "content": "@@ -156,17 +156,17 @@\n  size %3C \n-3\n+5\n  %7B%0A%09%09ret\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-04-13_21-13-48",
+            "content": "@@ -181,13 +181,8 @@\n %09for\n- i :=\n  ran\n@@ -197,13 +197,8 @@\n %09for\n- j :=\n  ran\n@@ -208,92 +208,8 @@\n 3 %7B%0A\n-%09%09%09if i != 1 && j != 1 %7B%0A%09%09%09%09t.Up()%0A%09%09%09%09t.Walk(size)%0A%09%09%09%09t.Down()%0A%09%09%09%09continue%0A%09%09%09%7D%0A\n %09%09%09t\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-04-13_21-16-05",
+            "content": "@@ -225,17 +225,17 @@\n if i != \n-2\n+1\n  && j !=\n@@ -235,17 +235,17 @@\n && j != \n-2\n+1\n  %7B%0A%09%09%09%09t\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-04-13_21-17-05",
+            "content": "@@ -217,19 +217,16 @@\n  3 %7B%0A%09%09%09\n-// \n if i != \n@@ -242,19 +242,16 @@\n  2 %7B%0A%09%09%09\n-// \n %09t.Up()%0A\n@@ -253,19 +253,16 @@\n Up()%0A%09%09%09\n-// \n %09t.Walk(\n@@ -270,19 +270,16 @@\n ize)%0A%09%09%09\n-// \n %09t.Down(\n@@ -283,19 +283,16 @@\n wn()%0A%09%09%09\n-// \n %09continu\n@@ -296,19 +296,16 @@\n inue%0A%09%09%09\n-// \n %7D%0A%09%09%09tap\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-04-13_21-17-38",
+            "content": "@@ -217,16 +217,19 @@\n  3 %7B%0A%09%09%09\n+// \n if i != \n@@ -245,16 +245,19 @@\n  2 %7B%0A%09%09%09\n+// \n %09t.Up()%0A\n@@ -255,24 +255,27 @@\n  %09t.Up()%0A%09%09%09\n+// \n %09t.Walk(size\n@@ -279,16 +279,19 @@\n ize)%0A%09%09%09\n+// \n %09t.Down(\n@@ -295,16 +295,19 @@\n wn()%0A%09%09%09\n+// \n %09continu\n@@ -311,16 +311,19 @@\n inue%0A%09%09%09\n+// \n %7D%0A%09%09%09tap\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-04-13_21-18-11",
+            "content": "@@ -226,22 +226,22 @@\n f i \n-== 1\n+!= 2\n  && j \n-== 1\n+!= 2\n  %7B%0A%09\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-04-13_21-18-38",
+            "content": "@@ -571,16 +571,202 @@\n Down()%0A%0A\n+%09%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%09// t.Walk(math.Sqrt2*(size/2))%0A%09// t.FillSquare(size, size)%0A%09// t.Walk(math.Sqrt2*(size/2))%0A%09%0A%09// tapet(t, size/3)%0A%09// t.SetRGB(0, 0, 0)%0A%09// t.Walk(-math.Sqrt2*(size))%0A%0A\n %7D%0A%0Afunc \n@@ -883,25 +883,27 @@\n %09pen.SetRGB(\n-0\n+255\n , 0, 0)     \n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-04-13_21-19-44",
+            "content": "@@ -156,17 +156,17 @@\n  size %3C \n-1\n+3\n  %7B%0A%09%09ret\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-13_21-20-03",
+            "content": "@@ -156,17 +156,17 @@\n  size %3C \n-2\n+1\n  %7B%0A%09%09ret\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-13_21-20-16",
+            "content": "@@ -156,17 +156,17 @@\n  size %3C \n-1\n+2\n  %7B%0A%09%09ret\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-13_21-20-26",
+            "content": "@@ -155,17 +155,16 @@\n f size %3C\n-=\n  1 %7B%0A%09%09r\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-13_21-21-04",
+            "content": "@@ -159,12 +159,11 @@\n ze %3C\n+=\n  1\n-.5\n  %7B%0A%09\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-13_21-21-20",
+            "content": "@@ -323,19 +323,16 @@\n e/3)%0A%09%09%09\n-// \n for rang\n@@ -340,19 +340,16 @@\n  4 %7B%0A%09%09%09\n-// \n %09t.Walk(\n@@ -357,19 +357,16 @@\n ize)%0A%09%09%09\n-// \n %09t.Right\n@@ -377,40 +377,9 @@\n %0A%09%09%09\n-// %7D%0A%09%09%09t.FillSquare(size, size)\n+%7D\n %0A%0A%09%09\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-13_21-23-45",
+            "content": "@@ -323,16 +323,19 @@\n e/3)%0A%09%09%09\n+// \n for rang\n@@ -339,24 +339,27 @@\n ange 4 %7B%0A%09%09%09\n+// \n %09t.Walk(size\n@@ -363,16 +363,19 @@\n ize)%0A%09%09%09\n+// \n %09t.Right\n@@ -382,17 +382,48 @@\n (90)%0A%09%09%09\n-%7D\n+// %7D%0A%09%09%09t.FillSquare(size, size)\n %0A%0A%09%09%09t.U\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-13_21-24-35",
+            "content": "@@ -156,17 +156,19 @@\n  size %3C \n-2\n+1.5\n  %7B%0A%09%09ret\n",
+            "lines": "63"
+        },
+        {
+            "label": "2026-04-13_21-24-48",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc tapet(t *Pen, size float64) {\n\tif size < 2 {\n\t\treturn \n\t}\n\tfor i := range 3 {\n\t\tfor j := range 3 {\n\t\t\tif i == 1 && j == 1 {\n\t\t\t\tt.Up()\n\t\t\t\tt.Walk(size)\n\t\t\t\tt.Down()\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\ttapet(t, size/3)\n\t\t\tfor range 4 {\n\t\t\t\tt.Walk(size)\n\t\t\t\tt.Right(90)\n\t\t\t}\n\n\t\t\tt.Up()\n\t\t\tt.Walk(size)\n\t\t\tt.Down()\n\t\t}\n\t\tt.Up()\n\t\tt.Left(180)\n\t\tt.Walk(size*3)\n\t\tt.Left(90)\n\t\tt.Walk(size)\n\t\tt.Left(90)\n\t\tt.Down()\n\t}\n\tt.Up()\n\tt.Left(90)\n\tt.Walk(size*3)\n\tt.Right(90)\n\tt.Down()\n\n}\n\nfunc main() {\n\tsize := 1000.0/3\n\tpen := NewPen(1000, 1000)   // cria um canvas de 500 de largura por 500 de altura\n\tpen.SetRGB(0, 0, 0)     // muda a cor do pincel para vermelho\n\tpen.SetPosition(0, 0) // move o pincel para x 250, y 500\n\tpen.SetHeading(0)\n\tpen.SetLineWidth(1)  \n\tpen.Down()\n\n\ttapet(pen, size)\n\n\tpen.SavePNG(\"tapete.png\")\n\tfmt.Println(\"PNG file created successfully.\")\n}\n",
+            "lines": "63"
         }
     ]
 }
