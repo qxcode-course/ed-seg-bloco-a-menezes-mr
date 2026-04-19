@@ -9,12 +9,19 @@ import (
 )
 
 func processa(vet []int) {
-	fmt.Println("[ " + Join(vet, " ") + " ]")
-	_ = vet;
-	// 1. defina o ponto de parada
-	// 2. monte o vetor auxiliar com os resultados das somas
-	// 3. chame recursivamente a função processa para o vetor auxiliar
-	// 4. imprima o vetor original
+	// fmt.Println("[ " + Join(vet, " ") + " ]")
+	num := len(vet);
+	if len(vet) == 1{
+		return
+	}
+	aux := make([]int, 0 , num-1)
+
+	for i:= 0; i < num - 1; i++ {
+		aux = append(aux, vet[i] + vet[i + 1])
+	}
+	processa(aux)
+	fmt.Println("[ " + Join(aux, " ") + " ]")
+
 }
 
 func main() {
@@ -31,6 +38,7 @@ func main() {
 		}
 	}
 	processa(vet)
+	fmt.Println("[ " + Join(vet, " ") + " ]")
 }
 
 func Join[T any](v []T, sep string) string {
