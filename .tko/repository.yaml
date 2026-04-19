@@ -22,10 +22,9 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
-- ed@map_set
 - ed@basic
-- eval1@teste-1
+- ed@map_set
+- ed@rec
 flags:
   inbox: inbox
   panel: graph
@@ -34,3 +33,4 @@ flags:
   show_time: 'true'
 lang: go
 selected: ed@fractais_png
+selected_index: 10

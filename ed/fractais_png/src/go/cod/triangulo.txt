@@ -9,32 +9,30 @@ func randInt(min, max int) int {
 	return min + rand.Intn(max-min+1)
 }
 
-func	trigo(t *Pen, size float64) {
-	if size < 1 {
+func	triangulo(t *Pen, size float64) {
+	if size < 2 {
 		return 
 	}
-	for range 4 {
+
+	for range 3 {
 		t.Walk(size)
-		t.Left(35)
-		trigo(t, size/3)
-		t.Right(2*35)
-		trigo(t, size/3)
-		t.Left(35)
+		t.Left(120)
+		triangulo(t, size/2)
 	}
-	t.Walk(-4 * size)
+	
 }
 
 func main() {
-	size := 150.0
+	size := 900.0
 	pen := NewPen(1000, 1000)
 	pen.SetRGB(0, 0, 0) 
 	pen.SetPosition(500, 950)
-	pen.SetHeading(90)
+	pen.SetHeading(60)
 	pen.SetLineWidth(1)  
 	pen.Down()
 
-	trigo(pen, size)
+	triangulo(pen, size)
 
-	pen.SavePNG("trigo.png")
+	pen.SavePNG("triangulo.png")
 	fmt.Println("PNG file created successfully.")
 }
