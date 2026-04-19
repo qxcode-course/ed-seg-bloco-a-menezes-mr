@@ -50,3 +50,8 @@
 2026-04-19 15:50:53, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:140
 2026-04-19 16:06:57, MOVE, v:1, k:ed@fractais_png, mode:PICK
 2026-04-19 16:07:00, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:137
+2026-04-19 16:10:44, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-04-19 16:07:00, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-19 16:07:40, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-19 16:12:23, SELF, v:1, k:ed@fractais_png, self:1, rate:100, concept:1
+2026-04-19 16:15:17, MOVE, v:1, k:ed@triangulo, mode:DOWN

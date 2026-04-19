@@ -22,15 +22,15 @@ sources:
   quests: null
   tasks: null
 expanded:
+- ed@rec
 - ed@basic
 - ed@map_set
-- ed@rec
 flags:
-  inbox: inbox
+  inbox: all
   panel: graph
   show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fractais_png
-selected_index: 10
+selected: ed@triangulo
+selected_index: 19
