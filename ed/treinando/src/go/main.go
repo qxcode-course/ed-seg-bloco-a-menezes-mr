@@ -7,10 +7,22 @@ import (
 	"strconv"
 	"strings"
 )
+func join(vet []int, aux string) string{
+	if len(vet) == 1 {
+		str := fmt.Sprint(vet[0])
+		return str
+	}
+
+	str := fmt.Sprint(vet[0],aux)
+	return str + join(vet[1:], aux)
+}
+
 
 func tostr(vet []int) string {
-	_ = vet
-	return ""
+	if len(vet) == 0 {
+		return "[]"
+	}
+	return ("[" + join(vet, ", ") + "]")
 }
 
 func tostrrev(vet []int) string {

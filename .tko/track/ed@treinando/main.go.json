@@ -1,0 +1,164 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-19_17-01-55",
+            "content": "@@ -72,252 +72,52 @@\n unc \n-Join%5BT any%5D(v %5B%5DT, sep string) string %7B%0A%09if len(v) == 0 %7B%0A%09%09return %22%22%0A%09%7D%0A%09s := %22%22%0A%09for i, x := range v %7B%0A%09%09if i %3E 0 %7B%0A%09%09%09s += sep%0A%09%09%7D%0A%09%09s += fmt.Sprintf(%22%25v%22, x)%0A%09%7D%0A%09return s%0A%7D%0A%0Afunc tostr(vet %5B%5Dint) string %7B%0A%09return %22%5B %22 + Join(vet, %22 %22) + %22 %5D\n+tostr(vet %5B%5Dint) string %7B%0A%09_ = vet%0A%09return %22\n %22%0A%7D%0A\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-04-19_17-05-28",
+            "content": "@@ -287,16 +287,17 @@\n eturn %22%5B\n+ \n %22 + Join\n@@ -310,16 +310,17 @@\n %22 %22) + %22\n+ \n %5D%22%0A%7D%0A%0Afu\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-05-43",
+            "content": "@@ -302,17 +302,16 @@\n n(vet, %22\n-,\n  %22) + %22%5D\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-05-58",
+            "content": "@@ -302,16 +302,17 @@\n n(vet, %22\n+,\n  %22) + %22%5D\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-06-32",
+            "content": "@@ -302,17 +302,17 @@\n n(vet, %22\n-,\n+ \n %22) + %22%5D%22\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-07-15",
+            "content": "@@ -303,17 +303,16 @@\n (vet, %22,\n- \n %22) + %22%5D%22\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-07-34",
+            "content": "@@ -303,16 +303,17 @@\n (vet, %22,\n+ \n %22) + %22%5D%22\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-09-54",
+            "content": "@@ -303,17 +303,16 @@\n (vet, %22,\n- \n %22) + %22%5D%22\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-11-37",
+            "content": "@@ -304,17 +304,16 @@\n vet, %22, \n-.\n %22) + %22%5D%22\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-12-04",
+            "content": "@@ -303,16 +303,17 @@\n (vet, %22,\n+ \n .%22) + %22%5D\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-12-37",
+            "content": "@@ -303,17 +303,17 @@\n (vet, %22,\n- \n+.\n %22) + %22%5D%22\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-12-45",
+            "content": "@@ -282,14 +282,14 @@\n  %7B%0A%09\n-str :=\n+return\n  %22%5B%22\n@@ -317,20 +317,8 @@\n %22%5D%22%0A\n-%09return str%0A\n %7D%0A%0Af\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-28-16",
+            "content": "@@ -285,28 +285,16 @@\n %09str := \n-fmt.Sprintf(\n %22%5B%22 + Jo\n@@ -312,17 +312,16 @@\n %22) + %22%5D%22\n-)\n %0A%09return\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-19_17-28-56",
+            "content": "@@ -295,16 +295,17 @@\n t.Sprint\n+f\n (%22%5B%22 + J\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-19_17-29-37",
+            "content": "@@ -285,16 +285,27 @@\n %09str := \n+fmt.Sprint(\n %22%5B%22 + Jo\n@@ -323,16 +323,17 @@\n %22) + %22%5D%22\n+)\n %0A%09return\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-19_17-30-01",
+            "content": "@@ -282,16 +282,15 @@\n  %7B%0A%09\n-return (\n+str := \n %22%5B%22 \n@@ -312,17 +312,28 @@\n %22) + %22%5D%22\n-)\n+%0A%09return str\n %0A%7D%0A%0Afunc\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-04-19_17-31-19",
+            "content": "@@ -285,16 +285,17 @@\n %09return \n+(\n %22%5B%22 + Jo\n@@ -308,16 +308,17 @@\n , %22,\n+ \n %22) + %22%5D%22\n %0A%7D%0A%0A\n@@ -313,16 +313,17 @@\n %22) + %22%5D%22\n+)\n %0A%7D%0A%0Afunc\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-31-32",
+            "content": "@@ -222,17 +222,16 @@\n printf(%22\n- \n %25v%22, x)%0A\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-31-51",
+            "content": "@@ -222,16 +222,17 @@\n printf(%22\n+ \n %25v%22, x)%0A\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-32-18",
+            "content": "@@ -303,17 +303,16 @@\n (vet, %22,\n- \n %22) + %22%5D%22\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-33-23",
+            "content": "@@ -355,41 +355,25 @@\n  %7B%0A%09\n-return %22%5B%22 + Join(vet, %22, %22) + %22%5D\n+_ = vet%0A%09return %22\n %22%0A%7D%0A\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-19_17-37-27",
+            "content": "@@ -67,159 +67,8 @@\n %0A)%0A%0A\n-func reversevet(vet %5B%5Dint) %5B%5Dint%7B%0A%09cont := len(vet)%0A%09aux := make(%5B%5Dint, cont)%0A%09for i := 0; i %3C cont; i++ %7B%0A%09%09aux%5Bcont - 1%5D = vet%5Bi%5D%0A%09%7D%0A%09return aux%0A%7D%0A%0A%0A\n func\n@@ -108,16 +108,16 @@\n tring %7B%0A\n+\n %09if len(\n@@ -246,18 +246,16 @@\n rn s%0A%7D%0A%0A\n-%0A%0A\n func tos\n@@ -312,24 +312,24 @@\n %22) + %22%5D%22%0A%7D%0A%0A\n+\n func tostrre\n@@ -354,31 +354,8 @@\n g %7B%0A\n-%09vet = reversevet(vet)%0A\n %09ret\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-04-19_17-51-44",
+            "content": "@@ -180,30 +180,24 @@\n aux%5B\n-i%5D = vet%5B(cont - 1) - \n+cont - 1%5D = vet%5B\n i%5D%0A%09\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-04-19_17-54-04",
+            "content": "@@ -61,16 +61,174 @@\n rings%22%0A)\n+%0A%0Afunc reversevet(vet %5B%5Dint) %5B%5Dint%7B%0A%09cont := len(vet)%0A%09aux := make(%5B%5Dint, cont)%0A%09for i := 0; i %3C cont; i++ %7B%0A%09%09aux%5Bi%5D = vet%5B(cont - 1) - i%5D%0A%09%7D%0A%09return aux%0A%7D%0A%0A\n %0Afunc Jo\n@@ -399,24 +399,26 @@\n return s%0A%7D%0A%0A\n+%0A%0A\n func tostr(v\n@@ -519,24 +519,27 @@\n et = reverse\n+vet\n (vet)%0A%09retur\n@@ -644,124 +644,15 @@\n  %7B%0A%09\n-cont := len(vet)%0A%09aux := make(%5B%5Dint, cont)%0A%09for i := 0; i %3C cont; i++ %7B%0A%09%09aux%5Bi%5D = vet%5B(cont - 1) - i%5D%0A%09%7D%0A%09vet = aux\n+_ = vet\n %0A%7D%0A%0A\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-04-19_17-58-16",
+            "content": "@@ -350,16 +350,22 @@\n ring %7B%0A%09\n+vet = \n reverse(\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-04-19_18-01-45",
+            "content": "@@ -475,84 +475,85 @@\n  %7B%0A%09\n-aux := 0%0A    for i := 0; i%3C= len(vet)/2; i++ %7B%0A        aux = vet%5Bi%5D;%0A%09%09%09%09vet\n+cont := len(vet)%0A%09aux := make(%5B%5Dint, cont)%0A%09for i := 0; i %3C cont; i++ %7B%0A%09%09aux\n %5Bi%5D \n@@ -555,32 +555,28 @@\n x%5Bi%5D = vet%5B(\n-len(vet)\n+cont\n  - 1) - i%5D%0A%09\n@@ -579,46 +579,20 @@\n i%5D%0A%09\n-%09%09\n+%7D%0A\n %09vet\n-%5B(len(vet) - 1) - i%5D = aux%0A    %7D\n+ = aux\n %0A%7D%0A%0A\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-04-19_18-09-18",
+            "content": "@@ -66,58 +66,256 @@\n %22%0A)%0A\n-%0Afunc tostr(vet %5B%5Dint) string %7B%0A%09_ = vet%0A%09return %22\n+func Join%5BT any%5D(v %5B%5DT, sep string) string %7B%0A%09if len(v) == 0 %7B%0A%09%09return %22%22%0A%09%7D%0A%09s := %22%22%0A%09for i, x := range v %7B%0A%09%09if i %3E 0 %7B%0A%09%09%09s += sep%0A%09%09%7D%0A%09%09s += fmt.Sprintf(%22%25v%22, x)%0A%09%7D%0A%09return s%0A%7D%0A%0Afunc tostr(vet %5B%5Dint) string %7B%0A%09return %22%5B%22 + Join(vet, %22, %22) + %22%5D\n %22%0A%7D%0A\n@@ -346,31 +346,36 @@\n ) string %7B%0A%09\n-_ = \n+reverse(\n vet\n+)\n %0A%09return %22%22%0A\n@@ -372,16 +372,41 @@\n return %22\n+%5B%22 + Join(vet, %22, %22) + %22%5D\n %22%0A%7D%0A%0A// \n@@ -471,23 +471,161 @@\n int) %7B%0A%09\n-_ = vet\n+aux := 0%0A    for i := 0; i%3C= len(vet)/2; i++ %7B%0A        aux = vet%5Bi%5D;%0A%09%09%09%09vet%5Bi%5D = vet%5B(len(vet) - 1) - i%5D%0A%09%09%09%09vet%5B(len(vet) - 1) - i%5D = aux%0A    %7D\n %0A%7D%0A%0A// s\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-04-19_18-14-43",
+            "content": "@@ -66,289 +66,59 @@\n %22%0A)%0A\n-func  join(vet %5B%5Dint, aux string) string%7B%0A%09if len(vet) == 1 %7B%0A%09%09str := fmt.Sprint(vet%5B0%5D)%0A%09%09return str%0A%09%7D%0A%0A%09join(vet%5B1:%5D, aux)%0A%09str := fmt.Sprint(vet%5B0%5D,aux)%0A%09return str%0A%7D%0A%0A%0Afunc tostr(vet %5B%5Dint) string %7B%0A%09if len(vet) == 0 %7B%0A%09%09return %22%5B%5D%22%0A%09%7D%0A%09return (%22%5B %22 + join(vet, %22, %22) + %22 %5D%22)\n+%0Afunc tostr(vet %5B%5Dint) string %7B%0A%09_ = vet%0A%09return %22%22\n %0A%7D%0A%0A\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-04-20_22-07-58",
+            "content": "@@ -315,16 +315,17 @@\n turn (%22%5B\n+ \n %22 + join\n@@ -339,16 +339,17 @@\n , %22) + %22\n+ \n %5D%22)%0A%7D%0A%0Af\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-20_22-08-23",
+            "content": "@@ -67,16 +67,17 @@\n %0A)%0Afunc \n+ \n join(vet\n@@ -169,16 +169,36 @@\n str%0A%09%7D%0A%0A\n+%09join(vet%5B1:%5D, aux)%0A\n %09str := \n@@ -235,44 +235,8 @@\n  str\n- + %09join(vet%5B1:%5D, aux)%0A%09// %22a%22 + %22b%22\n %0A%7D%0A%0A\n@@ -960,38 +960,8 @@\n in)%0A\n-%09a := %22a%22 + %22b%22%0A%09fmt.Print(a)%0A\n %09for\n",
+            "lines": "97"
+        },
+        {
+            "label": "2026-04-20_22-18-42",
+            "content": "@@ -213,16 +213,17 @@\n n str + \n+%09\n join(vet\n@@ -233,16 +233,30 @@\n %5D, aux)%0A\n+%09// %22a%22 + %22b%22%0A\n %7D%0A%0A%0Afunc\n@@ -971,16 +971,46 @@\n .Stdin)%0A\n+%09a := %22a%22 + %22b%22%0A%09fmt.Print(a)%0A\n %09for %7B%0A%09\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-04-20_22-19-17",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\nfunc join(vet []int, aux string) string{\n\tif len(vet) == 1 {\n\t\tstr := fmt.Sprint(vet[0])\n\t\treturn str\n\t}\n\n\tstr := fmt.Sprint(vet[0],aux)\n\treturn str + join(vet[1:], aux)\n}\n\n\nfunc tostr(vet []int) string {\n\tif len(vet) == 0 {\n\t\treturn \"[]\"\n\t}\n\treturn (\"[\" + join(vet, \", \") + \"]\")\n}\n\nfunc tostrrev(vet []int) string {\n\t_ = vet\n\treturn \"\"\n}\n\n// reverse: inverte os elementos do slice\nfunc reverse(vet []int) {\n\t_ = vet\n}\n\n// sum: soma dos elementos do slice\nfunc sum(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\n// mult: produto dos elementos do slice\nfunc mult(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\n// min: retorna o \u00edndice e valor do menor valor\n// crie uma fun\u00e7\u00e3o recursiva interna do modelo\n// var rec func(v []int) (int, int)\n// para fazer uma recurs\u00e3o que retorna valor e \u00edndice\nfunc min(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\nfunc main() {\n\tvar vet []int\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"read\":\n\t\t\tvet = nil\n\t\t\tfor _, arg := range args[1:] {\n\t\t\t\tif val, err := strconv.Atoi(arg); err == nil {\n\t\t\t\t\tvet = append(vet, val)\n\t\t\t\t}\n\t\t\t}\n\t\tcase \"tostr\":\n\t\t\tfmt.Println(tostr(vet))\n\t\tcase \"torev\":\n\t\t\tfmt.Println(tostrrev(vet))\n\t\tcase \"reverse\":\n\t\t\treverse(vet)\n\t\tcase \"sum\":\n\t\t\tfmt.Println(sum(vet))\n\t\tcase \"mult\":\n\t\t\tfmt.Println(mult(vet))\n\t\tcase \"min\":\n\t\t\tfmt.Println(min(vet))\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "96"
+        }
+    ]
+}
