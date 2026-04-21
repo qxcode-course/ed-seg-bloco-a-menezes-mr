@@ -26,13 +26,27 @@ func tostr(vet []int) string {
 }
 
 func tostrrev(vet []int) string {
-	_ = vet
-	return ""
+	if len(vet) == 0 {
+		return "[]"
+	}
+	reverse(vet)
+	return ("[" + join(vet, ", ") + "]")
+	// return ""
 }
-
 // reverse: inverte os elementos do slice
 func reverse(vet []int) {
-	_ = vet
+	tam := len(vet)
+	if tam == 1 || tam == 0 {
+		return
+	}
+
+	i := vet[0]
+	j := vet[tam - 1]
+
+	vet[0] = j
+	vet[tam - 1] = i
+
+	reverse(vet[1 : tam - 1])
 }
 
 // sum: soma dos elementos do slice

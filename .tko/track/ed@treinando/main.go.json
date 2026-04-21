@@ -157,8 +157,43 @@
         },
         {
             "label": "2026-04-20_22-19-17",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\nfunc join(vet []int, aux string) string{\n\tif len(vet) == 1 {\n\t\tstr := fmt.Sprint(vet[0])\n\t\treturn str\n\t}\n\n\tstr := fmt.Sprint(vet[0],aux)\n\treturn str + join(vet[1:], aux)\n}\n\n\nfunc tostr(vet []int) string {\n\tif len(vet) == 0 {\n\t\treturn \"[]\"\n\t}\n\treturn (\"[\" + join(vet, \", \") + \"]\")\n}\n\nfunc tostrrev(vet []int) string {\n\t_ = vet\n\treturn \"\"\n}\n\n// reverse: inverte os elementos do slice\nfunc reverse(vet []int) {\n\t_ = vet\n}\n\n// sum: soma dos elementos do slice\nfunc sum(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\n// mult: produto dos elementos do slice\nfunc mult(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\n// min: retorna o \u00edndice e valor do menor valor\n// crie uma fun\u00e7\u00e3o recursiva interna do modelo\n// var rec func(v []int) (int, int)\n// para fazer uma recurs\u00e3o que retorna valor e \u00edndice\nfunc min(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\nfunc main() {\n\tvar vet []int\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"read\":\n\t\t\tvet = nil\n\t\t\tfor _, arg := range args[1:] {\n\t\t\t\tif val, err := strconv.Atoi(arg); err == nil {\n\t\t\t\t\tvet = append(vet, val)\n\t\t\t\t}\n\t\t\t}\n\t\tcase \"tostr\":\n\t\t\tfmt.Println(tostr(vet))\n\t\tcase \"torev\":\n\t\t\tfmt.Println(tostrrev(vet))\n\t\tcase \"reverse\":\n\t\t\treverse(vet)\n\t\tcase \"sum\":\n\t\t\tfmt.Println(sum(vet))\n\t\tcase \"mult\":\n\t\t\tfmt.Println(mult(vet))\n\t\tcase \"min\":\n\t\t\tfmt.Println(min(vet))\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "content": "@@ -380,28 +380,23 @@\n ring %7B%0A%09\n-reverse(\n+_ = \n vet\n-)\n %0A%09return\n@@ -400,40 +400,14 @@\n urn \n-(%22%5B%22 + join(vet, %22, %22) + %22%5D%22)\n+%22%22\n %0A%7D%0A\n+%0A\n // r\n@@ -475,154 +475,15 @@\n  %7B%0A%09\n-tam := len(vet)%0A%09if tam == 1 %7C%7C tam == 0 %7B%0A%09%09return%0A%09%7D%0A%0A%09i := vet%5B0%5D%0A%09j := vet%5Btam - 1%5D%0A%0A%09vet%5B0%5D = j%0A%09vet%5Btam - 1%5D = i%0A%0A%09reverse(vet%5B1 : tam - 2%5D)\n+_ = vet\n %0A%7D%0A%0A\n",
             "lines": "96"
+        },
+        {
+            "label": "2026-04-21_10-02-52",
+            "content": "@@ -380,19 +380,16 @@\n ring %7B%0A%09\n-// \n reverse(\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-04-21_10-04-39",
+            "content": "@@ -380,16 +380,19 @@\n ring %7B%0A%09\n+// \n reverse(\n@@ -397,19 +397,16 @@\n e(vet)%0A%09\n-// \n return (\n@@ -438,19 +438,8 @@\n %5D%22)%0A\n-%09return %22%22%0A\n %7D%0A//\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-04-21_10-05-50",
+            "content": "@@ -659,17 +659,17 @@\n : tam - \n-1\n+2\n %5D)%0A%7D%0A%0A//\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-04-21_10-11-31",
+            "content": "@@ -394,16 +394,19 @@\n e(vet)%0A%09\n+// \n return (\n@@ -435,19 +435,16 @@\n + %22%5D%22)%0A%09\n-// \n return %22\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-04-21_10-12-31",
+            "content": "@@ -383,45 +383,8 @@\n g %7B%0A\n-%09if len(vet) == 0 %7B%0A%09%09return %22%5B%5D%22%0A%09%7D%0A\n %09rev\n@@ -544,16 +544,29 @@\n tam == 1\n+ %7C%7C tam == 0 \n %7B%0A%09%09retu\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-04-21_10-14-36",
+            "content": "@@ -585,21 +585,8 @@\n == 1\n- %7C%7C tam == 0 \n %7B%0A%09%09\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-04-21_10-15-25",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\nfunc join(vet []int, aux string) string{\n\tif len(vet) == 1 {\n\t\tstr := fmt.Sprint(vet[0])\n\t\treturn str\n\t}\n\n\tstr := fmt.Sprint(vet[0],aux)\n\treturn str + join(vet[1:], aux)\n}\n\n\nfunc tostr(vet []int) string {\n\tif len(vet) == 0 {\n\t\treturn \"[]\"\n\t}\n\treturn (\"[\" + join(vet, \", \") + \"]\")\n}\n\nfunc tostrrev(vet []int) string {\n\tif len(vet) == 0 {\n\t\treturn \"[]\"\n\t}\n\treverse(vet)\n\treturn (\"[\" + join(vet, \", \") + \"]\")\n\t// return \"\"\n}\n// reverse: inverte os elementos do slice\nfunc reverse(vet []int) {\n\ttam := len(vet)\n\tif tam == 1 || tam == 0 {\n\t\treturn\n\t}\n\n\ti := vet[0]\n\tj := vet[tam - 1]\n\n\tvet[0] = j\n\tvet[tam - 1] = i\n\n\treverse(vet[1 : tam - 1])\n}\n\n// sum: soma dos elementos do slice\nfunc sum(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\n// mult: produto dos elementos do slice\nfunc mult(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\n// min: retorna o \u00edndice e valor do menor valor\n// crie uma fun\u00e7\u00e3o recursiva interna do modelo\n// var rec func(v []int) (int, int)\n// para fazer uma recurs\u00e3o que retorna valor e \u00edndice\nfunc min(vet []int) int {\n\t_ = vet\n\treturn 0\n}\n\nfunc main() {\n\tvar vet []int\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(\"$\" + line)\n\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"read\":\n\t\t\tvet = nil\n\t\t\tfor _, arg := range args[1:] {\n\t\t\t\tif val, err := strconv.Atoi(arg); err == nil {\n\t\t\t\t\tvet = append(vet, val)\n\t\t\t\t}\n\t\t\t}\n\t\tcase \"tostr\":\n\t\t\tfmt.Println(tostr(vet))\n\t\tcase \"torev\":\n\t\t\tfmt.Println(tostrrev(vet))\n\t\tcase \"reverse\":\n\t\t\treverse(vet)\n\t\tcase \"sum\":\n\t\t\tfmt.Println(sum(vet))\n\t\tcase \"mult\":\n\t\t\tfmt.Println(mult(vet))\n\t\tcase \"min\":\n\t\t\tfmt.Println(min(vet))\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "110"
         }
     ]
 }
