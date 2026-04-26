@@ -1,0 +1,6 @@
+2026-04-26 17:34:31, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-26 17:34:36, EXEC, v:1, k:ed@treinando, mode:FULL, size:141, fail:COMP
+2026-04-26 17:39:12, MOVE, v:1, k:ed@treinando, mode:EDIT
+2026-04-26 17:42:01, EXEC, v:1, k:ed@treinando, mode:FULL, rate:83, size:140
+2026-04-26 17:44:09, MOVE, v:1, k:ed@treinando, mode:EDIT
+2026-04-26 17:45:09, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:140

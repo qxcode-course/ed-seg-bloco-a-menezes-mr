@@ -23,8 +23,6 @@ sources:
   tasks: null
 expanded:
 - ed@rec
-- ed@map_set
-- ed@basic
 flags:
   inbox: all
   panel: graph
@@ -33,4 +31,4 @@ flags:
   show_time: 'true'
 lang: go
 selected: ed@treinando
-selected_index: 20
+selected_index: 5
