@@ -22,8 +22,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
 - ed@vector
+- ed@rec
 flags:
   inbox: all
   panel: graph
@@ -31,5 +31,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@vetbuild
-selected_index: 29
+selected: ed@setbuild
+selected_index: 30
