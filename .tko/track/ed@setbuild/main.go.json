@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-02_16-21-02",
+            "content": "@@ -53,1258 +53,9 @@\n gs%22%0A\n-%09%22strconv%22%0A)%0A%0Atype Vector struct%7B%0A%09data %5B%5Dint%0A%09size int%0A%09capacity int%0A%7D%0A%0Afunc NewSet(capacity int) *Vector%7B%0A%09return &Vector%7B%0A%09%09data: make(%5B%5Dint, capacity),%0A%09%09size: 0,%0A%09%09capacity: capacity,%0A%0A%09%7D%0A%7D%0A%0Afunc (v *Vector) reserve(newCapacity int) %7B%0A%09v.capacity = newCapacity%0A%7D%0A%0Afunc (v *Vector) binarySearch(value int) int %7B%0A%09inicio := 0%0A%09fim := v.size - 1%0A%0A%09for inicio %3C= fim %7B%09%09%0A%09%09meio := inicio + (fim - inicio)/2%0A%0A%09%09if v.data%5Bmeio%5D == value %7B%0A%09%09%09return meio%0A%09%09%7D%0A%09%09if v.data%5Bmeio%5D %3C value %7B%0A%09%09%09inicio = meio + 1%0A%09%09%7D else %7B%0A%09%09%09fim = meio - 1%0A%09%09%7D%0A%09%7D%0A%09return -1%0A%7D%0Afunc (v *Vector) Contains(value int) bool %7B%0A%09flag := v.binarySearch(value) %0A%09if flag == -1%7B%0A%09%09return false%0A%09%7D%0A%09return true%0A%7D%0A%0A%0Afunc (v *Vector) insert(value int, index int) error %7B%0A%09if v.size == v.capacity %7B%0A%09%09v.reserve(v.capacity * 2)%0A%09%7D%0A%09%0A%09for i:= v.size; i %3E index; i-- %7B%0A%09%09v.data%5Bi%5D = v.data%5Bi-1%5D;%0A%09%7D%0A%09v.data%5Bindex%5D = value%0A%09v.size ++%0A%09return nil%0A%7D%0A%0A%0Afunc (v *Vector) Insert(value int)%7B%0A%09if !v.Contains(value) %7B%0A%09%09inicio := 0%0A%09%09fim := v.size - 1%0A%0A%09%09for inicio %3C= fim %7B%09%09%0A%09%09%09meio := inicio + (fim - inicio)/2%0A%0A%09%09%09if v.data%5Bmeio-1%5D %3C value && v.data%5Bmeio%5D %3E value %7B%0A%09%09%09%09v.insert(value, meio)%0A%09%09%09%7D%0A%09%09%09if v.data%5Bmeio%5D %3C value %7B%0A%09%09%09%09inicio = meio + 1%0A%09%09%09%7D else %7B%0A%09%09%09%09fim = meio - 1%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%7D\n+)\n %0A%0Afu\n@@ -373,16 +373,19 @@\n it%22:%0A%09%09%09\n+// \n value, _\n@@ -414,16 +414,19 @@\n %5B1%5D)%0A%09%09%09\n+// \n v = NewS\n@@ -455,16 +455,19 @@\n rt%22:%0A%09%09%09\n+// \n for _, p\n@@ -494,16 +494,19 @@\n :%5D %7B%0A%09%09%09\n+// \n %09value, \n@@ -536,28 +536,11 @@\n %0A%09%09%09\n-%09v.Insert(value)%0A%09%09%09\n+// \n %7D%0A%09%09\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-02_17-32-47",
+            "content": "@@ -247,131 +247,8 @@\n %09%7D%0A%7D\n-%0Afunc (v *Vector) ToString() string %7B %0A%09if v.size == 0 %7B%0A%09%09return %22%5B%5D%22%0A%09%7D%0A%09return %22%5B%22 + Join(v.data%5B:v.size%5D, %22, %22) + %22%5D%22%0A%7D\n %0A%0Afu\n@@ -1305,263 +1305,8 @@\n %0A%7D%0A%0A\n-func Join(slice %5B%5Dint, sep string) string %7B%0A%09if len(slice) == 0 %7B%0A%09%09return %22%22%0A%09%7D%0A%09var result strings.Builder%0A%09fmt.Fprintf(&result, %22%25d%22, slice%5B0%5D)%0A%09for _, value := range slice%5B1:%5D %7B%0A%09%09fmt.Fprintf(&result, %22%25s%25d%22, sep, value)%0A%09%7D%0A%09return result.String()%0A%7D%0A%0A\n func\n",
+            "lines": "128"
+        },
+        {
+            "label": "2026-05-02_17-34-22",
+            "content": "@@ -2188,24 +2188,8 @@\n w%22:%0A\n-%09%09%09v.ToString()%0A\n %09%09ca\n",
+            "lines": "146"
+        },
+        {
+            "label": "2026-05-02_17-34-43",
+            "content": "@@ -2187,26 +2187,16 @@\n ow%22:%0A%09%09%09\n-fmt.Print(\n v.ToStri\n@@ -2199,17 +2199,16 @@\n String()\n-)\n %0A%09%09case \n",
+            "lines": "147"
+        },
+        {
+            "label": "2026-05-02_17-35-21",
+            "content": "@@ -2196,18 +2196,16 @@\n mt.Print\n-ln\n (v.ToStr\n",
+            "lines": "147"
+        },
+        {
+            "label": "2026-05-02_17-35-31",
+            "content": "@@ -416,95 +416,8 @@\n ) %7B%0A\n-%09newData := make(%5B%5Dint, newCapacity)%0A%09copy(newData, v.data%5B:v.size%5D)%0A%09v.data = newData%0A\n %09v.c\n@@ -1238,16 +1238,103 @@\n nicio)/2\n+%0A%0A%09%09%09if v.data%5Bmeio-1%5D %3C value && v.data%5Bmeio%5D %3E value %7B%0A%09%09%09%09v.insert(value, meio)%0A%09%09%09%7D\n %0A%09%09%09if v\n@@ -1421,34 +1421,8 @@\n %09%09%7D%0A\n-%09%09v.insert(value, inicio)%0A\n %09%7D%0A%0A\n",
+            "lines": "147"
+        },
+        {
+            "label": "2026-05-02_17-54-11",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\t\"strconv\"\n)\n\ntype Vector struct{\n\tdata []int\n\tsize int\n\tcapacity int\n}\n\nfunc NewSet(capacity int) *Vector{\n\treturn &Vector{\n\t\tdata: make([]int, capacity),\n\t\tsize: 0,\n\t\tcapacity: capacity,\n\n\t}\n}\nfunc (v *Vector) ToString() string { \n\tif v.size == 0 {\n\t\treturn \"[]\"\n\t}\n\treturn \"[\" + Join(v.data[:v.size], \", \") + \"]\"\n}\n\nfunc (v *Vector) reserve(newCapacity int) {\n\tnewData := make([]int, newCapacity)\n\tcopy(newData, v.data[:v.size])\n\tv.data = newData\n\tv.capacity = newCapacity\n}\n\nfunc (v *Vector) binarySearch(value int) int {\n\tinicio := 0\n\tfim := v.size - 1\n\n\tfor inicio <= fim {\t\t\n\t\tmeio := inicio + (fim - inicio)/2\n\n\t\tif v.data[meio] == value {\n\t\t\treturn meio\n\t\t}\n\t\tif v.data[meio] < value {\n\t\t\tinicio = meio + 1\n\t\t} else {\n\t\t\tfim = meio - 1\n\t\t}\n\t}\n\treturn -1\n}\nfunc (v *Vector) Contains(value int) bool {\n\tflag := v.binarySearch(value) \n\tif flag == -1{\n\t\treturn false\n\t}\n\treturn true\n}\n\n\nfunc (v *Vector) insert(value int, index int) error {\n\tif v.size == v.capacity {\n\t\tv.reserve(v.capacity * 2)\n\t}\n\t\n\tfor i:= v.size; i > index; i-- {\n\t\tv.data[i] = v.data[i-1];\n\t}\n\tv.data[index] = value\n\tv.size ++\n\treturn nil\n}\n\n\nfunc (v *Vector) Insert(value int){\n\tif !v.Contains(value) {\n\t\tinicio := 0\n\t\tfim := v.size - 1\n\n\t\tfor inicio <= fim {\t\t\n\t\t\tmeio := inicio + (fim - inicio)/2\n\t\t\tif v.data[meio] < value {\n\t\t\t\tinicio = meio + 1\n\t\t\t} else {\n\t\t\t\tfim = meio - 1\n\t\t\t}\n\t\t}\n\t\tv.insert(value, inicio)\n\t}\n\n}\n\nfunc Join(slice []int, sep string) string {\n\tif len(slice) == 0 {\n\t\treturn \"\"\n\t}\n\tvar result strings.Builder\n\tfmt.Fprintf(&result, \"%d\", slice[0])\n\tfor _, value := range slice[1:] {\n\t\tfmt.Fprintf(&result, \"%s%d\", sep, value)\n\t}\n\treturn result.String()\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tv := NewSet(0)\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tv = NewSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range parts[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tv.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(v.ToString())\n\t\tcase \"erase\":\n\t\t\t// value, _ := strconv.Atoi(parts[1])\n\t\tcase \"contains\":\n\t\t\t// value, _ := strconv.Atoi(parts[1])\n\t\tcase \"clear\":\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "147"
+        }
+    ]
+}

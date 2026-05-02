@@ -36,9 +36,7 @@ func (v *Vector) ToString() string {
 
 func (v *Vector) Reserve(newCapacity int){ 
 	aux := make([]int, newCapacity)
-	for i, elemento := range v.data {
-		aux[i] = elemento
-	}
+	copy(aux, v.data[:v.size])
 	v.data = aux
 	v.capacity = newCapacity
 }
