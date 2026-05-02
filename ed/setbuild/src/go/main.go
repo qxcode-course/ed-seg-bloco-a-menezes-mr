@@ -95,6 +95,20 @@ func (v *Vector) Insert(value int){
 
 }
 
+func (v *Vector) Erase(value int) bool {
+	if !v.Contains(value) {
+		return false
+	}
+	index := v.binarySearch(value)
+
+	for i:= index; i < v.size - 1; i++ {
+		v.data[i] = v.data[i+1];
+	}
+	v.size --
+
+	return true
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -136,9 +150,13 @@ func main() {
 		case "show":
 			fmt.Println(v.ToString())
 		case "erase":
-			// value, _ := strconv.Atoi(parts[1])
+			value, _ := strconv.Atoi(parts[1])
+			if !v.Erase(value) {
+				fmt.Println("value not found")
+			}
 		case "contains":
-			// value, _ := strconv.Atoi(parts[1])
+			value, _ := strconv.Atoi(parts[1])
+			fmt.Println(v.Contains(value))
 		case "clear":
 		default:
 			fmt.Println("fail: comando invalido")
