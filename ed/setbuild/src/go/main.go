@@ -8,35 +8,35 @@ import (
 	"strconv"
 )
 
-type Vector struct{
+type Set struct{
 	data []int
 	size int
 	capacity int
 }
 
-func NewSet(capacity int) *Vector{
-	return &Vector{
+func NewSet(capacity int) *Set{
+	return &Set{
 		data: make([]int, capacity),
 		size: 0,
 		capacity: capacity,
 
 	}
 }
-func (v *Vector) ToString() string { 
+func (v *Set) ToString() string { 
 	if v.size == 0 {
 		return "[]"
 	}
 	return "[" + Join(v.data[:v.size], ", ") + "]"
 }
 
-func (v *Vector) reserve(newCapacity int) {
+func (v *Set) reserve(newCapacity int) {
 	newData := make([]int, newCapacity)
 	copy(newData, v.data[:v.size])
 	v.data = newData
 	v.capacity = newCapacity
 }
 
-func (v *Vector) binarySearch(value int) int {
+func (v *Set) binarySearch(value int) int {
 	inicio := 0
 	fim := v.size - 1
 
@@ -54,7 +54,7 @@ func (v *Vector) binarySearch(value int) int {
 	}
 	return -1
 }
-func (v *Vector) Contains(value int) bool {
+func (v *Set) Contains(value int) bool {
 	flag := v.binarySearch(value) 
 	if flag == -1{
 		return false
@@ -63,7 +63,7 @@ func (v *Vector) Contains(value int) bool {
 }
 
 
-func (v *Vector) insert(value int, index int) error {
+func (v *Set) insert(value int, index int) error {
 	if v.size == v.capacity {
 		v.reserve(v.capacity * 2)
 	}
@@ -77,7 +77,7 @@ func (v *Vector) insert(value int, index int) error {
 }
 
 
-func (v *Vector) Insert(value int){
+func (v *Set) Insert(value int){
 	if !v.Contains(value) {
 		inicio := 0
 		fim := v.size - 1
@@ -95,7 +95,7 @@ func (v *Vector) Insert(value int){
 
 }
 
-func (v *Vector) Erase(value int) bool {
+func (v *Set) Erase(value int) bool {
 	if !v.Contains(value) {
 		return false
 	}

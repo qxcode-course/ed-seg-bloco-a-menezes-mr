@@ -53,3 +53,6 @@
 2026-05-02 18:09:06, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:66, size:163
 2026-05-02 18:08:55, MOVE, v:1, k:ed@setbuild, mode:EDIT
 2026-05-02 18:13:18, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:100, size:165
+2026-05-02 18:14:10, MOVE, v:1, k:ed@setbuild, mode:BACK
+2026-05-02 18:17:14, SELF, v:1, k:ed@setbuild, self:1, rate:100, study:120, concept:1
+2026-05-02 18:18:33, MOVE, v:1, k:ed@bettersearch, mode:DOWN
