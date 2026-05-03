@@ -96,6 +96,7 @@ func (ll *LList) PopFront() {
 func (ll *LList) Clear() {
 	ll.root.next = ll.root
 	ll.root.prev = ll.root
+	ll.size = 0
 }
 
 func (ll *LList) Front() *Node{
