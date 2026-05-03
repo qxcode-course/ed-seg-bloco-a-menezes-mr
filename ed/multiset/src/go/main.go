@@ -86,6 +86,18 @@ func (ms *MultiSet) String() string{
 	return "[" + Join(ms.data[:ms.size], ", ") + "]"
 }
 
+func (ms *MultiSet) Erase(value int) bool {
+	existe, index := ms.search(value)
+	if !existe{
+		return false
+	}
+	for i:= index; i < ms.size - 1; i++ {
+		ms.data[i] = ms.data[i+1];
+	}
+	ms.size --
+	return true
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -126,9 +138,13 @@ func main() {
 		case "show":
 			fmt.Println(ms.String())
 		case "erase":
-			// value, _ := strconv.Atoi(args[1])
+			value, _ := strconv.Atoi(args[1])
+			if !ms.Erase(value) {
+				fmt.Println("value not found")
+			}
 		case "contains":
-			// value, _ := strconv.Atoi(args[1])
+			value, _ := strconv.Atoi(args[1])
+			fmt.Println(ms.Contains(value))
 		case "count":
 			// value, _ := strconv.Atoi(args[1])
 		case "unique":
