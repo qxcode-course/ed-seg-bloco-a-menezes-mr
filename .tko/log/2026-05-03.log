@@ -65,3 +65,14 @@
 2026-05-03 13:23:25, MOVE, v:1, k:ed@setbuild, mode:PICK
 2026-05-03 13:23:26, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:66, size:171
 2026-05-03 13:24:08, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:100, size:167
+2026-05-03 13:25:36, MOVE, v:1, k:ed@setbuild, mode:BACK
+2026-05-03 13:31:04, SELF, v:1, k:ed@manipulacao, self:1, rate:100, study:150, concept:1
+2026-05-03 13:30:48, MOVE, v:1, k:ed@manipulacao, mode:EDIT
+2026-05-03 13:32:21, MOVE, v:1, k:ed@lista_d2, mode:DOWN
+2026-05-03 13:32:25, MOVE, v:1, k:ed@lista_d2, mode:PICK
+2026-05-03 13:32:26, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:0, size:93
+2026-05-03 13:35:36, EXEC, v:1, k:ed@lista_d2, mode:FULL, rate:0, size:179
+2026-05-03 13:32:21, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 13:32:21, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 13:32:21, MOVE, v:1, k:ed@lista_d2, mode:EDIT
+2026-05-03 13:35:34, MOVE, v:1, k:ed@lista_d2, mode:EDIT

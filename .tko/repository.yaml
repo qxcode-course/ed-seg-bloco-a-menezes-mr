@@ -22,8 +22,8 @@ sources:
   quests: null
   tasks: null
 expanded:
+- ed@map_set
 - ed@list
-- ed@vector
 flags:
   inbox: all
   panel: graph
@@ -31,5 +31,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@setbuild
-selected_index: 6
+selected: ed@lista_d2
+selected_index: 15
