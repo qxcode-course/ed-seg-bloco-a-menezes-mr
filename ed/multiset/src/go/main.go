@@ -98,6 +98,38 @@ func (ms *MultiSet) Erase(value int) bool {
 	return true
 }
 
+func (ms *MultiSet) Count(value int) int {
+	if !ms.Contains(value) {
+		return 0
+	}
+	cont := 0
+
+	_, i := ms.search(value)
+
+	for ; ms.data[i] == value; i-- {
+		cont++	
+	}
+	return cont
+}
+
+func (ms *MultiSet) Unique() int {
+	if ms.size == 0 {
+		return 0
+	}
+	cont := 1
+	for i := 0; i < ms.size-1; i++ {
+		if ms.data[i] != ms.data[i+1] {
+			cont++
+		}
+	}
+
+	return cont
+}
+
+func (ms *MultiSet) Clear() {
+	ms.size = 0
+}
+
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
 		return ""
@@ -146,9 +178,12 @@ func main() {
 			value, _ := strconv.Atoi(args[1])
 			fmt.Println(ms.Contains(value))
 		case "count":
-			// value, _ := strconv.Atoi(args[1])
+			value, _ := strconv.Atoi(args[1])
+			fmt.Println(ms.Count(value))
 		case "unique":
+			fmt.Println(ms.Unique())
 		case "clear":
+			ms.Clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}
