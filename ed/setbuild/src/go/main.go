@@ -95,17 +95,19 @@ func (v *Set) Insert(value int){
 
 }
 
-func (v *Set) Erase(value int) bool {
-	if !v.Contains(value) {
-		return false
-	}
-	index := v.binarySearch(value)
-
+func (v *Set) erase(index int) error {
 	for i:= index; i < v.size - 1; i++ {
 		v.data[i] = v.data[i+1];
 	}
 	v.size --
+	return nil
+}
 
+func (v *Set) Erase(value int) bool {
+	if !v.Contains(value) {
+		return false
+	}
+	v.erase(v.binarySearch(value))
 	return true
 }
 
