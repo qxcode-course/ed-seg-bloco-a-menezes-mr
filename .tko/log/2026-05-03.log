@@ -190,3 +190,10 @@
 2026-05-03 17:27:48, EXEC, v:1, k:ed@prin_list1, mode:FULL, rate:100, size:182
 2026-05-03 17:28:14, MOVE, v:1, k:ed@prin_list1, mode:BACK
 2026-05-03 17:28:24, SELF, v:1, k:ed@prin_list1, self:1, rate:100
+2026-05-03 17:35:14, MOVE, v:1, k:ed@iterador, mode:DOWN
+2026-05-03 17:35:16, MOVE, v:1, k:ed@iterador, mode:PICK
+2026-05-03 17:35:17, EXEC, v:1, k:ed@iterador, mode:FULL, rate:33, size:82
+2026-05-03 17:35:14, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-03 17:35:14, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-03 17:35:14, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-03 17:35:14, MOVE, v:1, k:ed@iterador, mode:EDIT
