@@ -19,15 +19,14 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@rec
 - ed@list
-- ed@basic
+- ed@rec
 flags:
   inbox: all
   panel: skills
-  show_panel: 'true'
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@editorint
-selected_index: 45
+selected: ed@resto
+selected_index: 6

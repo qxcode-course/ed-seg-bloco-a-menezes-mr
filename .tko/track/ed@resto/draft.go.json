@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-21_20-54-07",
+            "content": "@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func res\n@@ -45,18 +45,18 @@\n ) string\n- \n %7B\n+%0A\n %0A    if \n@@ -90,21 +90,16 @@\n %22%0A    %7D%0A\n-    %0A\n     resD\n@@ -108,15 +108,18 @@\n  := \n-num / 2\n+int(num/2)\n %0A   \n@@ -138,29 +138,21 @@\n num \n-%25 2 %0A    resultado :=\n+- resDiv%0A%0A   \n  res\n@@ -182,50 +182,33 @@\n urn \n-resultado + fmt.Sprintf(%22%25d %25d%5Cn%22, \n+fmt.Sprintln(\n resDiv,\n+ %22 %22,\n  res\n@@ -293,10 +293,11 @@\n o(num))%0A\n+%0A\n %7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-21_20-57-54",
+            "content": "@@ -306,16 +306,18 @@\n mt.Print\n+ln\n (resto(n\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-05-21_20-59-37",
+            "content": "package main\nimport \"fmt\"\n\nfunc resto(num int) string {\n    if num == 0 {\n        return \"\"\n    }\n    \n    resDiv := num / 2\n    restDiv := num % 2 \n    resultado := resto(resDiv)\n    \n    return resultado + fmt.Sprintf(\"%d %d\\n\", resDiv, restDiv)\n}\n\nfunc main() {\n    var num int\n    fmt.Scan(&num)\n    fmt.Print(resto(num))\n}\n",
+            "lines": "20"
+        }
+    ]
+}

@@ -16,3 +16,6 @@
 2026-05-20 16:42:51, MOVE, v:1, k:ed@editorint, mode:EDIT
 2026-05-20 16:44:42, MOVE, v:1, k:ed@editorint, mode:EDIT
 2026-05-20 16:46:09, MOVE, v:1, k:ed@editorint, mode:EDIT
+2026-05-20 16:52:42, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:0, size:358
+2026-05-20 16:49:58, MOVE, v:1, k:ed@editorint, mode:EDIT
+2026-05-20 16:54:34, MOVE, v:1, k:ed@editorint, mode:BACK
