@@ -13,3 +13,8 @@
 2026-05-21 20:59:37, EXEC, v:1, k:ed@resto, mode:FULL, rate:100, size:20
 2026-05-21 20:59:50, MOVE, v:1, k:ed@resto, mode:BACK
 2026-05-21 20:59:59, SELF, v:1, k:ed@resto, self:1, rate:100
+2026-05-21 21:01:10, MOVE, v:1, k:ed@mdc, mode:DOWN
+2026-05-21 20:59:30, MOVE, v:1, k:ed@resto, mode:EDIT
+2026-05-21 21:01:10, MOVE, v:1, k:ed@mdc, mode:EDIT
+2026-05-21 21:01:10, MOVE, v:1, k:ed@mdc, mode:EDIT
+2026-05-21 21:04:01, MOVE, v:1, k:ed@mdc, mode:DOWN
