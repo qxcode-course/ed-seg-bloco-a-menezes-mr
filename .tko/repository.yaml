@@ -19,14 +19,16 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@list
 - ed@rec
+- ed@list
+- ed@basic
+- ed@map_set
 flags:
   inbox: all
-  panel: graph
-  show_panel: 'true'
+  panel: skills
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@labirinto
-selected_index: 9
+selected: ed@buscas
+selected_index: 14

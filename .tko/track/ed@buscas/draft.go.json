@@ -2,8 +2,13 @@
     "patches": [
         {
             "label": "2026-04-06_15-47-00",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -10,716 +10,66 @@\n ain%0A\n-%0A\n import \n-(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strings%22%0A)%0A%0Afunc matchingStrings(stringsList %5B%5Dstring, queries %5B%5Dstring) %5B%5Dint %7B%0A%0A%09frequencia := make(map%5Bstring%5Dint)%0A%09for _, s := range stringsList %7B%0A%09%09frequencia%5Bs%5D++%0A%09%7D%0A%0A%09resultado := make(%5B%5Dint, len(queries))%0A%09for i, q := range queries %7B%0A%09%09resultado%5Bi%5D = frequencia%5Bq%5D%0A%09%7D%0A%0A%09return resultado%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%0A%09scanner.Scan()%0A    scanner.Scan()%0A%09stringsList := strings.Fields(scanner.Text())%0A%09%0A    scanner.Scan()%0A    scanner.Scan()%0A%09queries := strings.Fields(scanner.Text())%0A%0A%09resultados := matchingStrings(stringsList, queries)%0A%0A%09for i, res := range resultados %7B%0A%09%09if i %3E 0 %7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D%0A%09%09fmt.Print(res)%0A%09%7D%0A%09fmt.Println(\n+%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-05-26_15-49-51",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n)\n\nfunc matchingStrings(stringsList []string, queries []string) []int {\n\n\tfrequencia := make(map[string]int)\n\tfor _, s := range stringsList {\n\t\tfrequencia[s]++\n\t}\n\n\tresultado := make([]int, len(queries))\n\tfor i, q := range queries {\n\t\tresultado[i] = frequencia[q]\n\t}\n\n\treturn resultado\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tscanner.Scan()\n    scanner.Scan()\n\tstringsList := strings.Fields(scanner.Text())\n\t\n    scanner.Scan()\n    scanner.Scan()\n\tqueries := strings.Fields(scanner.Text())\n\n\tresultados := matchingStrings(stringsList, queries)\n\n\tfor i, res := range resultados {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t\tfmt.Print(res)\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "45"
         }
     ]
 }
