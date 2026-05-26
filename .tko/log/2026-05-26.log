@@ -1,0 +1,18 @@
+2026-05-26 12:32:35, SELF, v:1, k:ed@fractais_png, self:1, rate:100, concept:1
+2026-05-26 12:32:49, MOVE, v:1, k:ed@mdc, mode:PICK
+2026-05-26 12:32:51, EXEC, v:1, k:ed@mdc, mode:FULL, rate:100
+2026-05-26 12:32:53, MOVE, v:1, k:ed@mdc, mode:BACK
+2026-05-26 12:33:10, MOVE, v:1, k:ed@queimada, mode:DOWN
+2026-05-26 12:33:10, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-26 12:33:10, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-26 12:33:10, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-26 12:55:38, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-26 12:55:39, EXEC, v:1, k:ed@queimada, mode:FULL, size:55, fail:COMP
+2026-05-26 12:58:29, EXEC, v:1, k:ed@queimada, mode:FULL, rate:0, size:55
+2026-05-26 12:59:21, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-26 13:03:27, EXEC, v:1, k:ed@queimada, mode:FULL, rate:0, size:54
+2026-05-26 13:05:31, EXEC, v:1, k:ed@queimada, mode:FULL, rate:0, size:54
+2026-05-26 13:05:26, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-26 13:09:09, EXEC, v:1, k:ed@queimada, mode:FULL, rate:0, size:56
+2026-05-26 13:10:11, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100, size:56
+2026-05-26 13:10:09, MOVE, v:1, k:ed@queimada, mode:EDIT
