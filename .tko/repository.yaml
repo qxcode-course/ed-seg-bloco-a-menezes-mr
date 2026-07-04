@@ -19,16 +19,16 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@rec
-- ed@list
-- ed@basic
-- ed@map_set
+- ed@linear
+- ed@backtrack
 flags:
   inbox: all
   panel: skills
-  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
+audit:
+  enabled: true
+  interval_seconds: null
 lang: go
-selected: ed@buscas
-selected_index: 14
+selected: ed@permutacoes
+selected_index: 20
