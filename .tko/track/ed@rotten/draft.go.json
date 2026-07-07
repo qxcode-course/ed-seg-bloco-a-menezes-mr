@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_12-09-36",
+            "content": "@@ -37,204 +37,39 @@\n ) %7B%0A\n-%09var m, n int%0A%09fmt.Scan(&m, &n)%0A%09mat := make(%5B%5D%5B%5Dint, m)%0A%0A    for i := range m %7B%0A        mat%5Bi%5D = make(%5B%5Dint, n)%0A        for j := range n %7B%0A            fmt.Scan(&mat%5Bi%5D%5Bj%5D)%0A        %7D%0A        %0A    %7D\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-05_12-29-04",
+            "content": "@@ -10,515 +10,20 @@\n ain%0A\n-%0A\n import \n-(%0A%09%22container/list%22%0A%09%22fmt%22%0A)%0A%0Atype Pos struct%7B%0A    l, c int%0A%7D%0A%0Afunc laranjaP(grid%5B%5D%5B%5Dint, l, c int) int%7B%0A    fila := %5B%5DPos %7B%7D%0A    count := 0%0A%0A    for i := range l %7B%0A        for j := range c %7B%0A            if grid%5Bi%5D%5Bj%5D == 2 %7B%0A                fila = append(fila, Pos%7Bi, j%7D)%0A            %7Delse if grid%5Bi%5D%5Bj%5D == 1 %7B%0A                count++%0A            %7D%0A        %7D%0A    %7D%0A%0A    if count == 0 %7B return 0%7D%0A%0A    minuto := 0%0A%0A    for len(list)  %3E 0 && count %3E 0%7B%0A        size := len(list)%0A%0A        %0A%0A    %7D%0A%0A%7D%0A%0A%0A\n+%22fmt%22\n %0Afun\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-07-06_22-27-31",
+            "content": "@@ -16,16 +16,34 @@\n mport (%0A\n+%09%22container/list%22%0A\n %09%22fmt%22%0A)\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-06_22-27-58",
+            "content": "@@ -413,63 +413,8 @@\n = 0%0A\n-    direcao := %5B%5DPos %7B%7B-1, 0%7D, %7B1, 0%7D, %7B0, -1%7D, %7B0, 1%7D%7D\n %0A   \n@@ -422,20 +422,20 @@\n for len(\n-fila\n+list\n )  %3E 0 &\n@@ -471,446 +471,13 @@\n len(\n-fila)%0A%0A        for range size %7B%0A            atual := fila%5B0%5D%0A            fila = fila%5B1:%5D%0A%0A            for _, d := range direcao %7B%0A                nl := atual.l+d.l%0A                nc := atual.c+d.c%0A                if nl %3E= 0 && nl %3C l && nc %3E= 0 && nc %3C c && grid%5Bnl%5D%5Bnc%5D == 1 %7B%0A                    grid%5Bnl%5D%5Bnc%5D = 2%0A                    count--%0A                    fila = append(fila, Pos%7Bnl, nc%7D)%0A                %7D%0A            %7D%0A        %7D\n+list)\n %0A%0A  \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-06_22-45-03",
+            "content": "@@ -964,94 +964,25 @@\n    %7D\n-%0A        minuto++\n %0A%0A    \n-%7D%0A\n     \n-if count %3E 0 %7B%0A        return -1%0A    %7D%0A%0A    return minuto\n+%0A%0A    %7D\n %0A%0A%7D%0A\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-07-06_22-46-42",
+            "content": "@@ -1269,43 +1269,6 @@\n   %7D%0A\n-    fmt.Println(laranjaP(mat, m, n))%0A\n %7D%0A\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-07-06_22-47-58",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\ntype Pos struct{\n    l, c int\n}\n\nfunc laranjaP(grid[][]int, l, c int) int{\n    fila := []Pos {}\n    count := 0\n\n    for i := range l {\n        for j := range c {\n            if grid[i][j] == 2 {\n                fila = append(fila, Pos{i, j})\n            }else if grid[i][j] == 1 {\n                count++\n            }\n        }\n    }\n\n    if count == 0 { return 0}\n\n    minuto := 0\n    direcao := []Pos {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}\n    for len(fila)  > 0 && count > 0{\n        size := len(fila)\n\n        for range size {\n            atual := fila[0]\n            fila = fila[1:]\n\n            for _, d := range direcao {\n                nl := atual.l+d.l\n                nc := atual.c+d.c\n                if nl >= 0 && nl < l && nc >= 0 && nc < c && grid[nl][nc] == 1 {\n                    grid[nl][nc] = 2\n                    count--\n                    fila = append(fila, Pos{nl, nc})\n                }\n            }\n        }\n        minuto++\n\n    }\n    if count > 0 {\n        return -1\n    }\n\n    return minuto\n\n}\n\n\n\nfunc main() {\n\tvar m, n int\n\tfmt.Scan(&m, &n)\n\tmat := make([][]int, m)\n\n    for i := range m {\n        mat[i] = make([]int, n)\n        for j := range n {\n            fmt.Scan(&mat[i][j])\n        }\n        \n    }\n    fmt.Println(laranjaP(mat, m, n))\n}\n",
+            "lines": "72"
+        }
+    ]
+}

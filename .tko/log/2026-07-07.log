@@ -1,0 +1,24 @@
+2026-07-07 15:36:08, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-07-07 15:36:11, EXEC, v:1, k:ed@detonate, mode:FULL, size:34, fail:COMP
+2026-07-07 15:40:33, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-07 15:45:34, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-07 15:50:03, EXEC, v:1, k:ed@detonate, mode:FULL, size:58, fail:COMP
+2026-07-07 15:50:27, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-07 15:53:56, EXEC, v:1, k:ed@detonate, mode:FULL, size:66, fail:COMP
+2026-07-07 15:54:09, EXEC, v:1, k:ed@detonate, mode:FULL, rate:100, size:66
+2026-07-07 15:54:21, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-07-07 15:54:37, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-07-07 15:54:40, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-07-07 15:55:03, SELF, v:1, k:ed@detonate, self:1, rate:100, concept:1
+2026-07-07 15:55:47, MOVE, v:1, k:ed@ilhas, mode:DOWN
+2026-07-07 15:55:48, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-07-07 15:55:47, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-07-07 15:55:47, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-07-07 16:04:26, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-07-07 16:08:58, MOVE, v:1, k:ed@ilhas, mode:EDIT
+2026-07-07 16:13:56, EXEC, v:1, k:ed@ilhas, mode:FULL, size:52, fail:COMP
+2026-07-07 16:13:57, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-07-07 16:14:31, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-07-07 16:15:58, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100, size:52
+2026-07-07 16:16:08, MOVE, v:1, k:ed@ilhas, mode:BACK
+2026-07-07 16:16:59, SELF, v:1, k:ed@ilhas, self:1, rate:100

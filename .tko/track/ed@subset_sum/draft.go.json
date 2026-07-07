@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-05_00-36-43",
+            "content": "@@ -10,519 +10,66 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-)%0A%0Afunc search(list %5B%5Dint, j, i int) bool%7B%0A    if j == 0 %7B return true %7D%0A    if i == len(list) %7C%7C j %3C 0 %7B return false%7D%0A    inList := search(list, j - list%5Bi%5D, i +1)%0A%0A    if inList %7B return true%7D%0A    notList := search(list, j, i +1)%0A    return notList%0A%7D%0A%0Afunc main() %7B%0A    n, k := 0, 0%0A    fmt.Scan(&n, &k)%0A%0A    nums := make(%5B%5Dint,n)%0A    for i := range n %7B%0A        fmt.Scan(&nums%5Bi%5D)%0A    %7D%0A%0A    if search(nums, k, 0) %7B%0A        fmt.Println(%22true%22)%0A    %7D else %7B%0A        fmt.Println(%22false%22)%0A    %7D%0A\n+func main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-05_00-54-34",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc search(list []int, j, i int) bool{\n    if j == 0 { return true }\n    if i == len(list) || j < 0 { return false}\n    inList := search(list, j - list[i], i +1)\n\n    if inList { return true}\n    notList := search(list, j, i +1)\n    return notList\n}\n\nfunc main() {\n    n, k := 0, 0\n    fmt.Scan(&n, &k)\n\n    nums := make([]int,n)\n    for i := range n {\n        fmt.Scan(&nums[i])\n    }\n\n    if search(nums, k, 0) {\n        fmt.Println(\"true\")\n    } else {\n        fmt.Println(\"false\")\n    }\n\n}\n",
+            "lines": "32"
+        }
+    ]
+}

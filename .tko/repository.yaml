@@ -19,8 +19,9 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@linear
-- ed@backtrack
+- ed@bfs
+- ed@vector
+- ed@dfs
 flags:
   inbox: all
   panel: skills
@@ -30,5 +31,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@permutacoes
-selected_index: 20
+selected: ed@cercado
+selected_index: 17

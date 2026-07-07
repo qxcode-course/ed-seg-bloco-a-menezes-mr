@@ -1,0 +1,35 @@
+2026-07-06 22:27:29, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-07-06 22:27:31, EXEC, v:1, k:ed@rotten, mode:FULL, size:53, fail:COMP
+2026-07-06 22:27:58, EXEC, v:1, k:ed@rotten, mode:FULL, size:52, fail:COMP
+2026-07-06 22:30:09, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-06 22:36:16, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-06 22:41:13, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-06 22:45:03, EXEC, v:1, k:ed@rotten, mode:FULL, size:67, fail:COMP
+2026-07-06 22:45:04, EXEC, v:1, k:ed@rotten, mode:FULL, fail:COMP
+2026-07-06 22:45:05, EXEC, v:1, k:ed@rotten, mode:FULL, fail:COMP
+2026-07-06 22:45:05, EXEC, v:1, k:ed@rotten, mode:FULL, fail:COMP
+2026-07-06 22:46:18, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-07-06 22:46:42, EXEC, v:1, k:ed@rotten, mode:FULL, rate:0, size:71
+2026-07-06 22:47:58, EXEC, v:1, k:ed@rotten, mode:FULL, rate:100, size:72
+2026-07-06 22:48:08, EXEC, v:1, k:ed@rotten, mode:FULL, rate:100
+2026-07-06 22:48:14, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-07-06 22:52:40, SELF, v:1, k:ed@rotten, self:1, rate:100, problem:1
+2026-07-06 22:54:10, MOVE, v:1, k:ed@detonate, mode:DOWN
+2026-07-06 22:56:25, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-07-06 22:56:27, EXEC, v:1, k:ed@detonate, mode:FULL, rate:0, size:5
+2026-07-06 22:56:50, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-07-06 22:57:28, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-07-06 22:58:19, MOVE, v:1, k:ed@detonate, mode:BACK
+2026-07-06 22:54:10, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 22:59:38, MOVE, v:1, k:ed@dfs_read, mode:DOWN
+2026-07-06 22:59:46, MOVE, v:1, k:ed@dfs_read, mode:PICK
+2026-07-06 22:59:49, EXEC, v:1, k:ed@dfs_read, mode:LOCK, rate:0, size:5
+2026-07-06 22:59:53, MOVE, v:1, k:ed@dfs_read, mode:BACK
+2026-07-06 23:00:22, SELF, v:1, k:ed@dfs_read, self:1, rate:100
+2026-07-06 23:01:44, SELF, v:1, k:ed@analise, self:1, rate:100
+2026-07-06 23:03:16, MOVE, v:1, k:ed@detonate, mode:PICK
+2026-07-06 23:17:21, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 23:23:51, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 23:28:32, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 23:33:01, MOVE, v:1, k:ed@detonate, mode:EDIT
+2026-07-06 23:34:57, MOVE, v:1, k:ed@detonate, mode:EDIT

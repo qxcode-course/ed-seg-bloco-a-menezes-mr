@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-06_22-56-27",
+            "content": "@@ -10,398 +10,66 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-)%0A%0Atype Pos struct%7B%0A    l, c, r int%0A%7D%0A%0Afunc bombas(grid%5B%5D%5B%5Dint\n+func main(\n ) \n-int\n %7B%0A    \n-n := len(grid)%0A    listaBom := make(%5B%5DPos, n)%0A%0A    for%0A%0A%7D%0A%0A%0A%0Afunc main() %7B%0A%09var m, n int%0A%09fmt.Scan(&m, &n)%0A%09mat := make(%5B%5D%5B%5Dint, m)%0A%0A    for i := range m %7B%0A        mat%5Bi%5D = make(%5B%5Dint, n)%0A        for j := range n %7B%0A            fmt.Scan(&mat%5Bi%5D%5Bj%5D)%0A        %7D%0A        %0A    %7D%0A    fmt.Println(bombas(mat)\n+fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-07_15-36-11",
+            "content": "@@ -71,696 +71,91 @@\n unc \n-detonar(atual int, visitado %5B%5Dbool, listaBom %5B%5DPos) int %7B%0A    visitado%5Batual%5D = true%0A    count := 1%0A    bombaA := listaBom%5Batual%5D%0A%0A    for i := range len(listaBom) %7B%0A        if !visitado%5Bi%5D %7B%0A            alvo := listaBom%5Bi%5D%0A%0A            deltL := bombaA.l - alvo.l%0A            deltC := bombaA.c - alvo.c%0A            raio := bombaA.r%0A            if deltL * deltL + deltC * deltC %3C= raio * raio %7B%0A                count += detonar(i, visitado, listaBom)%0A            %7D%0A        %7D%0A    %7D%0A%0A    return count%0A%7D%0A%0Afunc bombas(grid%5B%5D%5B%5Dint) int%7B%0A    n := len(grid)%0A    listaBom := make(%5B%5DPos, n)%0A%0A    for i, b := range grid %7B%0A        listaBom%5Bi%5D = Poa%7Bl: b%5B0%5D, c: b%5B1%5D, r: b%5B2%5D%7D%0A    %7D%0A    detonadas := 0\n+bombas(grid%5B%5D%5B%5Dint) int%7B%0A    n := len(grid)%0A    listaBom := make(%5B%5DPos, n)%0A%0A    for\n %0A%0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-07-07_15-50-03",
+            "content": "@@ -760,213 +760,8 @@\n = 0%0A\n-    for i := range n %7B%0A        visitado := make(%5B%5Dbool, n)%0A        count := detonar(i, visitado, listaBom)%0A%0A        if count %3E detonadas %7B%0A            detonadas = count%0A        %7D%0A    %7D%0A    return detonadas\n %0A%7D%0A%0A\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-07_15-53-56",
+            "content": "@@ -702,17 +702,17 @@\n %5Bi%5D = Po\n-s\n+a\n %7Bl: b%5B0%5D\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-07_15-54-09",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\ntype Pos struct{\n    l, c, r int\n}\n\nfunc detonar(atual int, visitado []bool, listaBom []Pos) int {\n    visitado[atual] = true\n    count := 1\n    bombaA := listaBom[atual]\n\n    for i := range len(listaBom) {\n        if !visitado[i] {\n            alvo := listaBom[i]\n\n            deltL := bombaA.l - alvo.l\n            deltC := bombaA.c - alvo.c\n            raio := bombaA.r\n            if deltL * deltL + deltC * deltC <= raio * raio {\n                count += detonar(i, visitado, listaBom)\n            }\n        }\n    }\n\n    return count\n}\n\nfunc bombas(grid[][]int) int{\n    n := len(grid)\n    listaBom := make([]Pos, n)\n\n    for i, b := range grid {\n        listaBom[i] = Pos{l: b[0], c: b[1], r: b[2]}\n    }\n    detonadas := 0\n    for i := range n {\n        visitado := make([]bool, n)\n        count := detonar(i, visitado, listaBom)\n\n        if count > detonadas {\n            detonadas = count\n        }\n    }\n    return detonadas\n}\n\n\n\nfunc main() {\n\tvar m, n int\n\tfmt.Scan(&m, &n)\n\tmat := make([][]int, m)\n\n    for i := range m {\n        mat[i] = make([]int, n)\n        for j := range n {\n            fmt.Scan(&mat[i][j])\n        }\n        \n    }\n    fmt.Println(bombas(mat))\n}\n",
+            "lines": "66"
+        }
+    ]
+}
