@@ -22,3 +22,4 @@
 2026-07-07 16:15:58, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100, size:52
 2026-07-07 16:16:08, MOVE, v:1, k:ed@ilhas, mode:BACK
 2026-07-07 16:16:59, SELF, v:1, k:ed@ilhas, self:1, rate:100
+2026-07-07 16:20:40, MOVE, v:1, k:ed@cercado, mode:DOWN
