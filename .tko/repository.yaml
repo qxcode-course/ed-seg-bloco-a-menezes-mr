@@ -19,9 +19,9 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@bfs
 - ed@vector
 - ed@dfs
+- ed@bfs
 flags:
   inbox: all
   panel: skills
