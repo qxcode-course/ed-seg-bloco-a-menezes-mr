@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-11_07-49-53",
+            "content": "@@ -67,485 +67,8 @@\n %0A)%0A%0A\n-func memorisar(matrix%5B%5D%5B%5Dint, m %5B%5D%5B%5Dint, l, c int) int%7B%0A%09if m%5Bl%5D%5Bc%5D != 0 %7B%0A%09%09return m%5Bl%5D%5Bc%5D%0A%09%7D%0A%0A%09caminhoM := 1%0A%09dirL:= %5B%5Dint %7B-1, 1, 0, 0%7D%0A%09dirC:= %5B%5Dint %7B0, 0, -1, 1%7D%0A%0A%09for i := range 4 %7B%0A%09%09visL := l + dirL%5Bi%5D%0A%09%09visC := c + dirC%5Bi%5D%0A%0A%09%09if visL %3E= 0 && visL %3C l && visC %3E= 0 && visC %3C c && matrix%5BvisL%5D%5BvisC%5D %3E matrix%5B1%5D%5Bc%5D %7B%0A%09%09%09caminhoV := 1 + memorisar(matrix, m, l, c)%0A%0A%09%09%09if caminhoV %3E caminhoM %7B%0A%09%09%09%09caminhoM = caminhoV%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%7D%0A%0A%09m%5Bl%5D%5Bc%5D = caminhoM%0A%09return caminhoM%0A%7D%0A%0A\n func\n@@ -121,295 +121,29 @@\n //%0A%09\n-l\n+_\n  := \n-len(\n matrix\n-)\n %0A%09\n-c := len(matrix%5B0%5D)%0A%0A%09m := make(%5B%5D%5B%5Dint, l)%0A%09for i := range l %7B%0A%09%09m%5Bi%5D = make(%5B%5Dint, c)%0A%09%7D%0A%0A%09recorde := 0%0A%0A%09for i := range l %7B%0A%09%09for j := range c %7B%0A%09%09%09caminhoA := memorisar(matrix, m, i, j)%0A%0A%09%09%09if caminhoA %3E recorde %7B%0A%09%09%09%09recorde = caminhoA%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09return recorde\n+return 0\n %0A%7D%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-07-11_08-18-44",
+            "content": "@@ -379,17 +379,17 @@\n  matrix%5B\n-l\n+1\n %5D%5Bc%5D %7B%0A%09\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-07-11_08-18-56",
+            "content": "@@ -322,26 +322,16 @@\n visL %3C l\n-en(matrix)\n  && visC\n@@ -346,30 +346,17 @@\n  visC %3C \n-len(matrix%5B0%5D)\n+c\n  && matr\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-07-11_08-21-14",
+            "content": "@@ -454,18 +454,12 @@\n  m, \n-visL, visC\n+l, c\n )%0A%0A%09\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-07-11_08-21-56",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc memorisar(matrix[][]int, m [][]int, l, c int) int{\n\tif m[l][c] != 0 {\n\t\treturn m[l][c]\n\t}\n\n\tcaminhoM := 1\n\tdirL:= []int {-1, 1, 0, 0}\n\tdirC:= []int {0, 0, -1, 1}\n\n\tfor i := range 4 {\n\t\tvisL := l + dirL[i]\n\t\tvisC := c + dirC[i]\n\n\t\tif visL >= 0 && visL < len(matrix) && visC >= 0 && visC < len(matrix[0]) && matrix[visL][visC] > matrix[l][c] {\n\t\t\tcaminhoV := 1 + memorisar(matrix, m, visL, visC)\n\n\t\t\tif caminhoV > caminhoM {\n\t\t\t\tcaminhoM = caminhoV\n\t\t\t}\n\t\t}\n\n\t}\n\n\tm[l][c] = caminhoM\n\treturn caminhoM\n}\n\nfunc longestIncreasingPath(matrix [][]int) int {\n\t//\n\tl := len(matrix)\n\tc := len(matrix[0])\n\n\tm := make([][]int, l)\n\tfor i := range l {\n\t\tm[i] = make([]int, c)\n\t}\n\n\trecorde := 0\n\n\tfor i := range l {\n\t\tfor j := range c {\n\t\t\tcaminhoA := memorisar(matrix, m, i, j)\n\n\t\t\tif caminhoA > recorde {\n\t\t\t\trecorde = caminhoA\n\t\t\t}\n\t\t}\n\t}\n\n\treturn recorde\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tparts := strings.Fields(scanner.Text())\n\tif len(parts) < 2 {\n\t\treturn\n\t}\n\tnl, _ := strconv.Atoi(parts[0])\n\tnc, _ := strconv.Atoi(parts[1])\n\n\tmatrix := make([][]int, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tif !scanner.Scan() {\n\t\t\treturn\n\t\t}\n\t\ttokens := strings.Fields(scanner.Text())\n\t\trow := make([]int, nc)\n\t\tfor j := 0; j < nc && j < len(tokens); j++ {\n\t\t\tv, _ := strconv.Atoi(tokens[j])\n\t\t\trow[j] = v\n\t\t}\n\t\tmatrix[i] = row\n\t}\n\n\tfmt.Println(longestIncreasingPath(matrix))\n}\n",
+            "lines": "92"
+        }
+    ]
+}

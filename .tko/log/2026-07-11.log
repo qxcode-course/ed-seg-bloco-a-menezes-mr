@@ -1,0 +1,32 @@
+2026-07-11 07:33:11, MOVE, v:1, k:ed@cercado, mode:PICK
+2026-07-11 07:33:12, EXEC, v:1, k:ed@cercado, mode:FULL, rate:100
+2026-07-11 07:33:15, MOVE, v:1, k:ed@cercado, mode:BACK
+2026-07-11 07:33:49, MOVE, v:1, k:ed@pintura, mode:DOWN
+2026-07-11 07:33:52, MOVE, v:1, k:ed@pintura, mode:PICK
+2026-07-11 07:33:49, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-07-11 07:37:56, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-07-11 07:42:59, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-07-11 07:47:52, MOVE, v:1, k:ed@pintura, mode:EDIT
+2026-07-11 07:48:37, EXEC, v:1, k:ed@pintura, mode:FULL, rate:100, size:75
+2026-07-11 07:48:52, MOVE, v:1, k:ed@pintura, mode:BACK
+2026-07-11 07:49:32, SELF, v:1, k:ed@pintura, self:1, rate:100
+2026-07-11 07:49:47, MOVE, v:1, k:ed@longest, mode:DOWN
+2026-07-11 07:49:51, MOVE, v:1, k:ed@longest, mode:PICK
+2026-07-11 07:49:53, EXEC, v:1, k:ed@longest, mode:FULL, size:46, fail:COMP
+2026-07-11 07:49:55, EXEC, v:1, k:ed@longest, mode:FULL, fail:COMP
+2026-07-11 07:49:47, MOVE, v:1, k:ed@longest, mode:EDIT
+2026-07-11 07:53:58, MOVE, v:1, k:ed@longest, mode:EDIT
+2026-07-11 07:59:00, MOVE, v:1, k:ed@longest, mode:EDIT
+2026-07-11 08:03:53, MOVE, v:1, k:ed@longest, mode:EDIT
+2026-07-11 08:06:58, MOVE, v:1, k:ed@longest, mode:EDIT
+2026-07-11 08:14:01, MOVE, v:1, k:ed@longest, mode:EDIT
+2026-07-11 08:18:44, EXEC, v:1, k:ed@longest, mode:FULL, rate:33, size:92
+2026-07-11 08:18:56, EXEC, v:1, k:ed@longest, mode:FULL, rate:33, size:92
+2026-07-11 08:18:55, MOVE, v:1, k:ed@longest, mode:EDIT
+2026-07-11 08:21:14, EXEC, v:1, k:ed@longest, mode:FULL, rate:0, size:92
+2026-07-11 08:21:56, EXEC, v:1, k:ed@longest, mode:FULL, rate:100, size:92
+2026-07-11 08:22:11, MOVE, v:1, k:ed@longest, mode:BACK
+2026-07-11 08:22:50, SELF, v:1, k:ed@longest, self:1, rate:100
+2026-07-11 08:24:10, MOVE, v:1, k:ed@serial, mode:DOWN
+2026-07-11 08:24:12, MOVE, v:1, k:ed@serial, mode:PICK
+2026-07-11 08:24:18, MOVE, v:1, k:ed@serial, mode:BACK
