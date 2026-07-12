@@ -29,5 +29,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@dfs
-selected_index: 19
+selected: ed@bst_serial
+selected_index: 17
