@@ -16,16 +16,56 @@ type Node struct {
 
 func BstInsert(values []int) *Node {
 	
-	_ = values
-	return nil
+	var root *Node
+	for _, elem := range values {
+		if root == nil {
+			root = &Node{Value: elem}
+			continue
+		}
+
+		atual := root
+
+		for {
+			if elem < atual.Value {
+				if atual.Left == nil {
+					atual.Left = &Node{Value: elem}
+					break
+				}
+				atual = atual.Left
+			} else if elem > atual.Value {
+				if atual.Right == nil {
+					atual.Right = &Node{Value: elem}
+					break
+				}
+				atual = atual.Right
+			} else {
+				break
+			}
+		}
+	}
+	return root
 }
 
 // Dica: crie um vetor compartilhado e vá preenchendo conforme anda na recursão
 // Depois use o strings.Join para gerar o serial
+
+func preencher(node *Node, nodes *[]string){
+	if node == nil {
+		*nodes = append(*nodes, "#")
+		return
+	}
+
+	*nodes = append(*nodes, strconv.Itoa(node.Value))
+	preencher(node.Left, nodes)
+	preencher(node.Right, nodes)
+}
+
+
 func Serialize(root *Node) string {
 	// TODO
-	_ = root
-	return ""
+	var nodes []string
+	preencher(root, &nodes)
+	return strings.Join(nodes, " ")
 }
 
 // -----------------------------------------------------------------------------------
@@ -60,9 +100,9 @@ func BShow(node *Node, history string) {
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
-	parts := strings.Split(scanner.Text(), " ")
-	values := make([]int, 0, len(parts))
-	for _, elem := range parts {
+	nodes := strings.Split(scanner.Text(), " ")
+	values := make([]int, 0, len(nodes))
+	for _, elem := range nodes {
 		v, err := strconv.Atoi(elem)
 		if err == nil {
 			values = append(values, v)

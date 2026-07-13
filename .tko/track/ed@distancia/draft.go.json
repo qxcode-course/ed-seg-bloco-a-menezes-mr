@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-12_20-37-11",
+            "content": "@@ -10,1126 +10,66 @@\n ain%0A\n-%0A\n import \n-(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strconv%22%0A)%0A%0Afunc colocar(texto %5B%5Dbyte, p, l int, num byte) bool %7B%0A    for i := range l %7B%0A        esq := p - i%0A        if esq %3E= 0 && texto%5Besq%5D == num %7B%0A            return false%0A        %7D%0A    %7D%0A%0A    for i := range l %7B%0A        dir := p + i%0A        if dir %3C len(texto) && texto%5Bdir%5D == num %7B%0A            return false%0A        %7D%0A    %7D%0A%0A    return true%0A%7D%0A%0Afunc resolver(texto %5B%5Dbyte, p, l int) bool%7B%0A    if p == len(texto) %7B%0A        return true%0A    %7D%0A    if texto%5Bp%5D != '.' %7B%0A        return resolver(texto, p + 1, l)%0A    %7D%0A%0A    for i := range l %7B%0A        num := byte('0' + i)%0A%0A        if colocar(texto, p, l, num) %7B%0A            texto%5Bp%5D = num%0A            if resolver(texto, p + 1, l) %7B%0A                return true%0A            %7D%0A            texto%5Bp%5D = '.'%0A        %7D%0A%0A    %7D%0A    return false%0A%7D%0A%0Afunc main() %7B%0A%0A    scanner := bufio.NewScanner(os.Stdin)%0A    if !scanner.Scan() %7B%0A        return%0A    %7D%0A    linha := scanner.Text()%0A    texto := %5B%5Dbyte(linha)%0A%0A    if !scanner.Scan() %7B%0A        return%0A    %7D%0A%0A    l, _ := strconv.Atoi(scanner.Text())%0A%0A    resolver(texto, 0, l)%0A%0A    fmt.Println(texto)%0A\n+%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-12_21-12-36",
+            "content": "@@ -53,19 +53,8 @@\n nv%22%0A\n-%09%22strings%22%0A\n )%0A%0Af\n@@ -1122,22 +1122,14 @@\n tln(\n-string(\n texto)\n-)\n %0A%0A%7D%0A\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-07-12_21-13-08",
+            "content": "@@ -49,16 +49,27 @@\n trconv%22%0A\n+%09%22strings%22%0A\n )%0A%0Afunc \n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-07-12_21-13-20",
+            "content": "@@ -115,38 +115,31 @@\n    for i := \n-1; i %3C= l; i++\n+range l\n  %7B%0A        e\n@@ -252,22 +252,15 @@\n  := \n-1; i %3C= l; i++\n+range l\n  %7B%0A \n@@ -576,22 +576,15 @@\n  := \n-0; i %3C= l; i++\n+range l\n  %7B%0A \n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-07-12_21-17-07",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n)\n\nfunc colocar(texto []byte, p, l int, num byte) bool {\n    for i := 1; i <= l; i++ {\n        esq := p - i\n        if esq >= 0 && texto[esq] == num {\n            return false\n        }\n    }\n\n    for i := 1; i <= l; i++ {\n        dir := p + i\n        if dir < len(texto) && texto[dir] == num {\n            return false\n        }\n    }\n\n    return true\n}\n\nfunc resolver(texto []byte, p, l int) bool{\n    if p == len(texto) {\n        return true\n    }\n    if texto[p] != '.' {\n        return resolver(texto, p + 1, l)\n    }\n\n    for i := 0; i <= l; i++ {\n        num := byte('0' + i)\n\n        if colocar(texto, p, l, num) {\n            texto[p] = num\n            if resolver(texto, p + 1, l) {\n                return true\n            }\n            texto[p] = '.'\n        }\n\n    }\n    return false\n}\n\nfunc main() {\n\n    scanner := bufio.NewScanner(os.Stdin)\n    if !scanner.Scan() {\n        return\n    }\n    linha := scanner.Text()\n    texto := []byte(linha)\n\n    if !scanner.Scan() {\n        return\n    }\n\n    l, _ := strconv.Atoi(scanner.Text())\n\n    resolver(texto, 0, l)\n\n    fmt.Println(string(texto))\n\n}\n",
+            "lines": "70"
+        }
+    ]
+}

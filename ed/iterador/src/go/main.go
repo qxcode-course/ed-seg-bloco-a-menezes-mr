@@ -63,11 +63,11 @@ func main() {
 			}
 			fmt.Println("]")
 		case "reverse":
-			// fmt.Print("[ ")
-			// for it := mylist.ReverseIterator(); it.HasNext(); {
-			// 	fmt.Printf("%v ", it.Next())
-			// }
-			// fmt.Println("]")
+			fmt.Print("[ ")
+			for it := mylist.ReverseIterator(); it.HasNext(); {
+			 	fmt.Printf("%v ", it.Next())
+			}
+			fmt.Println("]")
 		case "cyclic":
 			// qtd, _ := strconv.Atoi(args[1])
 			// fmt.Print("[ ")

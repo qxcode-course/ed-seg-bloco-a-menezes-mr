@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-12_20-19-44",
+            "content": "@@ -10,759 +10,38 @@\n ain%0A\n-%0A\n import \n-(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)%0A%0Afunc balanceado(s string) bool %7B%0A    var pilha %5B%5Drune%0A    for _, c := range s %7B%0A        if c == '('%7C%7C c == '%5B' %7B%0A            pilha = append(pilha, c)%0A        %7D else if c == ')'%7C%7C c == '%5D' %7B%0A            if len(pilha) == 0 %7B%0A                return false%0A            %7D%0A%0A            topo := pilha%5Blen(pilha) - 1%5D%0A            pilha = pilha%5B:len(pilha) - 1%5D%0A            if (c == ')' && topo != '(') %7C%7C (c == '%5D' && topo != '%5B') %7B%0A                return false%0A            %7D%0A        %7D%0A    %7D%0A%7D%0A%0Afunc main() %7B%0A    scanner := bufio.NewScanner(os.Stdin)%0A%09if !scanner.Scan() %7B%0A%09%09return%0A%09%7D%0A%09line := scanner.Text()%0A%0A    if balanceado(line) %7B%0A        fmt.Println(%22balanceado%22)%0A    %7D else %7B%0A        fmt.Println(%22nao balanceado%22)%0A    %7D\n+%22fmt%22%0Afunc main() %7B%0A    \n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-12_20-34-57",
+            "content": "@@ -528,35 +528,8 @@\n   %7D%0A\n-    return len(pilha) == 0%0A\n %7D%0A%0Af\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-07-12_20-35-35",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc balanceado(s string) bool {\n    var pilha []rune\n    for _, c := range s {\n        if c == '('|| c == '[' {\n            pilha = append(pilha, c)\n        } else if c == ')'|| c == ']' {\n            if len(pilha) == 0 {\n                return false\n            }\n\n            topo := pilha[len(pilha) - 1]\n            pilha = pilha[:len(pilha) - 1]\n            if (c == ')' && topo != '(') || (c == ']' && topo != '[') {\n                return false\n            }\n        }\n    }\n    return len(pilha) == 0\n}\n\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\n    if balanceado(line) {\n        fmt.Println(\"balanceado\")\n    } else {\n        fmt.Println(\"nao balanceado\")\n    }\n}\n",
+            "lines": "41"
+        }
+    ]
+}
